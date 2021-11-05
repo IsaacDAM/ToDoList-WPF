@@ -12,11 +12,11 @@
             <ColumnDefinition Width="4*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="150*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="150*" />
         </Grid.RowDefinitions>
         <Label VerticalAlignment="Center" Margin="10,0,0,0" Height="26">Codi:</Label>
         <TextBox VerticalAlignment="Center"  Margin="50,0,70,0" Height="18"></TextBox>
@@ -25,10 +25,15 @@
         <Label Grid.Row="1">Descripció:</Label>
         <TextBox Grid.Row="1" Grid.ColumnSpan="3" Margin="75,7,40,20" ></TextBox>
         <Label Grid.Row="2">Data Creació: </Label>
-        <TextBox Grid.Row="2" Margin="85,5,30,50"></TextBox>
+        <TextBox Grid.Row="2" Margin="85,7,30,20"></TextBox>
         <Label Grid.Row="3">Data Finalització:</Label>
-        <TextBox Grid.Row="3" Margin="100,5,30,50"></TextBox>
-
+        <TextBox Grid.Row="3" Margin="100,7,30,20"></TextBox>
+        <Label Grid.Row="2" Grid.Column="1">Prioritat:</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="60,7,260,20"></TextBox>
+        <Label Grid.Row="3" Grid.Column="1">Representant:</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="85,7,260,20"></TextBox>
+        <Button Grid.Row="4"  Margin="50">Guardar</Button>
+        <Button Grid.Row="4" Grid.Column="1" Margin="320,50,50,50">Cancelar</Button>
     </Grid>
 
 </Window>
