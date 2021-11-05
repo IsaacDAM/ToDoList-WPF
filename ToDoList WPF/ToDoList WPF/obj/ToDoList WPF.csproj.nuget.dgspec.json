@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adrià\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj": {}
+    "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adrià\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj": {
+    "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adrià\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
+        "projectUniqueName": "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
         "projectName": "ToDoList WPF",
-        "projectPath": "C:\\Users\\Adrià\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
-        "packagesPath": "C:\\Users\\Adrià\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adrià\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\obj\\",
+        "projectPath": "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
+        "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Adrià\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
