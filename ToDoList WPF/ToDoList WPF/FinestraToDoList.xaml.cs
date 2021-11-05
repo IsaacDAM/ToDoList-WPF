@@ -33,5 +33,10 @@ namespace ToDoList_WPF
             Finestra_Tasca ftasca = new Finestra_Tasca();
             ftasca.ShowDialog();
         }
+
+        private void BotoGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

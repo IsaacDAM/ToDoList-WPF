@@ -1,0 +1,24 @@
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\bin\Debug\netcoreapp3.1\ToDoList WPF.exe
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\bin\Debug\netcoreapp3.1\ToDoList WPF.deps.json
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\bin\Debug\netcoreapp3.1\ToDoList WPF.runtimeconfig.json
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\bin\Debug\netcoreapp3.1\ToDoList WPF.runtimeconfig.dev.json
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\bin\Debug\netcoreapp3.1\ToDoList WPF.dll
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\bin\Debug\netcoreapp3.1\ToDoList WPF.pdb
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.csproj.AssemblyReference.cache
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\FinestraTasca.g.cs
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\FinestraToDoList.g.cs
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\FinestraTreballadors.g.cs
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF_MarkupCompile.cache
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF_MarkupCompile.lref
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\FinestraTasca.baml
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\FinestraToDoList.baml
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\FinestraTreballadors.baml
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.g.resources
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.AssemblyInfoInputs.cache
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.AssemblyInfo.cs
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.csproj.CoreCompileInputs.cache
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.dll
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.pdb
+C:\Users\Isaac\Documents\GitHub\ToDoList-WPF\ToDoList WPF\ToDoList WPF\obj\Debug\netcoreapp3.1\ToDoList WPF.genruntimeconfig.cache

@@ -31,7 +31,5 @@
         <Border Grid.Row="0" Grid.Column="2" Background="LightGray" BorderThickness="1" BorderBrush="Black" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="227">
             <Label Content="Done" HorizontalContentAlignment="Center" Margin="0,-3,0,-1" FontWeight="Bold"/>
         </Border>
-
-
     </Grid>
 </Window>
