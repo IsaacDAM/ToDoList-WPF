@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="To Do List" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="BotoModTasca" Content="Afegir Tasca" HorizontalAlignment="Left" Margin="233,386,0,0" VerticalAlignment="Top" Click="BotoModTasca_Click"/>
+        <Button x:Name="BotoTreballadors" Content="Treballadors" HorizontalAlignment="Left" Margin="77,386,0,0" VerticalAlignment="Top" Click="BotoTreballadors_Click"/>
+
     </Grid>
 </Window>

@@ -6,9 +6,5 @@
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
         Title="Finestra_Tasca" Height="450" Width="800">
-    <Grid>
-        <Button Name="BotoTreballadors" Content="Treballadors" HorizontalAlignment="Left" Margin="77,386,0,0" VerticalAlignment="Top" Click="BotoTreballadors_Click"/>
-        <Button Name="BotoModTasca" Content="Afegir Tasca" HorizontalAlignment="Left" Margin="233,386,0,0" VerticalAlignment="Top" Click="BotoModTasca_Click"/>
-
-    </Grid>
+    <Grid/>
 </Window>

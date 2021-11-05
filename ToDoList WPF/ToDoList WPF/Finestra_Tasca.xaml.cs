@@ -22,15 +22,6 @@ namespace ToDoList_WPF
             InitializeComponent();
         }
 
-        private void BotoTreballadors_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void BotoModTasca_Click(object sender, RoutedEventArgs e)
-        {
-            Finestra_Tasca ft = new Finestra_Tasca();
-            ft.ShowDialog();
-        }
+       
     }
 }
