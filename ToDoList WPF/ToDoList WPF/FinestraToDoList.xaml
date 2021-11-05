@@ -7,8 +7,19 @@
         mc:Ignorable="d"
         Title="To Do List" Height="450" Width="800">
     <Grid>
-        <Button x:Name="BotoModTasca" Content="Afegir Tasca" HorizontalAlignment="Left" Margin="233,386,0,0" VerticalAlignment="Top" Click="BotoModTasca_Click"/>
-        <Button x:Name="BotoTreballadors" Content="Treballadors" HorizontalAlignment="Left" Margin="77,386,0,0" VerticalAlignment="Top" Click="BotoTreballadors_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="BotoModTasca" Content="Afegir Tasca"  Margin="0,15,110,10"  Click="BotoModTasca_Click"/>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="BotoGuardar" Content="Guardar"  Margin="50,15,50,10"  Click="BotoGuardar_Click"/>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="BotoTreballadors" Content="Treballadors"  Margin="50,15,50,10"  Click="BotoTreballadors_Click"/>
+        
 
     </Grid>
 </Window>
