@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PZzonWy9PJcJLiNKz7OryJd1s1Ir3sA+eXKqRQ+/HM5Wi3nRAkwRt5PXvz5yNHJZxE9ISnpYT9F0OuL15p5uAg==",
+  "dgSpecHash": "8qSJTgoeNuAy5yK4HdbH4th3l2LyX7s88s29HPa1hguv8mxbpcwuqH9vZtilAswfsAk2TAnhsa4yCRDT4yt5xQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\DAM\\2n\\M13 - Projecte\\Git\\1rProjecte\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luppe\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.20\\microsoft.netcore.app.host.win-x64.3.1.20.nupkg.sha512"
+  ],
   "logs": []
 }
