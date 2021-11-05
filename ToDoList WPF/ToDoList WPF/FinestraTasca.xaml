@@ -6,5 +6,29 @@
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
         Title="Finestra_Tasca" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1.5*" />
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" Margin="10,0,0,0" Height="26">Codi:</Label>
+        <TextBox VerticalAlignment="Center"  Margin="50,0,70,0" Height="18"></TextBox>
+        <Label Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Height="26">Títol Tasca:</Label>
+        <TextBox Grid.Column="1" VerticalAlignment="Center"  Margin="80,0,40,0" Height="18"></TextBox>
+        <Label Grid.Row="1">Descripció:</Label>
+        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Margin="75,7,40,20" ></TextBox>
+        <Label Grid.Row="2">Data Creació: </Label>
+        <TextBox Grid.Row="2" Margin="85,5,30,50"></TextBox>
+        <Label Grid.Row="3">Data Finalització:</Label>
+        <TextBox Grid.Row="3" Margin="100,5,30,50"></TextBox>
+
+    </Grid>
+
 </Window>
