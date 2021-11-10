@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="Finestra_Tasca" Height="450" Width="800">
+        Title="Tasca" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -23,15 +23,15 @@
         <Label Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Height="26">Títol Tasca:</Label>
         <TextBox Grid.Column="1" VerticalAlignment="Center"  Margin="80,0,40,0" Height="18"></TextBox>
         <Label Grid.Row="1">Descripció:</Label>
-        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Margin="75,7,40,20" ></TextBox>
-        <Label Grid.Row="2">Data Creació: </Label>
-        <TextBox Grid.Row="2" Margin="85,7,30,20"></TextBox>
-        <Label Grid.Row="3">Data Finalització:</Label>
-        <TextBox Grid.Row="3" Margin="100,7,30,20"></TextBox>
-        <Label Grid.Row="2" Grid.Column="1">Prioritat:</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="60,7,260,20"></TextBox>
-        <Label Grid.Row="3" Grid.Column="1">Representant:</Label>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="85,7,260,20"></TextBox>
+        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Margin="75,7,40,10" TextWrapping = "Wrap" ></TextBox>
+        <Label Grid.Row="2" VerticalAlignment="Center">Data Creació: </Label>
+        <TextBox Grid.Row="2" VerticalAlignment="Center" Margin="85,0,30,0"></TextBox>
+        <Label Grid.Row="3" VerticalAlignment="Center">Data Finalització:</Label>
+        <TextBox Grid.Row="3" VerticalAlignment="Center" Margin="100,0,30,0"></TextBox>
+        <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Prioritat:</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="60,0,260,0"></TextBox>
+        <Label Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Representant:</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="85,0,260,0"></TextBox>
         <Button Grid.Row="4"  Margin="50">Guardar</Button>
         <Button Grid.Row="4" Grid.Column="1" Margin="320,50,50,50">Cancelar</Button>
     </Grid>

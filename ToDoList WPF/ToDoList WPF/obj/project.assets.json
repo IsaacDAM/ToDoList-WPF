@@ -8,19 +8,24 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Isaac\\.nuget\\packages\\": {}
+    "C:\\Users\\luppe\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
+      "projectUniqueName": "D:\\DAM\\2n\\M13 - Projecte\\Git\\1rProjecte\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
       "projectName": "ToDoList WPF",
-      "projectPath": "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
-      "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Isaac\\Documents\\GitHub\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\obj\\",
+      "projectPath": "D:\\DAM\\2n\\M13 - Projecte\\Git\\1rProjecte\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\ToDoList WPF.csproj",
+      "packagesPath": "C:\\Users\\luppe\\.nuget\\packages\\",
+      "outputPath": "D:\\DAM\\2n\\M13 - Projecte\\Git\\1rProjecte\\ToDoList-WPF\\ToDoList WPF\\ToDoList WPF\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\luppe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -55,6 +60,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.20, 3.1.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -63,7 +74,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
