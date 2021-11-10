@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="To Do List" Height="450" Width="800">
+        Title="To Do List" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
@@ -19,9 +19,9 @@
         <Button Grid.Row="1" Grid.Column="1" x:Name="BotoModTasca" Content="Afegir Tasca"  Margin="0,15,110,10"  Click="BotoModTasca_Click"/>
         <Button Grid.Row="1" Grid.Column="2" x:Name="BotoGuardar" Content="Guardar"  Margin="50,15,50,10"  Click="BotoGuardar_Click"/>
         <Button Grid.Row="1" Grid.Column="0" x:Name="BotoTreballadors" Content="Treballadors"  Margin="50,15,50,10"  Click="BotoTreballadors_Click"/>
-        <ListBox Grid.Row="0" Grid.Column="0" x:Name="LlistaToDo" Margin="20,40,20,20"/>
-        <ListBox Grid.Row="0" Grid.Column="1" x:Name="LlistaDoing" Margin="20,40,20,20"/>
-        <ListBox Grid.Row="0" Grid.Column="2" x:Name="LlistaDone" Margin="20,40,20,20"/>
+        <ListBox Grid.Row="0" Grid.Column="0" x:Name="LlistaToDo" Margin="20,40,20,20" BorderBrush="Black"/>
+        <ListBox Grid.Row="0" Grid.Column="1" x:Name="LlistaDoing" Margin="20,40,20,20" BorderBrush="Black"/>
+        <ListBox Grid.Row="0" Grid.Column="2" x:Name="LlistaDone" Margin="20,40,20,20" BorderBrush="Black"/>
         <Border Grid.Row="0" Grid.Column="0" Background="LightGray" BorderThickness="1" BorderBrush="Black" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="227">
             <Label Content="To Do" HorizontalContentAlignment="Center" Margin="0,-3,0,-1" FontWeight="Bold"/>
         </Border>
