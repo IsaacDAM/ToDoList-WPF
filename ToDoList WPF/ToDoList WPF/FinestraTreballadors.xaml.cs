@@ -21,5 +21,13 @@ namespace ToDoList_WPF
         {
             InitializeComponent();
         }
+
+        private void BotoEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Vols eliminar al treballador?","Advertència",MessageBoxButton.YesNo,MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+
+            }
+        }
     }
 }
