@@ -32,20 +32,20 @@
         <ListBox Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="300,0,150,17">
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Images\redDot.png" Stretch="Fill" />
-                    <TextBlock Margin="10,0,0,0">Alta</TextBlock>
+                    <Image Source="Images\redDot.png" Margin="0,0,5,0"/>
+                    <TextBlock >Alta</TextBlock>
                 </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Images\orangeDot.png" Stretch="Fill" />
-                    <TextBlock Margin="10,0,0,0">Mitja</TextBlock>
+                    <Image Source="Images\orangeDot.png" Margin="0,0,5,0"/>
+                    <TextBlock >Mitja</TextBlock>
                 </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Images\greenDot.png" Stretch="Fill" />
-                    <TextBlock Margin="10,0,0,0">Baixa</TextBlock>
+                    <Image Source="Images\greenDot.png" Margin="0,0,5,0"/>
+                    <TextBlock >Baixa</TextBlock>
                 </StackPanel>
             </ListBoxItem>
         </ListBox>
