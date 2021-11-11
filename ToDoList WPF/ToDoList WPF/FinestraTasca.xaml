@@ -28,12 +28,31 @@
         <TextBox Grid.Row="2" VerticalAlignment="Center" Margin="85,0,30,0"></TextBox>
         <Label Grid.Row="3" VerticalAlignment="Center">Data Finalització:</Label>
         <TextBox Grid.Row="3" VerticalAlignment="Center" Margin="100,0,30,0"></TextBox>
-        <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Prioritat:</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="60,0,260,0"></TextBox>
+        <Label Grid.Row="2" Grid.Column="1"  Margin="245,0,0,0">Prioritat:</Label>
+        <ListBox Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="300,0,150,17">
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images\redDot.png" Margin="0,0,5,0"/>
+                    <TextBlock >Alta</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images\orangeDot.png" Margin="0,0,5,0"/>
+                    <TextBlock >Mitja</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images\greenDot.png" Margin="0,0,5,0"/>
+                    <TextBlock >Baixa</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
         <Label Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Representant:</Label>
         <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="85,0,260,0"></TextBox>
         <Button Grid.Row="4"  Margin="50">Guardar</Button>
-        <Button Grid.Row="4" Grid.Column="1" Margin="320,50,50,50">Cancelar</Button>
+        <Button Name="btnCancelarTasca" Grid.Row="4" Grid.Column="1" Margin="320,50,50,50" Click="Button_Click">Cancelar</Button>
     </Grid>
 
 </Window>

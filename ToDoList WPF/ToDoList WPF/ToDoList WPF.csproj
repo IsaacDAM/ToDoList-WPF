@@ -7,4 +7,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\greenDot.png" />
+    <None Remove="Images\orangeDot.png" />
+    <None Remove="Images\redDot.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\greenDot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\orangeDot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\redDot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
