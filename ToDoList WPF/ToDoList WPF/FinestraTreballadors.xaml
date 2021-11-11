@@ -9,9 +9,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="72*"/>
-            <RowDefinition Height="36*"/>
-            <RowDefinition Height="33*"/>
-            <RowDefinition Height="34*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
             <RowDefinition Height="72*"/>
             <RowDefinition Height="37*"/>
         </Grid.RowDefinitions>
