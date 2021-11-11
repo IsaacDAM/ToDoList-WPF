@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoList_WPF
+namespace ToDoList_WPF.Entitats
 {
     class TascaDades
     {
@@ -13,7 +13,7 @@ namespace ToDoList_WPF
         public DateTime dFinalitzacio { get; set; }
         public enum _Prioritat { Alta, Mitja, Baixa }
         public _Prioritat Prioritat { get; set; }
-        public TreballadorDades Representant { get; set; }
+        public string Representant { get; set; }
         public enum _Estat { ToDo, Doing, Done}
         public _Estat Estat { get; set; }
     }

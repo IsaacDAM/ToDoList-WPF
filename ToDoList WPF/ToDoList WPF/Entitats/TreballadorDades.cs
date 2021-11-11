@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoList_WPF
+namespace ToDoList_WPF.Entitats
 {
     class TreballadorDades
     {
