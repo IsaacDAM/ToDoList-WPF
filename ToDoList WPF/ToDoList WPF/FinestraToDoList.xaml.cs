@@ -28,7 +28,7 @@ namespace ToDoList_WPF
             ftreball.ShowDialog();
         }
 
-        private void BotoModTasca_Click(object sender, RoutedEventArgs e)
+        private void BotoAfegirTasca_Click(object sender, RoutedEventArgs e)
         {
             Finestra_Tasca ftasca = new Finestra_Tasca();
             ftasca.ShowDialog();
