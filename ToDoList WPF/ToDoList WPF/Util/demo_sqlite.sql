@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS treballador(
                       )
 
 CREATE TABLE  IF NOT EXISTS tasca(
-            codi INTEGER PRIMARY KEY,
+            codi INTEGER PRIMARY KEY AUTOINCREMENT,
             titol TEXT CHECK( LENGTH(titol)>30) NOT NULL,
             descripcio TEXT CHECK( LENGTH(descripcio)>150),
             dCreacio DATETIME,
