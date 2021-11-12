@@ -50,19 +50,21 @@ namespace ToDoList_WPF.Persistence
                         {
                             command.Parameters.Add(new SQLiteParameter("titol", "Titol " + i));
                             command.Parameters.Add(new SQLiteParameter("descripcio", "Descripcio " + i));
-                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString() + i));
-                            command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString() + i));
-                            command.Parameters.Add(new SQLiteParameter("prioritat", ""  + i));
+                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString() + " " + i));
+                            command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString() + " " + i));
+                            command.Parameters.Add(new SQLiteParameter("prioritat", "Prioritat "  + i));
+                            command.Parameters.Add(new SQLiteParameter("representant", "Representant " + i));
+                            command.Parameters.Add(new SQLiteParameter("estat", "Estat " + i));
 
                             command.ExecuteNonQuery();
                         }
                         using (var command = new SQLiteCommand(query2, ctx))
                         {
-                            command.Parameters.Add(new SQLiteParameter("name", "Name " + i));
-                            command.Parameters.Add(new SQLiteParameter("lastname", "Lastname " + i));
-
-                            var rnd = new Random();
-                            command.Parameters.Add(new SQLiteParameter("birthday", DateTime.Today.AddYears(-rnd.Next(1, 50))));
+                            command.Parameters.Add(new SQLiteParameter("nif", "NIF " + i));
+                            command.Parameters.Add(new SQLiteParameter("nom", "Nom " + i));
+                            command.Parameters.Add(new SQLiteParameter("cognoms", "Cognoms " + i));
+                            command.Parameters.Add(new SQLiteParameter("telefon", "Telefon " + i));
+                            command.Parameters.Add(new SQLiteParameter("correu", "Correu " + i));
 
                             command.ExecuteNonQuery();
                         }

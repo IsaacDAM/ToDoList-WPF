@@ -11,10 +11,8 @@ namespace ToDoList_WPF.Entitats
         public string Descripcio { get; set; }
         public DateTime dCreacio { get; set; }
         public DateTime dFinalitzacio { get; set; }
-        public enum _Prioritat { Alta, Mitja, Baixa }
-        public _Prioritat Prioritat { get; set; }
+        public string Prioritat { get; set; }
         public string Representant { get; set; }
-        public enum _Estat { ToDo, Doing, Done}
-        public _Estat Estat { get; set; }
+        public string Estat { get; set; }
     }
 }
