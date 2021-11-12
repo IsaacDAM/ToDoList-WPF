@@ -42,7 +42,7 @@ namespace ToDoList_WPF
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if(guardat = false)
+            if(!guardat)
             {
                 MessageBoxResult Resultat = MessageBox.Show("Desar canvis abans de sortir?", "Advertència", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
                 if (Resultat == MessageBoxResult.Yes)
