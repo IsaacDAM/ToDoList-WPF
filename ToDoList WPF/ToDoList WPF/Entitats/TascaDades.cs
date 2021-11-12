@@ -6,7 +6,7 @@ namespace ToDoList_WPF.Entitats
 {
     class TascaDades
     {
-        public int Codi_Tasc { get; set; }
+        public int Codi { get; set; }
         public string Titol { get; set; }
         public string Descripcio { get; set; }
         public DateTime dCreacio { get; set; }
