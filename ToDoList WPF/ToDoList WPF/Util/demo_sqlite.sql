@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS tasca(
     dCreacio DATETIME,
     dFinalitz DATETIME,
     Prioritat ENUM("Alta","Mitja","Baixa"),
-    Representant VARCHAR(9) ,
+    Representant VARCHAR(9),
     Estat ENUM("ToDo","Doing","Done"),
     FOREIGN KEY (representant) REFERENCES NIF (treballador)
 )

@@ -17,6 +17,7 @@ namespace ToDoList_WPF
     /// </summary>
     public partial class Finestra_ToDoList : Window
     {
+        bool guardat = true;
         public Finestra_ToDoList()
         {
             InitializeComponent();
@@ -37,6 +38,23 @@ namespace ToDoList_WPF
         private void BotoGuardar_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(guardat = false)
+            {
+                MessageBoxResult Resultat = MessageBox.Show("Desar canvis abans de sortir?", "Advertència", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+                if (Resultat == MessageBoxResult.Yes)
+                {
+
+                }
+                else if (Resultat == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+            
         }
     }
 }
