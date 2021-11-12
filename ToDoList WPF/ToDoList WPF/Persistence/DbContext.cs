@@ -43,10 +43,20 @@ namespace ToDoList_WPF.Persistence
 
                     for (var i = 1; i <= 100; i++)
                     {
-                        var query1 = "INSERT INTO tasca (codi, titol, descripcio, d) VALUES (?, ?, ?)";
-                        var query2 = "INSERT INTO tasca (, lastname, birthday) VALUES (?, ?, ?)";
+                        var query1 = "INSERT INTO tasca (titol, descripcio, dCreacio, dFinalitz, prioritat, representant, estat) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                        var query2 = "INSERT INTO treballador (NIF, nom, tel, correu) VALUES (?, ?, ?, ?, ?)";
 
                         using (var command = new SQLiteCommand(query1, ctx))
+                        {
+                            command.Parameters.Add(new SQLiteParameter("titol", "Titol " + i));
+                            command.Parameters.Add(new SQLiteParameter("descripcio", "Descripcio " + i));
+                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString() + i));
+                            command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString() + i));
+                            command.Parameters.Add(new SQLiteParameter("prioritat", ""  + i));
+
+                            command.ExecuteNonQuery();
+                        }
+                        using (var command = new SQLiteCommand(query2, ctx))
                         {
                             command.Parameters.Add(new SQLiteParameter("name", "Name " + i));
                             command.Parameters.Add(new SQLiteParameter("lastname", "Lastname " + i));
@@ -56,6 +66,7 @@ namespace ToDoList_WPF.Persistence
 
                             command.ExecuteNonQuery();
                         }
+
                     }
                 }
             }
