@@ -19,30 +19,30 @@
             <RowDefinition Height="150*" />
         </Grid.RowDefinitions>
         <Label VerticalAlignment="Center" Margin="10,0,0,0" Height="26">Codi:</Label>
-        <TextBox VerticalAlignment="Center"  Margin="50,0,70,0" Height="18"></TextBox>
+        <TextBox Name="tbCodi" VerticalAlignment="Center"  Margin="50,0,70,0" Height="18"></TextBox>
         <Label Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Height="26">Títol Tasca:</Label>
-        <TextBox Grid.Column="1" VerticalAlignment="Center"  Margin="80,0,40,0" Height="18"></TextBox>
+        <TextBox Name="tbTitol" Grid.Column="1" VerticalAlignment="Center"  Margin="80,0,40,0" Height="18"></TextBox>
         <Label Grid.Row="1" Margin="10,0,0,0">Descripció:</Label>
-        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Margin="85,7,40,10" TextWrapping = "Wrap" ></TextBox>
+        <TextBox Name="tbDescripcio" Grid.Row="1" Grid.ColumnSpan="3" Margin="85,7,40,10" TextWrapping = "Wrap" ></TextBox>
         <Label Grid.Row="2" VerticalAlignment="Center" Margin="10,0,0,0">Data Creació: </Label>
-        <TextBox Grid.Row="2" VerticalAlignment="Center" Margin="95,0,20,0"></TextBox>
+        <TextBox Name="tbDCreacio" Grid.Row="2" VerticalAlignment="Center" Margin="95,0,20,0"></TextBox>
         <Label Grid.Row="3" VerticalAlignment="Center" Margin="10,0,0,0">Data Finalització:</Label>
-        <TextBox Grid.Row="3" VerticalAlignment="Center" Margin="110,0,20,0"></TextBox>
+        <TextBox Name="tbDFinal" Grid.Row="3" VerticalAlignment="Center" Margin="110,0,20,0"></TextBox>
         <Label Grid.Row="2" Grid.Column="1"  Margin="245,0,0,0">Prioritat:</Label>
-        <ListBox Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="300,0,150,17">
-            <ListBoxItem>
+        <ListBox Name="lbPrioritats" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="300,0,150,17">
+            <ListBoxItem Name="Alta">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images\redDot.png" Margin="0,0,5,0"/>
                     <TextBlock >Alta</TextBlock>
                 </StackPanel>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Name="Mitja">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images\orangeDot.png" Margin="0,0,5,0"/>
                     <TextBlock >Mitja</TextBlock>
                 </StackPanel>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Name="Baixa">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images\greenDot.png" Margin="0,0,5,0"/>
                     <TextBlock >Baixa</TextBlock>
@@ -50,8 +50,10 @@
             </ListBoxItem>
         </ListBox>
         <Label Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Representant:</Label>
-        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="85,0,260,0"></TextBox>
-        <Button Grid.Row="4"  Margin="50">Guardar</Button>
+        <ListBox Name="lbRepresentant"  Grid.Row="3" Grid.Column="1" Margin="85,10,260,5">
+          
+        </ListBox>
+        <Button Name="btnGuardarTasca"  Grid.Row="4"  Margin="50">Guardar</Button>
         <Button Name="btnCancelarTasca" Grid.Row="4" Grid.Column="1" Margin="320,50,50,50" Click="Button_Click">Cancelar</Button>
     </Grid>
 
