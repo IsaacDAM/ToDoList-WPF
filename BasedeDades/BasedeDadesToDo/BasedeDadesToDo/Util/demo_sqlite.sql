@@ -4,16 +4,16 @@ CREATE TABLE IF NOT EXISTS treballador(
     Cognoms VARCHAR(40),
     Telefon VARCHAR(9),
     Correu VARCHAR(50)
-)
+);
 
 CREATE TABLE IF NOT EXISTS tasca(
-    Codi INT PRIMARY KEY AUTOINCREMENT,
+    Codi INTEGER PRIMARY KEY AUTOINCREMENT,
     Titol VARCHAR(20) NOT NULL,
     Descripcio VARCHAR(150),
     dCreacio DATETIME,
     dFinalitz DATETIME,
-    Prioritat ENUM("Alta","Mitja","Baixa"),
+    Prioritat VARCHAR(5),
     Representant VARCHAR(9),
-    Estat ENUM("ToDo","Doing","Done"),
+    Estat VARCHAR(5),
     FOREIGN KEY (representant) REFERENCES NIF (treballador)
-)
+);
