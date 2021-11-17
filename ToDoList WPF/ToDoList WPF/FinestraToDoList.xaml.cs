@@ -9,6 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToDoList_WPF.Entitats;
+using ToDoList_WPF.Persistence;
+using ToDoList_WPF.Servei;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace ToDoList_WPF
 {
@@ -55,6 +60,11 @@ namespace ToDoList_WPF
                 }
             }
             
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            DbContext.Up();
         }
     }
 }

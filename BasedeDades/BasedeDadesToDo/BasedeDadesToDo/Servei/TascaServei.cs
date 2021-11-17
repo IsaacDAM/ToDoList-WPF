@@ -11,7 +11,7 @@ namespace ToDoList_WPF.Servei
     {
         public static IEnumerable<TascaDades> GetAll()
         {
-            var result = new List<TascaDades>();
+            List<TascaDades> result = new List<TascaDades>();
 
             using (var ctx = DbContext.GetInstance())
             {
@@ -21,18 +21,20 @@ namespace ToDoList_WPF.Servei
                 {
                     using (var reader = command.ExecuteReader())
                     {
+
                         while (reader.Read())
                         {
+                            
                             result.Add(new TascaDades
                             {
                                 Codi = Convert.ToInt32(reader["Codi"].ToString()),
                                 Titol = reader["Titol"].ToString(),
                                 Descripcio = reader["Descripcio"].ToString(),
                                 dCreacio = Convert.ToDateTime(reader["dCreacio"].ToString()),
-                                dFinalitzacio = Convert.ToDateTime(reader["dFinalitzacio"].ToString()),
+                                dFinalitzacio = Convert.ToDateTime(reader["dFinalitz"].ToString()),
                                 Prioritat = reader["Prioritat"].ToString(),
                                 Representant = reader["Representant"].ToString(),
-                                Estat = reader["Estat"].ToString(),
+                                Estat = reader["Estat"].ToString()
                             });
                         }
                     }

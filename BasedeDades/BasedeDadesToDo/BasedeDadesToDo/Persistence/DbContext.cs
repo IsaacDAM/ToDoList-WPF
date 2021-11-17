@@ -8,8 +8,8 @@ namespace ToDoList_WPF.Persistence
 {
     class DbContext
     {
-        private const string DBName = "demo_sqlite.sqlite";
-        private const string SQLScript = @"..\..\..\Util\demo_sqlite.sql";
+        private const String DBName = "demo_sqlite.sqlite";
+        private const String SQLScript = @"..\..\..\Util\demo_sqlite.sql";
         private static bool IsDbRecentlyCreated = false;
 
         public static void Up()
@@ -50,8 +50,8 @@ namespace ToDoList_WPF.Persistence
                         {
                             command.Parameters.Add(new SQLiteParameter("titol", "Titol " + i));
                             command.Parameters.Add(new SQLiteParameter("descripcio", "Descripcio " + i));
-                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString()));
-                            command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString()));
+                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+                            command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString("yyyy-MM-dd HH:mm:ss")));
                             command.Parameters.Add(new SQLiteParameter("prioritat", "Prioritat "  + i));
                             command.Parameters.Add(new SQLiteParameter("representant", "Representant " + i));
                             command.Parameters.Add(new SQLiteParameter("estat", "Estat " + i));
@@ -76,7 +76,7 @@ namespace ToDoList_WPF.Persistence
         public static SQLiteConnection GetInstance()
         {
             var db = new SQLiteConnection(
-                string.Format("Data Source={0};Version=3;", DBName)
+                String.Format("Data Source={0};Version=3;", DBName)
             );
 
             db.Open();

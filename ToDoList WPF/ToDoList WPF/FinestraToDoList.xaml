@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="To Do List" Height="650" Width="1000" ResizeMode="NoResize" Closing="Window_Closing">
+        Title="To Do List" Height="650" Width="1000" ResizeMode="NoResize" Closing="Window_Closing" Activated="Window_Activated">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />

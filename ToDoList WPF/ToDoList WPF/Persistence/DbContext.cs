@@ -8,8 +8,8 @@ namespace ToDoList_WPF.Persistence
 {
     class DbContext
     {
-        private const string DBName = "demo_sqlite.sqlite";
-        private const string SQLScript = @"..\..\Util\demo_sqlite.sql";
+        private const String DBName = "demo_sqlite.sqlite";
+        private const String SQLScript = @"..\..\..\Util\demo_sqlite.sql";
         private static bool IsDbRecentlyCreated = false;
 
         public static void Up()
@@ -44,15 +44,15 @@ namespace ToDoList_WPF.Persistence
                     for (var i = 1; i <= 100; i++)
                     {
                         var query1 = "INSERT INTO tasca (titol, descripcio, dCreacio, dFinalitz, prioritat, representant, estat) VALUES (?, ?, ?, ?, ?, ?, ?)";
-                        var query2 = "INSERT INTO treballador (NIF, nom, cognoms, tel, correu) VALUES (?, ?, ?, ?, ?)";
+                        var query2 = "INSERT INTO treballador (NIF, nom, cognoms, telefon, correu) VALUES (?, ?, ?, ?, ?)";
 
                         using (var command = new SQLiteCommand(query1, ctx))
                         {
                             command.Parameters.Add(new SQLiteParameter("titol", "Titol " + i));
                             command.Parameters.Add(new SQLiteParameter("descripcio", "Descripcio " + i));
-                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString() + " " + i));
-                            command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString() + " " + i));
-                            command.Parameters.Add(new SQLiteParameter("prioritat", "Prioritat "  + i));
+                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+                            command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString("yyyy-MM-dd HH:mm:ss")));
+                            command.Parameters.Add(new SQLiteParameter("prioritat", "Prioritat " + i));
                             command.Parameters.Add(new SQLiteParameter("representant", "Representant " + i));
                             command.Parameters.Add(new SQLiteParameter("estat", "Estat " + i));
 
@@ -76,7 +76,7 @@ namespace ToDoList_WPF.Persistence
         public static SQLiteConnection GetInstance()
         {
             var db = new SQLiteConnection(
-                string.Format("Data Source={0};Version=3;", DBName)
+                String.Format("Data Source={0};Version=3;", DBName)
             );
 
             db.Open();

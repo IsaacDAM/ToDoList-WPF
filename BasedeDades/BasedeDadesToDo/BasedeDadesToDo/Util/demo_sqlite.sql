@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS treballador(
     Cognoms VARCHAR(40),
     Telefon VARCHAR(9),
     Correu VARCHAR(50)
-);
+)
 
 CREATE TABLE IF NOT EXISTS tasca(
     Codi INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -16,4 +16,4 @@ CREATE TABLE IF NOT EXISTS tasca(
     Representant VARCHAR(9),
     Estat VARCHAR(5),
     FOREIGN KEY (representant) REFERENCES NIF (treballador)
-);
+)
