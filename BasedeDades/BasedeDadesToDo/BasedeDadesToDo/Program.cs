@@ -18,7 +18,7 @@ namespace ToDoList_WPF
             foreach (var tasca in TascaServei.GetAll())
             {
                 Console.WriteLine(
-                    string.Format("#{0}: - Titol: {1}, Descripcio: {2}, DataCreacio: {3} - DataFinalitzacio: {4}, Prioritat: {5}, Representant: {6}, Estat: {7} ", tasca.Codi, tasca.Titol, tasca.Descripcio, tasca.dCreacio, tasca.dFinalitzacio, tasca.Prioritat, tasca.Representant, tasca.Estat)
+                    string.Format("#{0}: - Titol: {1}, Descripcio: {2}, DataCreacio: {3}, DataFinalitzacio: {4}, Prioritat: {5}, Representant: {6}, Estat: {7} ", tasca.Codi, tasca.Titol, tasca.Descripcio, tasca.dCreacio, tasca.dFinalitzacio, tasca.Prioritat, tasca.Representant, tasca.Estat)
                 );
             }
             foreach (var treballador in TreballadorServei.GetAll())
