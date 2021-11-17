@@ -29,7 +29,16 @@ namespace ToDoList_WPF
         {
             if (MessageBox.Show("Vols eliminar al treballador?","Advertència",MessageBoxButton.YesNo,MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
+                using (var ctx = DbContext.GetInstance())
+                {
+                    var query = $"DELETE FROM treballador WHERE nom like '{LlistaDeTreballadors.SelectedItem.ToString()}';";
 
+                    var command = new SQLiteCommand(query,ctx);
+
+                    command.ExecuteNonQuery();
+
+                    LlistaDeTreballadors.Items.Remove(LlistaDeTreballadors.SelectedItem.ToString());
+                }
             }
         }
 
@@ -51,6 +60,11 @@ namespace ToDoList_WPF
                 }
 
             }
+        }
+
+        private void LlistaDeTreballadors_Selected(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
