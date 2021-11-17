@@ -47,7 +47,7 @@ namespace ToDoList_WPF
                 MessageBoxResult Resultat = MessageBox.Show("Desar canvis abans de sortir?", "Advertència", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
                 if (Resultat == MessageBoxResult.Yes)
                 {
-                    
+                    MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else if (Resultat == MessageBoxResult.Cancel)
                 {
