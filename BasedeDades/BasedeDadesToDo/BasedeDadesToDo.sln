@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasedeDadesToDo", "BasedeDadesToDo\BasedeDadesToDo.csproj", "{C3F87872-D779-4A26-9740-FB942E593AF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entitats", "Entitats", "{4CD84890-B48C-4ED6-A9EF-6CB00B508501}"
+	ProjectSection(SolutionItems) = preProject
+		..\Entitats\TascaDades.cs = ..\Entitats\TascaDades.cs
+		..\Entitats\TreballadorDades.cs = ..\Entitats\TreballadorDades.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{69173C97-FE98-4477-8D21-99373893A02A}"
+	ProjectSection(SolutionItems) = preProject
+		..\Persistence\DbContext.cs = ..\Persistence\DbContext.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servei", "Servei", "{09E43CB1-E044-4966-BA10-C4ACEDC6BD27}"
+	ProjectSection(SolutionItems) = preProject
+		..\Servei\TascaServei.cs = ..\Servei\TascaServei.cs
+		..\Servei\TreballadorServei.cs = ..\Servei\TreballadorServei.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{3759B7EA-40C2-43DA-9138-EBA24363B78B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Util\demo_sqlite.sql = ..\Util\demo_sqlite.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3F87872-D779-4A26-9740-FB942E593AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F87872-D779-4A26-9740-FB942E593AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F87872-D779-4A26-9740-FB942E593AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F87872-D779-4A26-9740-FB942E593AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C28AAAE-D193-4A40-96DD-25442E26DE9B}
+	EndGlobalSection
+EndGlobal
