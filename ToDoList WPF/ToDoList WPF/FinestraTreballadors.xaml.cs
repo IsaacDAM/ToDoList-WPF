@@ -45,7 +45,7 @@ namespace ToDoList_WPF
                     {
                         while (reader.Read())
                         {
-                            LlistaDeTreballadors.Items.Add(reader);
+                            LlistaDeTreballadors.Items.Add(reader["nom"].ToString());
                         }
                     }
                 }
