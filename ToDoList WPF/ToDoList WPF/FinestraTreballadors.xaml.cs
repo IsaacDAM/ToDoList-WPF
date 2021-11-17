@@ -9,6 +9,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToDoList_WPF.Entitats;
+using ToDoList_WPF.Persistence;
+using System.Data.SQLite;
 
 namespace ToDoList_WPF
 {
@@ -26,6 +29,26 @@ namespace ToDoList_WPF
         {
             if (MessageBox.Show("Vols eliminar al treballador?","Advertència",MessageBoxButton.YesNo,MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
+
+            }
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            using (var ctx = DbContext.GetInstance())
+            {
+                var query = "SELECT nom FROM treballador";
+
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            LlistaDeTreballadors.Items.Add(reader);
+                        }
+                    }
+                }
 
             }
         }
