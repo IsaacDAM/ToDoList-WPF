@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="Treballadors" Height="300" Width="500" ResizeMode="NoResize">
+        Title="Treballadors" Height="300" Width="500" ResizeMode="NoResize" Activated="Window_Activated">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60*"/>
@@ -30,11 +30,11 @@
         <Label Content="NIF:" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2"/>
         <Label Content="Tel:" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="3"/>
         <Label Content="Email:" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="4"/>
-        <TextBox Name="tbNom" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Height="18"/>
-        <TextBox Name="tbCnom" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="1"/>
-        <TextBox Name="tbNIF" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="2"/>
-        <TextBox Name="tbTel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="3"/>
-        <TextBox Name="tbEmail" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="4"/>
+        <TextBox Name="tbNom" MaxLength="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Height="18"/>
+        <TextBox Name="tbCnom" MaxLength="40" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="1"/>
+        <TextBox Name="tbNIF" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="2"/>
+        <TextBox Name="tbTel" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="3"/>
+        <TextBox Name="tbEmail" MaxLength="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="4"/>
         <Button Name="BotoAfegir" Content="Afegir" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="26" Width="75" Grid.Column="2" Grid.Row="5"/>
         <Button Name="BotoModificar" Content="Modificar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,0" Height="26" Width="75" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
         <Button Name="BotoEliminar" Content="Eliminar" HorizontalAlignment="Center" Width="76" Height="25" Grid.Row="6" VerticalAlignment="Center" Click="BotoEliminar_Click"/>

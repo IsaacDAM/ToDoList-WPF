@@ -44,7 +44,7 @@ namespace ToDoList_WPF.Persistence
                     for (var i = 1; i <= 100; i++)
                     {
                         var query1 = "INSERT INTO tasca (titol, descripcio, dCreacio, dFinalitz, prioritat, representant, estat) VALUES (?, ?, ?, ?, ?, ?, ?)";
-                        var query2 = "INSERT INTO treballador (NIF, nom, tel, correu) VALUES (?, ?, ?, ?, ?)";
+                        var query2 = "INSERT INTO treballador (NIF, nom, cognoms, tel, correu) VALUES (?, ?, ?, ?, ?)";
 
                         using (var command = new SQLiteCommand(query1, ctx))
                         {
