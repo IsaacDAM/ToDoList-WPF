@@ -37,5 +37,46 @@ namespace ToDoList_WPF.Servei
                 return result;
             }
         }
+
+        public int Add(TreballadorDades treballador)
+        {
+            int rows_afected = 0;
+            using (var ctx = DbContext.GetInstance())
+            {
+                string query = "INSERT INTO treballador (NIF, nom, cognoms, telefon, correu) VALUES (?, ?, ?, ?, ?)";
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
+                    command.Parameters.Add(new SQLiteParameter("nom", treballador.Nom));
+                    command.Parameters.Add(new SQLiteParameter("cognoms", treballador.Cognoms));
+                    command.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
+                    command.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
+
+                    rows_afected = command.ExecuteNonQuery();
+                }
+            }
+            return rows_afected;
+        }
+
+        public int Update(TreballadorDades treballador)
+        {
+            int rows_afected = 0;
+            using (var ctx = DbContext.GetInstance())
+            {
+                string query = "UPDATE tasca SET nif = ?, nom = ?, cognoms = ?, telefon = ?, correu = ? WHERE nif = ?";
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
+                    command.Parameters.Add(new SQLiteParameter("nom", treballador.Nom));
+                    command.Parameters.Add(new SQLiteParameter("cognoms", treballador.Cognoms));
+                    command.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
+                    command.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
+
+                    rows_afected = command.ExecuteNonQuery();
+                }
+            }
+            return rows_afected;
+        }
+
     }
 }
