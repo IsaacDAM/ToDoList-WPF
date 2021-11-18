@@ -50,8 +50,14 @@
             </ListBoxItem>
         </ListBox>
         <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,440,0">Representant:</Label>
-        <ListBox Name="lbRepresentant"  Grid.Row="2" Grid.Column="1" Margin="95,10,260,5">
-          
+        <ListBox Name="lbRepresentant"  Grid.Row="2" Grid.Column="1" Margin="95,10,260,5" SelectionChanged="lbRepresentant_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label  Content="{Binding Nom}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <Button Name="btnGuardarTasca"  Grid.Row="4"  Margin="50">Guardar</Button>
         <Button Name="btnCancelarTasca" Grid.Row="4" Grid.Column="1" Margin="320,50,50,50" Click="Button_Click">Cancelar</Button>

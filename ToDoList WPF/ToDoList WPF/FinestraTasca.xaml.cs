@@ -9,6 +9,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToDoList_WPF.Entitats;
+using ToDoList_WPF.Servei;
+using ToDoList_WPF.Persistence;
+using System.Data.SQLite;
 
 namespace ToDoList_WPF
 {
@@ -22,9 +26,19 @@ namespace ToDoList_WPF
             InitializeComponent();
         }
 
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            lbRepresentant.ItemsSource = TreballadorServei.GetAll();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void lbRepresentant_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
