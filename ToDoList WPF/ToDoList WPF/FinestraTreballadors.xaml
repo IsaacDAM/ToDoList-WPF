@@ -21,7 +21,7 @@
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="182*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="LlistaDeTreballadors" HorizontalAlignment="Center" BorderBrush="Black" Width="175" Grid.RowSpan="6" Margin="0,45,0,0" Selected="LlistaDeTreballadors_Selected" >
+        <ListBox Name="LlistaDeTreballadors" HorizontalAlignment="Center" BorderBrush="Black" Width="175" Grid.RowSpan="6" Margin="0,45,0,0" SelectionChanged="LlistaDeTreballadors_SelectionChanged" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

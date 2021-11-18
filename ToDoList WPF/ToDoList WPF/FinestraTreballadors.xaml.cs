@@ -32,7 +32,7 @@ namespace ToDoList_WPF
             {
                 TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
                 TreballadorServei TServei = new TreballadorServei();
-                TServei.Delete(Treballador.NIF);
+                TServei.Delete(Treballador);
 
                 LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
             }
@@ -43,15 +43,15 @@ namespace ToDoList_WPF
             LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
         }
 
-        private void LlistaDeTreballadors_Selected(object sender, RoutedEventArgs e)
+        private void LlistaDeTreballadors_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
 
             tbNom.Text = Treballador.Nom;
-            tbCnom.Text = Treballador.Nom;
-            tbNIF.Text = Treballador.Nom;
-            tbTel.Text = Treballador.Nom;
-            tbEmail.Text = Treballador.Nom;
+            tbCnom.Text = Treballador.Cognoms;
+            tbNIF.Text = Treballador.NIF;
+            tbTel.Text = Treballador.Telefon;
+            tbEmail.Text = Treballador.Correu;
         }
     }
 }
