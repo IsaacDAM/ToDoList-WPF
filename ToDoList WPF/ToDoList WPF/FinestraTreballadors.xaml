@@ -21,7 +21,15 @@
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="182*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="LlistaDeTreballadors" HorizontalAlignment="Center" BorderBrush="Black" Width="175" Grid.RowSpan="6" Margin="0,45,0,0" Selected="LlistaDeTreballadors_Selected"/>
+        <ListBox Name="LlistaDeTreballadors" HorizontalAlignment="Center" BorderBrush="Black" Width="175" Grid.RowSpan="6" Margin="0,45,0,0" Selected="LlistaDeTreballadors_Selected" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label  Content="{Binding Nom}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Border Background="LightGray" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="175">
             <Label Content="Llista Treballadors" HorizontalContentAlignment="Center" Margin="0,-3,0,-1" FontWeight="Bold"/>
         </Border>

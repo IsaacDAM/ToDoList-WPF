@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ToDoList_WPF.Entitats;
+using ToDoList_WPF.Servei;
 using ToDoList_WPF.Persistence;
 using System.Data.SQLite;
 
@@ -27,44 +28,30 @@ namespace ToDoList_WPF
 
         private void BotoEliminar_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Vols eliminar al treballador?","Advertència",MessageBoxButton.YesNo,MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Vols eliminar al treballador?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                using (var ctx = DbContext.GetInstance())
-                {
-                    var query = $"DELETE FROM treballador WHERE nom like '{LlistaDeTreballadors.SelectedItem.ToString()}';";
+                TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+                TreballadorServei TServei = new TreballadorServei();
+                TServei.Delete(Treballador.NIF);
 
-                    var command = new SQLiteCommand(query,ctx);
-
-                    command.ExecuteNonQuery();
-
-                    LlistaDeTreballadors.Items.Remove(LlistaDeTreballadors.SelectedItem.ToString());
-                }
+                LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
             }
         }
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            using (var ctx = DbContext.GetInstance())
-            {
-                var query = "SELECT nom FROM treballador";
-
-                using (var command = new SQLiteCommand(query, ctx))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            LlistaDeTreballadors.Items.Add(reader["nom"].ToString());
-                        }
-                    }
-                }
-
-            }
+            LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
         }
 
         private void LlistaDeTreballadors_Selected(object sender, RoutedEventArgs e)
         {
+            TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
 
+            tbNom.Text = Treballador.Nom;
+            tbCnom.Text = Treballador.Nom;
+            tbNIF.Text = Treballador.Nom;
+            tbTel.Text = Treballador.Nom;
+            tbEmail.Text = Treballador.Nom;
         }
     }
 }
