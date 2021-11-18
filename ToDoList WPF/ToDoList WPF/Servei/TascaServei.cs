@@ -87,6 +87,22 @@ namespace ToDoList_WPF.Servei
             return rows_afected;
         }
 
+        public int Delete(int Codi)
+        {
+            int rows_afected = 0;
+            using (var ctx = DbContext.GetInstance())
+            {
+                string query = "DELETE FROM tasca WHERE Codi = ?";
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("codi", Codi));
+                    rows_afected = command.ExecuteNonQuery();
+                }
+            }
+
+            return rows_afected;
+        }
+
 
     }
 }

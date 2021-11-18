@@ -63,7 +63,7 @@ namespace ToDoList_WPF.Servei
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
             {
-                string query = "UPDATE tasca SET nif = ?, nom = ?, cognoms = ?, telefon = ?, correu = ? WHERE nif = ?";
+                string query = "UPDATE tasca SET nif = ?, nom = ?, cognoms = ?, telefon = ?, correu = ? WHERE NIF = ?";
                 using (var command = new SQLiteCommand(query, ctx))
                 {
                     command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
@@ -75,6 +75,22 @@ namespace ToDoList_WPF.Servei
                     rows_afected = command.ExecuteNonQuery();
                 }
             }
+            return rows_afected;
+        }
+
+        public int Delete(string NIF)
+        {
+            int rows_afected = 0;
+            using (var ctx = DbContext.GetInstance())
+            {
+                string query = "DELETE FROM treballador WHERE NIF = ?";
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("nif", NIF));
+                    rows_afected = command.ExecuteNonQuery();
+                }
+            }
+
             return rows_afected;
         }
 
