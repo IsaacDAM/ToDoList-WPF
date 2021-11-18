@@ -78,7 +78,7 @@ namespace ToDoList_WPF.Servei
             return rows_afected;
         }
 
-        public int Delete(string NIF)
+        public int Delete(TreballadorDades treballador)
         {
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
@@ -86,7 +86,7 @@ namespace ToDoList_WPF.Servei
                 string query = "DELETE FROM treballador WHERE NIF = ?";
                 using (var command = new SQLiteCommand(query, ctx))
                 {
-                    command.Parameters.Add(new SQLiteParameter("nif", NIF));
+                    command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
                     rows_afected = command.ExecuteNonQuery();
                 }
             }
