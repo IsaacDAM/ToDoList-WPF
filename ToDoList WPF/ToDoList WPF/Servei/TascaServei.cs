@@ -42,6 +42,52 @@ namespace ToDoList_WPF.Servei
                 return result;
             }
         }
+
+        public int Add(TascaDades tasca)
+        {
+            int rows_afected = 0;
+            using (var ctx = DbContext.GetInstance())
+            {
+                string query = "INSERT INTO tasca (titol, descripcio, dCreacio, dFinalitz, prioritat, representant, estat) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("titol", tasca.Titol));
+                    command.Parameters.Add(new SQLiteParameter("descripcio", tasca.Descripcio));
+                    command.Parameters.Add(new SQLiteParameter("dCreacio", tasca.dCreacio));
+                    command.Parameters.Add(new SQLiteParameter("dFinalitz", tasca.dFinalitzacio));
+                    command.Parameters.Add(new SQLiteParameter("prioritat", tasca.Prioritat));
+                    command.Parameters.Add(new SQLiteParameter("representant", tasca.Representant));
+                    command.Parameters.Add(new SQLiteParameter("estat", tasca.Estat));
+
+                    rows_afected = command.ExecuteNonQuery();
+                }   
+            }
+            return rows_afected;
+        }
+
+        public int Update(TascaDades tasca)
+        {
+            int rows_afected = 0;
+            using (var ctx = DbContext.GetInstance())
+            {
+                string query = "UPDATE tasca SET titol = ?, descripcio = ?, dCreacio = ?, dFinalitz = ?, prioritat = ?, representant = ?, estat = ? WHERE codi = ?";
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("titol", tasca.Titol));
+                    command.Parameters.Add(new SQLiteParameter("descripcio", tasca.Descripcio));
+                    command.Parameters.Add(new SQLiteParameter("dCreacio", tasca.dCreacio));
+                    command.Parameters.Add(new SQLiteParameter("dFinalitz", tasca.dFinalitzacio));
+                    command.Parameters.Add(new SQLiteParameter("prioritat", tasca.Prioritat));
+                    command.Parameters.Add(new SQLiteParameter("representant", tasca.Representant));
+                    command.Parameters.Add(new SQLiteParameter("estat", tasca.Estat));
+
+                    rows_afected = command.ExecuteNonQuery();
+                }
+            }
+            return rows_afected;
+        }
+
+
     }
 }
 
