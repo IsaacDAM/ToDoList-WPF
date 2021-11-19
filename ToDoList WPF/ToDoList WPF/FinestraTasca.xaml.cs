@@ -41,5 +41,10 @@ namespace ToDoList_WPF
             TreballadorDades Treballador = (TreballadorDades)lbRepresentant.SelectedItem;
 
         }
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            lbRepresentant.ItemsSource = TreballadorServei.GetAll();
+        }
     }
 }

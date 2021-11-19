@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="Tasca" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Tasca" Height="450" Width="800" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -50,11 +51,11 @@
             </ListBoxItem>
         </ListBox>
         <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,430,0">Representant:</Label>
-        <ListBox Name="lbRepresentant"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Width="130" Height="130" SelectionChanged="lbRepresentant_SelectionChanged" Margin="103,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <ListBox Name="lbRepresentant"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Width="130" Height="130"  Margin="103,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="lbRepresentant_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label  Content="{Binding nom}"></Label>
+                        <Label  Content="{Binding Nom}"></Label>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
