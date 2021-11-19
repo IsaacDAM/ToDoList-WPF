@@ -83,9 +83,7 @@ namespace ToDoList_WPF
                 {
                     LlistaDone.Items.Add(i);
                     
-                }
-
-                
+                }        
 
             }
             
