@@ -88,5 +88,11 @@ namespace ToDoList_WPF
             }
             
         }
+
+        private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
+        {
+            LlistaDoing.Items.Add(LlistaToDo.SelectedItem);
+            LlistaToDo.Items.Remove(LlistaToDo.SelectedItem);
+        }
     }
 }

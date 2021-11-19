@@ -31,7 +31,7 @@
         <Button Grid.Row="3" Grid.Column="2" Name="BotoRetornarToDo">
             <Image Source="Images\45048 (1).png"/>
         </Button>
-        <Button Grid.Row="3" Grid.Column="3" Name="BotoEnviarDoing">
+        <Button Grid.Row="3" Grid.Column="3" Name="BotoEnviarDoing" Click="BotoEnviarDoing_Click">
             <Image Source="Images\45048.png"/>
         </Button>
         <Button Grid.Row="3" Grid.Column="5" Name="BotoRetornarDoing">
@@ -44,7 +44,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Name="StackToDo">
-                        <TreeView Height="150" Width="250">
+                        <TreeView Width="250">
                             <TreeViewItem Header="{Binding Titol}">
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
@@ -62,7 +62,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Name="StackDoing">
-                        <TreeView Height="150" Width="250">
+                        <TreeView Width="250">
                             <TreeViewItem Header="{Binding Titol}">
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
@@ -80,7 +80,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Name="StackDone" HorizontalAlignment="Center" VerticalAlignment="Top">
-                        <TreeView Height="150" Width="250">
+                        <TreeView Width="250">
                             <TreeViewItem Header="{Binding Titol}">
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
