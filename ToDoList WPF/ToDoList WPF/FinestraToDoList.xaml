@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="To Do List" Height="650" Width="1000" ResizeMode="NoResize" Closing="Window_Closing" Activated="Window_Activated">
+        Title="To Do List" Height="650" Width="1000" ResizeMode="NoResize" Closing="Window_Closing" ContentRendered="Window_ContentRendered">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
@@ -19,7 +19,26 @@
         <Button Grid.Row="1" x:Name="BotoAfegirTasca" Content="Afegir Tasca"  Margin="333,15,110,10"  Click="BotoAfegirTasca_Click" Grid.ColumnSpan="2"/>
         <Button Grid.Row="1" Grid.Column="2" x:Name="BotoGuardar" Content="Guardar"  Margin="50,15,50,10"  Click="BotoGuardar_Click"/>
         <Button Grid.Row="1" Grid.Column="0" x:Name="BotoTreballadors" Content="Treballadors"  Margin="50,15,50,10"  Click="BotoTreballadors_Click"/>
-        <ListBox Grid.Row="0" Grid.Column="0" x:Name="LlistaToDo" Margin="20,40,20,20" BorderBrush="Black"/>
+        <ListBox Grid.Row="0" Grid.Column="0" x:Name="LlistaToDo" Margin="20,40,20,20" BorderBrush="Black">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Name="StackToDo">
+                        <!-- <Label  Content="{Binding Titol}" />-->
+                        <TreeView Height="150" Width="250">
+                            <TreeViewItem Header="{Binding Titol}" Name="TreeTasca">
+                                <TreeViewItem Header="{Binding Codi}"></TreeViewItem>
+                                <TreeViewItem Header="{Binding Descripcio}"></TreeViewItem>
+                                <TreeViewItem Header="{Binding dCreacio}"></TreeViewItem>
+                                <TreeViewItem Header="{Binding dFinalitz}"></TreeViewItem>
+                                <TreeViewItem Header="{Binding Prioritat}"></TreeViewItem>
+                                <TreeViewItem Header="{Binding Representant}"></TreeViewItem>
+                                <TreeViewItem Header="{Binding Estat}"></TreeViewItem>
+                            </TreeViewItem>
+                        </TreeView>
+                </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+        </ListBox>
         <ListBox Grid.Row="0" Grid.Column="1" x:Name="LlistaDoing" Margin="20,40,20,20" BorderBrush="Black"/>
         <ListBox Grid.Row="0" Grid.Column="2" x:Name="LlistaDone" Margin="20,40,20,20" BorderBrush="Black"/>
         <Border Grid.Row="0" Background="LightGray" BorderThickness="1" BorderBrush="Black" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="293">

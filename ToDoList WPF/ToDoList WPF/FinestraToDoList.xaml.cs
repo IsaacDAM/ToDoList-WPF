@@ -43,6 +43,7 @@ namespace ToDoList_WPF
         private void BotoGuardar_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -62,9 +63,32 @@ namespace ToDoList_WPF
             
         }
 
-        private void Window_Activated(object sender, EventArgs e)
+
+        private void Window_ContentRendered(object sender, EventArgs e)
         {
             DbContext.Up();
+            List<TascaDades> Tasca = TascaServei.GetAll().ToList();
+            foreach (var i in Tasca)
+            {
+                if (i.Estat == "ToDo")
+                {
+                    LlistaToDo.Items.Add(i);
+                    
+                }
+                else if (i.Estat == "Doing")
+                {
+                    LlistaDoing.Items.Add(i);
+                }
+                else if (i.Estat == "Done")
+                {
+                    LlistaDone.Items.Add(i);
+                    
+                }
+
+                
+
+            }
+            
         }
     }
 }
