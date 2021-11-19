@@ -14,6 +14,7 @@ using ToDoList_WPF.Servei;
 using ToDoList_WPF.Persistence;
 using System.Data.SQLite;
 
+
 namespace ToDoList_WPF
 {
     /// <summary>
@@ -26,18 +27,18 @@ namespace ToDoList_WPF
             InitializeComponent();
         }
 
-        private void Window_Activated(object sender, EventArgs e)
-        {
-            lbRepresentant.ItemsSource = TreballadorServei.GetAll();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        private void Window_Loaded(object sender, EventArgs e)
+        {
+            lbRepresentant.ItemsSource = TreballadorServei.GetAll();
+        }
         private void lbRepresentant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            TreballadorDades Treballador = (TreballadorDades)lbRepresentant.SelectedItem;
 
         }
     }
