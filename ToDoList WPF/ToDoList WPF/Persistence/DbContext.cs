@@ -54,7 +54,7 @@ namespace ToDoList_WPF.Persistence
                             command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString("yyyy-MM-dd HH:mm:ss")));
                             command.Parameters.Add(new SQLiteParameter("prioritat", "Prioritat " + i));
                             command.Parameters.Add(new SQLiteParameter("representant", "Representant " + i));
-                            command.Parameters.Add(new SQLiteParameter("estat", "Estat " + i));
+                            command.Parameters.Add(new SQLiteParameter("estat", "ToDo"));
 
                             command.ExecuteNonQuery();
                         }

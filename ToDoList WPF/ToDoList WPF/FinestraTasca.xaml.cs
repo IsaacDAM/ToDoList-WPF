@@ -32,10 +32,6 @@ namespace ToDoList_WPF
             Close();
         }
 
-        private void Window_Loaded(object sender, EventArgs e)
-        {
-            lbRepresentant.ItemsSource = TreballadorServei.GetAll();
-        }
         private void lbRepresentant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TreballadorDades Treballador = (TreballadorDades)lbRepresentant.SelectedItem;

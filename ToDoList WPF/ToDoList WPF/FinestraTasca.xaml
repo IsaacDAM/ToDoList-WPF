@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
         Title="Tasca" Height="450" Width="800" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -22,14 +22,14 @@
         <Label VerticalAlignment="Center" Margin="10,0,160,0" Height="26">Codi:</Label>
         <TextBox Name="tbCodi" VerticalAlignment="Center"  Margin="110,0,50,0" Height="18"></TextBox>
         <Label Grid.Column="1" VerticalAlignment="Center" Margin="10,0,443,0" Height="26">Títol Tasca:</Label>
-        <TextBox Name="tbTitol" Grid.Column="1" VerticalAlignment="Center"  Margin="90,0,40,0" Height="18"></TextBox>
+        <TextBox Name="tbTitol" Grid.Column="1" VerticalAlignment="Center"  Margin="90,0,40,0" Height="18"/>
         <Label Grid.Row="1" Margin="10,0,160,0">Descripció:</Label>
-        <TextBox Name="tbDescripcio" Grid.Row="1" Grid.ColumnSpan="3" Margin="110,7,40,10" TextWrapping = "Wrap" ></TextBox>
+        <TextBox Name="tbDescripcio" Grid.Row="1" Grid.ColumnSpan="3" Margin="110,7,40,10" TextWrapping = "Wrap" />
         <Label Grid.Row="2" VerticalAlignment="Center" Margin="10,0,160,0">Data Creació:</Label>
-        <TextBox Name="tbDCreacio" Grid.Row="2" VerticalAlignment="Center" Margin="110,0,20,0"></TextBox>
+        <DatePicker Name="tbDCreacio" Grid.Row="2" VerticalAlignment="Center" Margin="110,0,0,0" SelectedDateFormat="Short" />
         <Label Grid.Row="3" VerticalAlignment="Center" Margin="10,0,157,0">Data Finalització:</Label>
-        <TextBox Name="tbDFinal" Grid.Row="3" VerticalAlignment="Center" Margin="110,0,20,0"></TextBox>
-        <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="341,0,132,0">Prioritat:</Label>
+        <DatePicker Name="tbDFinal" Grid.Row="3" VerticalAlignment="Center" Margin="110,0,0,0"  SelectedDateFormat="Short" />
+        <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="333,5,132,0">Prioritat:</Label>
         <ListBox Name="lbPrioritats" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="400,0,40,18">
             <ListBoxItem Name="Alta">
                 <StackPanel Orientation="Horizontal">
@@ -60,8 +60,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Name="btnGuardarTasca"  Grid.Row="4"  Margin="50">Guardar</Button>
-        <Button Name="btnCancelarTasca" Grid.Row="4" Grid.Column="1" Margin="320,50,50,50" Click="Button_Click">Cancelar</Button>
+        <Button Name="btnSortirTasca" Grid.Row="4" Grid.Column="1" Margin="320,50,50,50" Click="Button_Click">Sortir</Button>
     </Grid>
 
 </Window>
