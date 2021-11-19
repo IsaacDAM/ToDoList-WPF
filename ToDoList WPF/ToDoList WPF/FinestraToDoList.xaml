@@ -28,16 +28,16 @@
         </Grid.RowDefinitions>
         <Button Grid.Row="5" Grid.Column="4" x:Name="BotoAfegirTasca" Content="Afegir Tasca"  Margin="28,15,29,10"  Click="BotoAfegirTasca_Click"/>
         <Button Grid.Row="5" Grid.Column="1" x:Name="BotoTreballadors" Content="Treballadors"  Margin="28,15,29,10"  Click="BotoTreballadors_Click"/>
-        <Button Grid.Row="3" Grid.Column="2">
+        <Button Grid.Row="3" Grid.Column="2" Name="BotoRetornarToDo">
             <Image Source="Images\45048 (1).png"/>
         </Button>
-        <Button Grid.Row="3" Grid.Column="3">
+        <Button Grid.Row="3" Grid.Column="3" Name="BotoEnviarDoing">
             <Image Source="Images\45048.png"/>
         </Button>
-        <Button Grid.Row="3" Grid.Column="5">
+        <Button Grid.Row="3" Grid.Column="5" Name="BotoRetornarDoing">
             <Image Source="Images\45048 (1).png"/>
         </Button>
-        <Button Grid.Row="3" Grid.Column="6">
+        <Button Grid.Row="3" Grid.Column="6" Name="BotoEnviarDone">
             <Image Source="Images\45048.png"/>
         </Button>
         <ListBox Grid.Row="2" Grid.Column="1" x:Name="LlistaToDo"  BorderBrush="Black" Grid.RowSpan="3">
