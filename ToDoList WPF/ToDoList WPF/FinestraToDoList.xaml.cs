@@ -67,13 +67,42 @@ namespace ToDoList_WPF
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             DbContext.Up();
+            ActualitzarTaula();
+            
+        }
+
+        private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
+        {
+            TascaDades Tasca = new TascaDades();
+            TascaServei TS = new TascaServei();
+
+            TS.UpdateEstat(Tasca, "Doing");
+            ActualitzarTaula();
+        }
+
+        private void BotoRetornarToDo_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void BotoRetornarDoing_Click(object sender, RoutedEventArgs e)
+        {
+  
+        }
+
+        private void BotoEnviarDone_Click(object sender, RoutedEventArgs e)
+        {
+      
+        }
+
+        private void ActualitzarTaula()
+        {
             List<TascaDades> Tasca = TascaServei.GetAll().ToList();
             foreach (var i in Tasca)
             {
                 if (i.Estat == "ToDo")
                 {
                     LlistaToDo.Items.Add(i);
-                    
+
                 }
                 else if (i.Estat == "Doing")
                 {
@@ -82,17 +111,12 @@ namespace ToDoList_WPF
                 else if (i.Estat == "Done")
                 {
                     LlistaDone.Items.Add(i);
-                    
-                }        
+
+                }
 
             }
-            
         }
 
-        private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
-        {
-            LlistaDoing.Items.Add(LlistaToDo.SelectedItem);
-            LlistaToDo.Items.Remove(LlistaToDo.SelectedItem);
-        }
+        
     }
 }

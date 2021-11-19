@@ -70,7 +70,7 @@ namespace ToDoList_WPF.Servei
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
             {
-                string query = "UPDATE tasca SET titol = ?, descripcio = ?, dCreacio = ?, dFinalitz = ?, prioritat = ?, representant = ?, estat = ? WHERE codi = ?";
+                string query = "UPDATE tasca SET titol = ?, descripcio = ?, dCreacio = ?, dFinalitz = ?, prioritat = ?, representant = ? WHERE codi = ?";
                 using (var command = new SQLiteCommand(query, ctx))
                 {
                     command.Parameters.Add(new SQLiteParameter("titol", tasca.Titol));
@@ -79,13 +79,30 @@ namespace ToDoList_WPF.Servei
                     command.Parameters.Add(new SQLiteParameter("dFinalitz", tasca.dFinalitzacio));
                     command.Parameters.Add(new SQLiteParameter("prioritat", tasca.Prioritat));
                     command.Parameters.Add(new SQLiteParameter("representant", tasca.Representant));
-                    command.Parameters.Add(new SQLiteParameter("estat", tasca.Estat));
 
                     rows_afected = command.ExecuteNonQuery();
                 }
             }
             return rows_afected;
         }
+
+        public int UpdateEstat(TascaDades tasca, string estat)
+        {
+            int rows_afected = 0;
+            using (var ctx = DbContext.GetInstance())
+            {
+                string query = "UPDATE tasca SET estat = ? WHERE codi = ?";
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("estat", estat));
+                    command.Parameters.Add(new SQLiteParameter("codi", tasca.Codi));
+
+                    rows_afected = command.ExecuteNonQuery();
+                }
+            }
+            return rows_afected;
+        }
+        
 
         public int Delete(int Codi)
         {
