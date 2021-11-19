@@ -42,28 +42,38 @@ namespace ToDoList_WPF.Servei
         {
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
-            {
-                string query = "INSERT INTO treballador (NIF, nom, cognoms, telefon, correu) VALUES (?, ?, ?, ?, ?)";
+            { 
+                string query = "SELECT count(*) FROM treballador WHERE NIF = ?";
+                string query2 = "INSERT INTO treballador (NIF, nom, cognoms, telefon, correu) VALUES (?, ?, ?, ?, ?)";
+
                 using (var command = new SQLiteCommand(query, ctx))
                 {
                     command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
-                    command.Parameters.Add(new SQLiteParameter("nom", treballador.Nom));
-                    command.Parameters.Add(new SQLiteParameter("cognoms", treballador.Cognoms));
-                    command.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
-                    command.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
+                    int dup = Convert.ToInt32(command.ExecuteScalar());
+                    if (dup == 0)
+                    {
+                        using (var command2 = new SQLiteCommand(query2, ctx))
+                        {
+                            command2.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
+                            command2.Parameters.Add(new SQLiteParameter("nom", treballador.Nom));
+                            command2.Parameters.Add(new SQLiteParameter("cognoms", treballador.Cognoms));
+                            command2.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
+                            command2.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
 
-                    rows_afected = command.ExecuteNonQuery();
+                            rows_afected = command2.ExecuteNonQuery();
+                        }
+                    }
                 }
             }
             return rows_afected;
         }
 
-        public int Update(TreballadorDades treballador)
+        public int Update(TreballadorDades treballador, String NIF)
         {
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
             {
-                string query = "UPDATE tasca SET nif = ?, nom = ?, cognoms = ?, telefon = ?, correu = ? WHERE NIF = ?";
+                string query = "UPDATE treballador SET NIF = ?, nom = ?, cognoms = ?, telefon = ?, correu = ? WHERE NIF = ?";
                 using (var command = new SQLiteCommand(query, ctx))
                 {
                     command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
@@ -71,6 +81,7 @@ namespace ToDoList_WPF.Servei
                     command.Parameters.Add(new SQLiteParameter("cognoms", treballador.Cognoms));
                     command.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
                     command.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
+                    command.Parameters.Add(new SQLiteParameter("onif", NIF));
 
                     rows_afected = command.ExecuteNonQuery();
                 }

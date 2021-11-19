@@ -28,7 +28,12 @@ namespace ToDoList_WPF
 
         private void BotoEliminar_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Vols eliminar al treballador?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+            if (TNIF == null)
+            {
+                MessageBox.Show("No s'ha seleccionat un treballador.");
+            }
+            else if (MessageBox.Show("Vols eliminar al treballador?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
                 TreballadorServei TServei = new TreballadorServei();
@@ -54,6 +59,61 @@ namespace ToDoList_WPF
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+        }
+
+        private void BotoModificar_Click(object sender, RoutedEventArgs e)
+        {
+            TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+            if(TNIF == null)
+            {
+                MessageBox.Show("No s'ha seleccionat un treballador.");
+            }
+            else
+            {
+                TreballadorDades Treballador = new TreballadorDades();
+
+                Treballador.Nom = tbNom.Text;
+                Treballador.Cognoms = tbCnom.Text;
+                Treballador.NIF = tbNIF.Text;
+                Treballador.Telefon = tbTel.Text;
+                Treballador.Correu = tbEmail.Text;
+
+                TreballadorServei TServei = new TreballadorServei();
+                String NIF = TNIF.NIF;
+                TServei.Update(Treballador, NIF);
+
+                LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+            }
+            
+
+
+        }
+
+        private void BotoAfegir_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbNIF.Text != "" && tbNom.Text != "")
+            {
+                TreballadorDades Treballador = new TreballadorDades();
+
+                Treballador.Nom = tbNom.Text;
+                Treballador.Cognoms = tbCnom.Text;
+                Treballador.NIF = tbNIF.Text;
+                Treballador.Telefon = tbTel.Text;
+                Treballador.Correu = tbEmail.Text;
+                TreballadorServei TServei = new TreballadorServei();
+                if (TServei.Add(Treballador) == 0)
+                {
+                    MessageBox.Show("Ja existeix un treballador amb aquest NIF.");
+                }
+                else
+                {
+                    LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Els camps marcats amb * son obligatoris");
+            }
         }
     }
 }

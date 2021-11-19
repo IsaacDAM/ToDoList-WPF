@@ -43,8 +43,8 @@
         <TextBox Name="tbNIF" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="2"/>
         <TextBox Name="tbTel" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="3"/>
         <TextBox Name="tbEmail" MaxLength="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="4"/>
-        <Button Name="BotoAfegir" Content="Afegir" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="26" Width="75" Grid.Column="2" Grid.Row="5"/>
-        <Button Name="BotoModificar" Content="Modificar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,0" Height="26" Width="75" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <Button Name="BotoAfegir" Content="Afegir" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="26" Width="75" Grid.Column="2" Grid.Row="5" Click="BotoAfegir_Click"/>
+        <Button Name="BotoModificar" Content="Modificar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,0" Height="26" Width="75" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Click="BotoModificar_Click"/>
         <Button Name="BotoEliminar" Content="Eliminar" HorizontalAlignment="Center" Width="76" Height="25" Grid.Row="6" VerticalAlignment="Center" Click="BotoEliminar_Click"/>
         <Label Content="*" Grid.Column="2" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Bottom" Foreground="Red"/>
         <Label Content="*" Grid.Column="2"  Grid.Row="2" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Bottom" Foreground="Red"/>
