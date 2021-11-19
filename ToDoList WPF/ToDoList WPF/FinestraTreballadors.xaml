@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="Treballadors" Height="300" Width="500" ResizeMode="NoResize" Activated="Window_Activated" Loaded="Window_Loaded" ContentRendered="Window_ContentRendered">
+        Title="Treballadors" Height="300" Width="500" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60*"/>

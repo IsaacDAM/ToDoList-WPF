@@ -51,14 +51,9 @@ namespace ToDoList_WPF
             }    
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
-        }
-
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-
+            LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
         }
     }
 }
