@@ -86,7 +86,7 @@ namespace ToDoList_WPF.Servei
                 string query = "DELETE FROM treballador WHERE NIF = ?";
                 using (var command = new SQLiteCommand(query, ctx))
                 {
-                    command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
+                    command.Parameters.Add(new SQLiteParameter("NIF", treballador.NIF));
                     rows_afected = command.ExecuteNonQuery();
                 }
             }

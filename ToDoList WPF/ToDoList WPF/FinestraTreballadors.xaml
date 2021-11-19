@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="Treballadors" Height="300" Width="500" ResizeMode="NoResize" Activated="Window_Activated">
+        Title="Treballadors" Height="300" Width="500" ResizeMode="NoResize" Activated="Window_Activated" Loaded="Window_Loaded" ContentRendered="Window_ContentRendered">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60*"/>
@@ -21,7 +21,7 @@
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="182*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="LlistaDeTreballadors" HorizontalAlignment="Center" BorderBrush="Black" Width="175" Grid.RowSpan="6" Margin="0,45,0,0" SelectionChanged="LlistaDeTreballadors_SelectionChanged" >
+        <ListBox Name="LlistaDeTreballadors" HorizontalAlignment="Center" BorderBrush="Black" Width="175" Grid.RowSpan="6" Margin="0,45,0,0" SelectionChanged="LlistaDeTreballadors_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

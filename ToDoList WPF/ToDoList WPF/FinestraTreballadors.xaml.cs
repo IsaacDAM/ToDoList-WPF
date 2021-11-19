@@ -38,20 +38,27 @@ namespace ToDoList_WPF
             }
         }
 
-        private void Window_Activated(object sender, EventArgs e)
+        private void LlistaDeTreballadors_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+            if(Treballador != null)
+            {
+                tbNom.Text = Treballador.Nom;
+                tbCnom.Text = Treballador.Cognoms;
+                tbNIF.Text = Treballador.NIF;
+                tbTel.Text = Treballador.Telefon;
+                tbEmail.Text = Treballador.Correu;
+            }    
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
         }
 
-        private void LlistaDeTreballadors_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Window_ContentRendered(object sender, EventArgs e)
         {
-            TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
 
-            tbNom.Text = Treballador.Nom;
-            tbCnom.Text = Treballador.Cognoms;
-            tbNIF.Text = Treballador.NIF;
-            tbTel.Text = Treballador.Telefon;
-            tbEmail.Text = Treballador.Correu;
         }
     }
 }
