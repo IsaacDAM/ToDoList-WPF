@@ -8,12 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\45048 %281%29.png" />
+    <None Remove="Images\45048.png" />
     <None Remove="Images\greenDot.png" />
     <None Remove="Images\orangeDot.png" />
     <None Remove="Images\redDot.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\45048 (1).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\45048.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\greenDot.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
