@@ -79,6 +79,8 @@ namespace ToDoList_WPF.Servei
                     command.Parameters.Add(new SQLiteParameter("dFinalitz", tasca.dFinalitzacio));
                     command.Parameters.Add(new SQLiteParameter("prioritat", tasca.Prioritat));
                     command.Parameters.Add(new SQLiteParameter("representant", tasca.Representant));
+                    command.Parameters.Add(new SQLiteParameter("codi", tasca.Codi));
+
 
                     rows_afected = command.ExecuteNonQuery();
                 }

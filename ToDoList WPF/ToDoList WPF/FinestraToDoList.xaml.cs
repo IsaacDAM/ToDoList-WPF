@@ -163,9 +163,9 @@ namespace ToDoList_WPF
 
         private void BotoModificar_Click(object sender, RoutedEventArgs e)
         {
-            
             Finestra_Tasca ftasca = new Finestra_Tasca((Int32)(sender as Button).Tag);
             ftasca.ShowDialog();
+            ActualitzarTaula();
         }
 
         private void BotoEliminar_Click(object sender, RoutedEventArgs e)

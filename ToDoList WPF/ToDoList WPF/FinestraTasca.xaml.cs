@@ -36,19 +36,20 @@ namespace ToDoList_WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            
+
             TascaDades Tasca = new TascaDades();
 
             Tasca.Titol = tbTitol.Text;
             Tasca.Descripcio = tbDescripcio.Text;
             Tasca.dCreacio = (DateTime)tbDCreacio.SelectedDate;
             Tasca.dFinalitzacio = (DateTime)tbDFinal.SelectedDate;
-            int opcioPrioritat= lbPrioritats.SelectedIndex;
+            int opcioPrioritat = lbPrioritats.SelectedIndex;
             if (opcioPrioritat == 0)
             {
                 Tasca.Prioritat = "Alta";
             }
-            else if(opcioPrioritat == 1)
+            else if (opcioPrioritat == 1)
             {
                 Tasca.Prioritat = "Mitja";
             }
@@ -58,12 +59,30 @@ namespace ToDoList_WPF
             }
             TreballadorDades t1 = (TreballadorDades)lbRepresentant.SelectedItem;
             Tasca.Representant = t1.Nom;
-            Tasca.Estat = "ToDo";
 
             TascaServei ts = new TascaServei();
-            ts.Add(Tasca);
 
-            Close();
+            if (tbCodi.Text == "")
+            {
+                
+                Tasca.Estat = "ToDo";
+
+                
+                ts.Add(Tasca);
+
+                Close();
+            }
+            else
+            {
+                /*TascaDades estat = ts.Get(Int32.Parse(tbCodi.Text));
+                Tasca.Estat = estat.Estat;*/
+                ts.Update(Tasca);
+
+                Close();
+            }
+            
+
+            
         }
 
         private void lbRepresentant_SelectionChanged(object sender, SelectionChangedEventArgs e)
