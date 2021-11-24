@@ -67,7 +67,7 @@
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
-                                <TreeViewItem Header="{Binding dFinalitz}" FontSize="13"></TreeViewItem>
+                                <TreeViewItem Header="{Binding dFinalitzacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Prioritat}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Representant}" FontSize="13"></TreeViewItem>
                             </TreeViewItem>
@@ -85,7 +85,7 @@
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
-                                <TreeViewItem Header="{Binding dFinalitz}" FontSize="13"></TreeViewItem>
+                                <TreeViewItem Header="{Binding dFinalitzacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Prioritat}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Representant}" FontSize="13"></TreeViewItem>
                             </TreeViewItem>
