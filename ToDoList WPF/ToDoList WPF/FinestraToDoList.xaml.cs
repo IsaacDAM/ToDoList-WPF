@@ -67,13 +67,86 @@ namespace ToDoList_WPF
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             DbContext.Up();
+            ActualitzarTaula();
+            
+        }
+
+        private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
+        {
+            TascaDades Tasca = (TascaDades)LlistaToDo.SelectedItem;
+            TascaServei TS = new TascaServei();
+
+            if(LlistaToDo.SelectedItem != null)
+            {
+                TS.UpdateEstat(Tasca, "Doing");
+                ActualitzarTaula();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un element de la llista", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            
+        }
+
+        private void BotoRetornarToDo_Click(object sender, RoutedEventArgs e)
+        {
+            TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
+            TascaServei TS = new TascaServei();
+
+            if (LlistaDoing.SelectedItem != null)
+            {
+                TS.UpdateEstat(Tasca, "ToDo");
+                ActualitzarTaula();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un element de la llista", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+        private void BotoRetornarDoing_Click(object sender, RoutedEventArgs e)
+        {
+            TascaDades Tasca = (TascaDades)LlistaDone.SelectedItem;
+            TascaServei TS = new TascaServei();
+
+            if (LlistaDone.SelectedItem != null)
+            {
+                TS.UpdateEstat(Tasca, "Doing");
+                ActualitzarTaula();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un element de la llista", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void BotoEnviarDone_Click(object sender, RoutedEventArgs e)
+        {
+            TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
+            TascaServei TS = new TascaServei();
+
+            if (LlistaDoing.SelectedItem != null)
+            {
+                TS.UpdateEstat(Tasca, "Done");
+                ActualitzarTaula();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un element de la llista", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void ActualitzarTaula()
+        {
+            LlistaToDo.Items.Clear();
+            LlistaDoing.Items.Clear();
+            LlistaDone.Items.Clear();
             List<TascaDades> Tasca = TascaServei.GetAll().ToList();
             foreach (var i in Tasca)
             {
                 if (i.Estat == "ToDo")
                 {
                     LlistaToDo.Items.Add(i);
-                    
+
                 }
                 else if (i.Estat == "Doing")
                 {
@@ -82,17 +155,12 @@ namespace ToDoList_WPF
                 else if (i.Estat == "Done")
                 {
                     LlistaDone.Items.Add(i);
-                    
-                }        
+
+                }
 
             }
-            
         }
 
-        private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
-        {
-            LlistaDoing.Items.Add(LlistaToDo.SelectedItem);
-            LlistaToDo.Items.Remove(LlistaToDo.SelectedItem);
-        }
+        
     }
 }

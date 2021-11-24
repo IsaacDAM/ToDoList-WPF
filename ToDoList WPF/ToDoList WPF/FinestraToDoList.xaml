@@ -28,16 +28,16 @@
         </Grid.RowDefinitions>
         <Button Grid.Row="5" Grid.Column="4" x:Name="BotoAfegirTasca" Content="Afegir Tasca"  Margin="28,15,29,10"  Click="BotoAfegirTasca_Click"/>
         <Button Grid.Row="5" Grid.Column="1" x:Name="BotoTreballadors" Content="Treballadors"  Margin="28,15,29,10"  Click="BotoTreballadors_Click"/>
-        <Button Grid.Row="3" Grid.Column="2" Name="BotoRetornarToDo">
+        <Button Grid.Row="3" Grid.Column="2" Name="BotoRetornarToDo" Click="BotoRetornarToDo_Click">
             <Image Source="Images\45048 (1).png"/>
         </Button>
         <Button Grid.Row="3" Grid.Column="3" Name="BotoEnviarDoing" Click="BotoEnviarDoing_Click">
             <Image Source="Images\45048.png"/>
         </Button>
-        <Button Grid.Row="3" Grid.Column="5" Name="BotoRetornarDoing">
+        <Button Grid.Row="3" Grid.Column="5" Name="BotoRetornarDoing" Click="BotoRetornarDoing_Click">
             <Image Source="Images\45048 (1).png"/>
         </Button>
-        <Button Grid.Row="3" Grid.Column="6" Name="BotoEnviarDone">
+        <Button Grid.Row="3" Grid.Column="6" Name="BotoEnviarDone" Click="BotoEnviarDone_Click">
             <Image Source="Images\45048.png"/>
         </Button>
         <ListBox Grid.Row="2" Grid.Column="1" x:Name="LlistaToDo"  BorderBrush="Black" Grid.RowSpan="3">
