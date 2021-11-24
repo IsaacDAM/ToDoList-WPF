@@ -31,7 +31,7 @@ namespace ToDoList_WPF
             TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
             if (TNIF == null)
             {
-                MessageBox.Show("No s'ha seleccionat un treballador.");
+                MessageBox.Show("No s'ha seleccionat un treballador.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else if (MessageBox.Show("Vols eliminar al treballador?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
@@ -66,7 +66,7 @@ namespace ToDoList_WPF
             TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
             if(TNIF == null)
             {
-                MessageBox.Show("No s'ha seleccionat un treballador.");
+                MessageBox.Show("No s'ha seleccionat un treballador.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
@@ -103,7 +103,7 @@ namespace ToDoList_WPF
                 TreballadorServei TServei = new TreballadorServei();
                 if (TServei.Add(Treballador) == 0)
                 {
-                    MessageBox.Show("Ja existeix un treballador amb aquest NIF.");
+                    MessageBox.Show("Ja existeix un treballador amb aquest NIF.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -112,7 +112,7 @@ namespace ToDoList_WPF
             }
             else
             {
-                MessageBox.Show("Els camps marcats amb * son obligatoris");
+                MessageBox.Show("Els camps marcats amb * son obligatoris", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }
