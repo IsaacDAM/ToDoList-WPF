@@ -161,6 +161,24 @@ namespace ToDoList_WPF
             }
         }
 
-        
+        private void BotoModificar_Click(object sender, RoutedEventArgs e)
+        {
+            
+            TascaDades Tasca = (Tasca);
+            Finestra_Tasca ftasca = new Finestra_Tasca();
+            ftasca.ShowDialog()
+        }
+
+        private void BotoEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Vols eliminar la tasca?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                TascaServei TS = new TascaServei();
+                TS.Delete((Int32)(sender as Button).Tag);
+                ActualitzarTaula();
+            }
+           
+            
+        }
     }
 }
