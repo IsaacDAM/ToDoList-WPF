@@ -50,7 +50,7 @@ namespace ToDoList_WPF.Persistence
                         {
                             command.Parameters.Add(new SQLiteParameter("titol", "Titol " + i));
                             command.Parameters.Add(new SQLiteParameter("descripcio", "Descripcio " + i));
-                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
+                            command.Parameters.Add(new SQLiteParameter("dCreacio", DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss")));
                             command.Parameters.Add(new SQLiteParameter("dFinalitz", DateTime.Today.AddDays(7).ToString("yyyy-MM-dd HH:mm:ss")));
                             command.Parameters.Add(new SQLiteParameter("prioritat", "Prioritat " + i));
                             command.Parameters.Add(new SQLiteParameter("representant", "Representant " + i));
