@@ -120,6 +120,41 @@ namespace ToDoList_WPF.Servei
             return rows_afected;
         }
 
+        public TascaDades Get(int entrada)
+        {
+            TascaDades result = new TascaDades();
+
+            using (var ctx = DbContext.GetInstance())
+            {
+                var query = "SELECT * FROM tasca WHERE Codi = ?";
+
+                using (var command = new SQLiteCommand(query, ctx))
+                {
+                    command.Parameters.Add(new SQLiteParameter("codi", entrada.ToString()));
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+
+                            result=(new TascaDades
+                            {
+                                Codi = Convert.ToInt32(reader["Codi"].ToString()),
+                                Titol = reader["Titol"].ToString(),
+                                Descripcio = reader["Descripcio"].ToString(),
+                                dCreacio = Convert.ToDateTime(reader["dCreacio"].ToString()),
+                                dFinalitzacio = Convert.ToDateTime(reader["dFinalitz"].ToString()),
+                                Prioritat = reader["Prioritat"].ToString(),
+                                Representant = reader["Representant"].ToString(),
+                                Estat = reader["Estat"].ToString()
+                            });
+                        }
+                    }
+                }
+                return result;
+            }
+        }
+
 
     }
 }

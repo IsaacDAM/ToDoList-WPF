@@ -26,9 +26,17 @@ namespace ToDoList_WPF
         {
             InitializeComponent();
         }
+        public Finestra_Tasca(int entrada)
+        {
+            InitializeComponent();
+            TascaServei TS = new TascaServei();
+            TascaDades Tasca = TS.Get(entrada);
+            this.DataContext = Tasca;
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           
             TascaDades Tasca = new TascaDades();
 
             Tasca.Titol = tbTitol.Text;

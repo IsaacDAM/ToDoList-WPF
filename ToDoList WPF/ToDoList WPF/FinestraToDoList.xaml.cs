@@ -166,7 +166,7 @@ namespace ToDoList_WPF
             
             TascaDades Tasca = (Tasca);
             Finestra_Tasca ftasca = new Finestra_Tasca();
-            ftasca.ShowDialog()
+            ftasca.ShowDialog();
         }
 
         private void BotoEliminar_Click(object sender, RoutedEventArgs e)
