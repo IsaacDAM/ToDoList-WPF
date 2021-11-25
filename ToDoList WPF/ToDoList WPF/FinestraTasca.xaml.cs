@@ -92,11 +92,6 @@ namespace ToDoList_WPF
 
         }
 
-        private void lbPrioritats_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             lbRepresentant.ItemsSource = TreballadorServei.GetAll();
