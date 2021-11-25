@@ -30,7 +30,7 @@
         <Label Grid.Row="3" VerticalAlignment="Center" Margin="10,0,157,0">Data Finalització:</Label>
         <DatePicker Name="tbDFinal" SelectedDate="{Binding dFinalitzacio}" Grid.Row="3" VerticalAlignment="Center" Margin="110,0,0,0"  SelectedDateFormat="Short" />
         <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="333,5,132,0">Prioritat:</Label>
-        <ListBox Name="lbPrioritats" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="400,0,40,18" SelectionChanged="lbPrioritats_SelectionChanged">
+        <ListBox Name="lbPrioritats" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="400,0,40,18">
             <ListBoxItem Name="Alta">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images\redDot.png" Margin="0,0,5,0"/>
