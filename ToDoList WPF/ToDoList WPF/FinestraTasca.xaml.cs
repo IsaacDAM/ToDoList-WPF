@@ -35,51 +35,55 @@ namespace ToDoList_WPF
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-
-            TascaDades Tasca = new TascaDades();
-
-            Tasca.Codi = Int32.Parse(tbCodi.Text);
-            Tasca.Titol = tbTitol.Text;
-            Tasca.Descripcio = tbDescripcio.Text;
-            Tasca.dCreacio = (DateTime)tbDCreacio.SelectedDate;
-            Tasca.dFinalitzacio = (DateTime)tbDFinal.SelectedDate;
-            int opcioPrioritat = lbPrioritats.SelectedIndex;
-            if (opcioPrioritat == 0)
+        {   
+            if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbPrioritats.SelectedItem != null)
             {
-                Tasca.Prioritat = "Alta";
-            }
-            else if (opcioPrioritat == 1)
-            {
-                Tasca.Prioritat = "Mitja";
+                TascaDades Tasca = new TascaDades();
+                if (tbCodi.Text != "")
+                {
+                    Tasca.Codi = Int32.Parse(tbCodi.Text);
+                }
+                Tasca.Titol = tbTitol.Text;
+                Tasca.Descripcio = tbDescripcio.Text;
+                Tasca.dCreacio = (DateTime)tbDCreacio.SelectedDate;
+                Tasca.dFinalitzacio = (DateTime)tbDFinal.SelectedDate;
+                int opcioPrioritat = lbPrioritats.SelectedIndex;
+                if (opcioPrioritat == 0)
+                {
+                    Tasca.Prioritat = "Alta";
+                }
+                else if (opcioPrioritat == 1)
+                {
+                    Tasca.Prioritat = "Mitja";
+                }
+                else
+                {
+                    Tasca.Prioritat = "Baixa";
+                }
+                TreballadorDades t1 = (TreballadorDades)lbRepresentant.SelectedItem;
+                Tasca.Representant = t1.Nom;
+
+                TascaServei ts = new TascaServei();
+
+                if (tbCodi.Text == "")
+                {
+
+                    Tasca.Estat = "ToDo";
+                    ts.Add(Tasca);
+                    Close();
+                }
+                else
+                {
+                    TascaDades estat = ts.Get(Int32.Parse(tbCodi.Text));
+                    Tasca.Estat = estat.Estat;
+                    ts.Update(Tasca);
+                    Close();
+                }
             }
             else
             {
-                Tasca.Prioritat = "Baixa";
+                MessageBox.Show("S'han d'emplenar tots els camps.","Informació",MessageBoxButton.OK,MessageBoxImage.Information);
             }
-            TreballadorDades t1 = (TreballadorDades)lbRepresentant.SelectedItem;
-            Tasca.Representant = t1.Nom;
-
-            TascaServei ts = new TascaServei();
-
-            if (tbCodi.Text == "")
-            {
-                
-                Tasca.Estat = "ToDo";               
-                ts.Add(Tasca);
-                Close();
-            }
-            else
-            {
-                TascaDades estat = ts.Get(Int32.Parse(tbCodi.Text));
-                Tasca.Estat = estat.Estat;
-                ts.Update(Tasca);
-                Close();
-            }
-            
-
-            
         }
 
         private void lbRepresentant_SelectionChanged(object sender, SelectionChangedEventArgs e)

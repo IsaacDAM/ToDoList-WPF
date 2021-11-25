@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
-        Title="To Do List" Height="650" Width="1000" ResizeMode="NoResize" Closing="Window_Closing" ContentRendered="Window_ContentRendered">
+        Title="To Do List" Height="650" Width="1000" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*" />
@@ -41,9 +41,24 @@
             <Image Source="Images\45048.png"/>
         </Button>
         <ListBox Grid.Row="2" Grid.Column="1" x:Name="LlistaToDo"  BorderBrush="Black" Grid.RowSpan="3">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Alta">
+                            <Setter Property="Background" Value="Red"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Mitja">
+                            <Setter Property="Background" Value="Orange"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Baixa">
+                            <Setter Property="Background" Value="LawnGreen"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Name="StackToDo">
+                    <StackPanel x:Name="StackToDo">
                         <TreeView Width="250">
                             <TreeViewItem Header="{Binding Titol}">
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
@@ -63,6 +78,21 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <ListBox Grid.Row="2" Grid.Column="4" x:Name="LlistaDoing" BorderBrush="Black" Grid.RowSpan="3">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Alta">
+                            <Setter Property="Background" Value="Red"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Mitja">
+                            <Setter Property="Background" Value="Orange"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Baixa">
+                            <Setter Property="Background" Value="LawnGreen"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Name="StackDoing">
@@ -85,6 +115,21 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <ListBox Grid.Row="2" Grid.Column="7" x:Name="LlistaDone" BorderBrush="Black" Grid.RowSpan="3">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Alta">
+                            <Setter Property="Background" Value="Red"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Mitja">
+                            <Setter Property="Background" Value="Orange"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Prioritat}" Value="Baixa">
+                            <Setter Property="Background" Value="LawnGreen"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Name="StackDone" HorizontalAlignment="Center" VerticalAlignment="Top">

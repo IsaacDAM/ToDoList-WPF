@@ -17,12 +17,8 @@ using System.Linq;
 
 namespace ToDoList_WPF
 {
-    /// <summary>
-    /// Lógica de interacción para Finestra_ToDoList.xaml
-    /// </summary>
     public partial class Finestra_ToDoList : Window
     {
-        bool guardat = true;
         public Finestra_ToDoList()
         {
             InitializeComponent();
@@ -38,6 +34,7 @@ namespace ToDoList_WPF
         {
             Finestra_Tasca ftasca = new Finestra_Tasca();
             ftasca.ShowDialog();
+            ActualitzarTaula();
         }
 
         private void BotoGuardar_Click(object sender, RoutedEventArgs e)
@@ -45,24 +42,6 @@ namespace ToDoList_WPF
             MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if(!guardat)
-            {
-                MessageBoxResult Resultat = MessageBox.Show("Desar canvis abans de sortir?", "Advertència", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
-                if (Resultat == MessageBoxResult.Yes)
-                {
-                    MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else if (Resultat == MessageBoxResult.Cancel)
-                {
-                    e.Cancel = true;
-                }
-            }
-            
-        }
-
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
@@ -154,7 +133,6 @@ namespace ToDoList_WPF
                 else if (i.Estat == "Done")
                 {
                     LlistaDone.Items.Add(i);
-
                 }
 
             }
