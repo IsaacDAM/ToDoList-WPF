@@ -88,7 +88,7 @@ namespace ToDoList_WPF.Servei
             return rows_afected;
         }
 
-        public int UpdateEstat(TascaDades tasca, string estat)
+        public int UpdateEstat(int codi, string estat)
         {
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
@@ -97,7 +97,7 @@ namespace ToDoList_WPF.Servei
                 using (var command = new SQLiteCommand(query, ctx))
                 {
                     command.Parameters.Add(new SQLiteParameter("estat", estat));
-                    command.Parameters.Add(new SQLiteParameter("codi", tasca.Codi));
+                    command.Parameters.Add(new SQLiteParameter("codi", codi));
 
                     rows_afected = command.ExecuteNonQuery();
                 }

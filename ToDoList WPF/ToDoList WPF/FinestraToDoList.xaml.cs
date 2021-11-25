@@ -19,6 +19,7 @@ namespace ToDoList_WPF
 {
     public partial class Finestra_ToDoList : Window
     {
+
         public Finestra_ToDoList()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace ToDoList_WPF
 
             if(LlistaToDo.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca, "Doing");
+                TS.UpdateEstat(Tasca.Codi, "Doing");
                 ActualitzarTaula();
             }
             else
@@ -74,7 +75,7 @@ namespace ToDoList_WPF
 
             if (LlistaDoing.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca, "ToDo");
+                TS.UpdateEstat(Tasca.Codi, "ToDo");
                 ActualitzarTaula();
             }
             else
@@ -89,7 +90,7 @@ namespace ToDoList_WPF
 
             if (LlistaDone.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca, "Doing");
+                TS.UpdateEstat(Tasca.Codi, "Doing");
                 ActualitzarTaula();
             }
             else
@@ -105,7 +106,7 @@ namespace ToDoList_WPF
 
             if (LlistaDoing.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca, "Done");
+                TS.UpdateEstat(Tasca.Codi, "Done");
                 ActualitzarTaula();
             }
             else
@@ -153,8 +154,6 @@ namespace ToDoList_WPF
                 TS.Delete((Int32)(sender as Button).Tag);
                 ActualitzarTaula();
             }
-           
-            
         }
     }
 }
