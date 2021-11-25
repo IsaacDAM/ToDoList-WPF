@@ -40,6 +40,7 @@ namespace ToDoList_WPF
 
             TascaDades Tasca = new TascaDades();
 
+            Tasca.Codi = Int32.Parse(tbCodi.Text);
             Tasca.Titol = tbTitol.Text;
             Tasca.Descripcio = tbDescripcio.Text;
             Tasca.dCreacio = (DateTime)tbDCreacio.SelectedDate;
@@ -65,19 +66,15 @@ namespace ToDoList_WPF
             if (tbCodi.Text == "")
             {
                 
-                Tasca.Estat = "ToDo";
-
-                
+                Tasca.Estat = "ToDo";               
                 ts.Add(Tasca);
-
                 Close();
             }
             else
             {
-                /*TascaDades estat = ts.Get(Int32.Parse(tbCodi.Text));
-                Tasca.Estat = estat.Estat;*/
+                TascaDades estat = ts.Get(Int32.Parse(tbCodi.Text));
+                Tasca.Estat = estat.Estat;
                 ts.Update(Tasca);
-
                 Close();
             }
             

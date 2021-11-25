@@ -146,7 +146,6 @@ namespace ToDoList_WPF
                 if (i.Estat == "ToDo")
                 {
                     LlistaToDo.Items.Add(i);
-
                 }
                 else if (i.Estat == "Doing")
                 {

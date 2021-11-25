@@ -70,7 +70,7 @@ namespace ToDoList_WPF.Servei
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
             {
-                string query = "UPDATE tasca SET titol = ?, descripcio = ?, dCreacio = ?, dFinalitz = ?, prioritat = ?, representant = ? WHERE codi = ?";
+                string query = "UPDATE tasca SET titol = ?, descripcio = ?, dCreacio = ?, dFinalitz = ?, prioritat = ?, representant = ? WHERE Codi = ?";
                 using (var command = new SQLiteCommand(query, ctx))
                 {
                     command.Parameters.Add(new SQLiteParameter("titol", tasca.Titol));
