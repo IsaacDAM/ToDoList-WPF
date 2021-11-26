@@ -22,9 +22,9 @@
         <Label VerticalAlignment="Center" Margin="10,0,160,0" Height="26">Codi:</Label>
         <TextBox Name="tbCodi" Text="{Binding Codi}" VerticalAlignment="Center"  Margin="110,0,50,0" Height="18" IsEnabled="False"></TextBox>
         <Label Grid.Column="1" VerticalAlignment="Center" Margin="10,0,443,0" Height="26">Títol Tasca:</Label>
-        <TextBox Name="tbTitol" Text="{Binding Titol}" Grid.Column="1" VerticalAlignment="Center"  Margin="90,0,40,0" Height="18"/>
+        <TextBox Name="tbTitol" Text="{Binding Titol}" Grid.Column="1" VerticalAlignment="Center"  Margin="90,0,40,0" Height="18" MaxLength="20"/>
         <Label Grid.Row="1" Margin="10,0,160,0">Descripció:</Label>
-        <TextBox Name="tbDescripcio" Text="{Binding Descripcio}" Grid.Row="1" Grid.ColumnSpan="3" Margin="110,7,40,10" TextWrapping = "Wrap" />
+        <TextBox Name="tbDescripcio" Text="{Binding Descripcio}" Grid.Row="1" Grid.ColumnSpan="3" Margin="110,7,40,10" TextWrapping = "Wrap" MaxLength="150" />
         <Label Grid.Row="2" VerticalAlignment="Center" Margin="10,0,160,0">Data Creació:</Label>
         <DatePicker Name="tbDCreacio" SelectedDate="{Binding dCreacio}" Grid.Row="2" VerticalAlignment="Center" Margin="110,0,0,0" SelectedDateFormat="Short" />
         <Label Grid.Row="3" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100">Data Finalització:</Label>
