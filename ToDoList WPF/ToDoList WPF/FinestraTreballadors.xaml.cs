@@ -70,23 +70,33 @@ namespace ToDoList_WPF
             }
             else
             {
-                TreballadorDades Treballador = new TreballadorDades();
+                if (tbNIF.Text != "" && tbNom.Text != "")
+                {
+                    TreballadorDades Treballador = new TreballadorDades();
 
-                Treballador.Nom = tbNom.Text;
-                Treballador.Cognoms = tbCnom.Text;
-                Treballador.NIF = tbNIF.Text;
-                Treballador.Telefon = tbTel.Text;
-                Treballador.Correu = tbEmail.Text;
+                    Treballador.Nom = tbNom.Text;
+                    Treballador.Cognoms = tbCnom.Text;
+                    Treballador.NIF = tbNIF.Text;
+                    Treballador.Telefon = tbTel.Text;
+                    Treballador.Correu = tbEmail.Text;
 
-                TreballadorServei TServei = new TreballadorServei();
-                String NIF = TNIF.NIF;
-                TServei.Update(Treballador, NIF);
+                    TreballadorServei TServei = new TreballadorServei();
+                    String NIF = TNIF.NIF;
 
-                LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+                    if (TServei.Update(Treballador, NIF) == 0)
+                    {
+                        MessageBox.Show("Ja existeix un treballador amb aquest NIF.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Els camps marcats amb * son obligatoris", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
-            
-
-
         }
 
         private void BotoAfegir_Click(object sender, RoutedEventArgs e)

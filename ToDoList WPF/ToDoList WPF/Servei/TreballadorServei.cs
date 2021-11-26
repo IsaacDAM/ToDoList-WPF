@@ -82,8 +82,11 @@ namespace ToDoList_WPF.Servei
                     command.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
                     command.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
                     command.Parameters.Add(new SQLiteParameter("onif", NIF));
-
-                    rows_afected = command.ExecuteNonQuery();
+                    try
+                    {
+                        rows_afected = command.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException) { }
                 }
             }
             return rows_afected;
