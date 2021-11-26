@@ -27,7 +27,7 @@
         <TextBox Name="tbDescripcio" Text="{Binding Descripcio}" Grid.Row="1" Grid.ColumnSpan="3" Margin="110,7,40,10" TextWrapping = "Wrap" />
         <Label Grid.Row="2" VerticalAlignment="Center" Margin="10,0,160,0">Data Creació:</Label>
         <DatePicker Name="tbDCreacio" SelectedDate="{Binding dCreacio}" Grid.Row="2" VerticalAlignment="Center" Margin="110,0,0,0" SelectedDateFormat="Short" />
-        <Label Grid.Row="3" VerticalAlignment="Center" Margin="10,0,157,0">Data Finalització:</Label>
+        <Label Grid.Row="3" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100">Data Finalització:</Label>
         <DatePicker Name="tbDFinal" SelectedDate="{Binding dFinalitzacio}" Grid.Row="3" VerticalAlignment="Center" Margin="110,0,0,0"  SelectedDateFormat="Short" />
         <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="333,5,132,0">Prioritat:</Label>
         <ListBox Name="lbPrioritats" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="400,0,40,18">
