@@ -60,7 +60,7 @@
                 <DataTemplate>
                     <StackPanel x:Name="StackToDo">
                         <TreeView Width="250">
-                            <TreeViewItem Header="{Binding Titol}">
+                            <TreeViewItem Header="{Binding Titol}" IsExpanded="True">
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
@@ -97,7 +97,7 @@
                 <DataTemplate>
                     <StackPanel Name="StackDoing">
                         <TreeView Width="250">
-                            <TreeViewItem Header="{Binding Titol}">
+                            <TreeViewItem Header="{Binding Titol}" IsExpanded="True">
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
@@ -134,7 +134,7 @@
                 <DataTemplate>
                     <StackPanel Name="StackDone" HorizontalAlignment="Center" VerticalAlignment="Top">
                         <TreeView Width="250">
-                            <TreeViewItem Header="{Binding Titol}">
+                            <TreeViewItem Header="{Binding Titol}" IsExpanded="True">
                                 <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
