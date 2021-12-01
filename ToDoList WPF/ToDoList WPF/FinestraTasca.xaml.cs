@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Servei;
-using ToDoList_WPF.Persistence;
-using System.Data.SQLite;
-
+using System.Linq;
 
 namespace ToDoList_WPF
 {
@@ -36,7 +27,7 @@ namespace ToDoList_WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {   
-            if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbPrioritats.SelectedItem != null)
+            if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbRepresentant.SelectedItem != null)
             {
                 TascaDades Tasca = new TascaDades();
                 if (tbCodi.Text != "")
@@ -95,9 +86,42 @@ namespace ToDoList_WPF
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             lbRepresentant.ItemsSource = TreballadorServei.GetAll();
-
+            if (this.DataContext != null)
+            {
+                int contador = 0;
+                bool trobat = false;
+                int i = 0;
+                List<TreballadorDades> Treballadors = TreballadorServei.GetAll().ToList();
+                while (contador < Treballadors.Count() && !trobat)
+                {
+                    if (Treballadors[i].Nom == ((TascaDades)this.DataContext).Representant)
+                    {
+                        lbRepresentant.SelectedIndex = contador;
+                        trobat = true;
+                    }
+                    else
+                    {
+                        contador++;
+                    }
+                    i++;
+                }
+                if(trobat == false)
+                {
+                    MessageBox.Show("S'ha eliminat el treballador d'aquesta tasca, selecciona un de nou.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                if(((TascaDades)this.DataContext).Prioritat == "Alta")
+                {
+                    lbPrioritats.SelectedIndex = 0;
+                }
+                else if(((TascaDades)this.DataContext).Prioritat == "Mitja")
+                {
+                    lbPrioritats.SelectedIndex = 1;
+                }
+                else
+                {
+                    lbPrioritats.SelectedIndex = 2;
+                }
+            }
         }
-
-
     }
 }
