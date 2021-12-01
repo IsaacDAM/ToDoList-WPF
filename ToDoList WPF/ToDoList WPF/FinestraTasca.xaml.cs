@@ -105,6 +105,10 @@ namespace ToDoList_WPF
                     }
                     i++;
                 }
+                if(trobat == false)
+                {
+                    MessageBox.Show("S'ha eliminat el treballador d'aquesta tasca, selecciona un de nou.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
                 if(((TascaDades)this.DataContext).Prioritat == "Alta")
                 {
                     lbPrioritats.SelectedIndex = 0;
