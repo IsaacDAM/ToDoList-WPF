@@ -1,10 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Persistence;
 using ToDoList_WPF.Servei;
+using System.Threading.Tasks;
 using System.Linq;
 
 namespace ToDoList_WPF
@@ -28,6 +36,12 @@ namespace ToDoList_WPF
             Finestra_Tasca ftasca = new Finestra_Tasca();
             ftasca.ShowDialog();
             ActualitzarTaula();
+        }
+
+        private void BotoGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
