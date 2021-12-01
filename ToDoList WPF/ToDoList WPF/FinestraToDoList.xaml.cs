@@ -30,12 +30,6 @@ namespace ToDoList_WPF
             ActualitzarTaula();
         }
 
-        private void BotoGuardar_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("S'han guardat els canvis", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
-
-        }
-
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             DbContext.Up();
