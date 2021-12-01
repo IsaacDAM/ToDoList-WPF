@@ -52,7 +52,7 @@
             </ListBoxItem>
         </ListBox>
         <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,430,0">Representant:</Label>
-        <ListBox Name="lbRepresentant"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Width="130" Height="130"  Margin="103,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="lbRepresentant_SelectionChanged">
+        <ListBox Name="lbRepresentant"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Width="130" Height="130"  Margin="103,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

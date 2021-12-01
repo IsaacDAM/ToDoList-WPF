@@ -77,11 +77,7 @@ namespace ToDoList_WPF
             }
         }
 
-        private void lbRepresentant_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            TreballadorDades Treballador = (TreballadorDades)lbRepresentant.SelectedItem;
 
-        }
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
