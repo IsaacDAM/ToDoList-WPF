@@ -1,18 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Servei;
-using ToDoList_WPF.Persistence;
-using System.Data.SQLite;
 using System.Linq;
 
 namespace ToDoList_WPF
@@ -113,6 +104,18 @@ namespace ToDoList_WPF
                         contador++;
                     }
                     i++;
+                }
+                if(((TascaDades)this.DataContext).Prioritat == "Alta")
+                {
+                    lbPrioritats.SelectedIndex = 0;
+                }
+                else if(((TascaDades)this.DataContext).Prioritat == "Mitja")
+                {
+                    lbPrioritats.SelectedIndex = 1;
+                }
+                else
+                {
+                    lbPrioritats.SelectedIndex = 2;
                 }
             }            
         }
