@@ -59,13 +59,14 @@ namespace ToDoList_WPF
             {
                 if (tbNIF.Text != "" && tbNom.Text != "")
                 {
-                    TreballadorDades Treballador = new TreballadorDades();
-
-                    Treballador.Nom = tbNom.Text;
-                    Treballador.Cognoms = tbCnom.Text;
-                    Treballador.NIF = tbNIF.Text;
-                    Treballador.Telefon = tbTel.Text;
-                    Treballador.Correu = tbEmail.Text;
+                    TreballadorDades Treballador = new TreballadorDades
+                    {
+                        Nom = tbNom.Text,
+                        Cognoms = tbCnom.Text,
+                        NIF = tbNIF.Text,
+                        Telefon = tbTel.Text,
+                        Correu = tbEmail.Text
+                    };
 
                     TreballadorServei TServei = new TreballadorServei();
                     String NIF = TNIF.NIF;
@@ -90,13 +91,15 @@ namespace ToDoList_WPF
         {
             if (tbNIF.Text != "" && tbNom.Text != "")
             {
-                TreballadorDades Treballador = new TreballadorDades();
+                TreballadorDades Treballador = new TreballadorDades
+                {
+                    Nom = tbNom.Text,
+                    Cognoms = tbCnom.Text,
+                    NIF = tbNIF.Text,
+                    Telefon = tbTel.Text,
+                    Correu = tbEmail.Text
+                };
 
-                Treballador.Nom = tbNom.Text;
-                Treballador.Cognoms = tbCnom.Text;
-                Treballador.NIF = tbNIF.Text;
-                Treballador.Telefon = tbTel.Text;
-                Treballador.Correu = tbEmail.Text;
                 TreballadorServei TServei = new TreballadorServei();
                 if (TServei.Add(Treballador) == 0)
                 {
