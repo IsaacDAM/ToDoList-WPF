@@ -6,9 +6,6 @@ using ToDoList_WPF.Servei;
 
 namespace ToDoList_WPF
 {
-    /// <summary>
-    /// Lógica de interacción para FinestraTreballadors.xaml
-    /// </summary>
     public partial class FinestraTreballadors : Window
     {
         public FinestraTreballadors()
