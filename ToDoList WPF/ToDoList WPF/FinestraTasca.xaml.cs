@@ -13,7 +13,7 @@ using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Servei;
 using ToDoList_WPF.Persistence;
 using System.Data.SQLite;
-
+using System.Linq;
 
 namespace ToDoList_WPF
 {
@@ -36,7 +36,7 @@ namespace ToDoList_WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {   
-            if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbPrioritats.SelectedItem != null)
+            if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbRepresentant.SelectedItem != null)
             {
                 TascaDades Tasca = new TascaDades();
                 if (tbCodi.Text != "")
@@ -95,7 +95,26 @@ namespace ToDoList_WPF
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             lbRepresentant.ItemsSource = TreballadorServei.GetAll();
-
+            if (this.DataContext != null)
+            {
+                int contador = 0;
+                bool trobat = false;
+                int i = 0;
+                List<TreballadorDades> Treballadors = TreballadorServei.GetAll().ToList();
+                while (contador < Treballadors.Count() && !trobat)
+                {
+                    if (Treballadors[i].Nom == ((TascaDades)this.DataContext).Representant)
+                    {
+                        lbRepresentant.SelectedIndex = contador;
+                        trobat = true;
+                    }
+                    else
+                    {
+                        contador++;
+                    }
+                    i++;
+                }
+            }            
         }
 
 
