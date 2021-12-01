@@ -121,9 +121,7 @@ namespace ToDoList_WPF
                 {
                     lbPrioritats.SelectedIndex = 2;
                 }
-            }            
+            }
         }
-
-
     }
 }
