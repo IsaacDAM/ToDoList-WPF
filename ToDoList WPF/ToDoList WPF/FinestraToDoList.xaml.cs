@@ -6,6 +6,8 @@ using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Persistence;
 using ToDoList_WPF.Servei;
 using System.Linq;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace ToDoList_WPF
 {
@@ -149,6 +151,67 @@ namespace ToDoList_WPF
             LlistaDoing.UnselectAll();
             LlistaDone.UnselectAll();
             ((ListBox)sender).SelectedItem = selected;
+        }
+        private void Llista_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            object Tasca = GetTascaFromListBox((ListBox)sender, e.GetPosition((ListBox)sender));
+
+            if (Tasca != null)
+            {
+                DragDrop.DoDragDrop((ListBox)sender, Tasca, DragDropEffects.Move);
+            }
+        }
+
+        private static object GetTascaFromListBox(ListBox source, Point point)
+        {
+            UIElement element = source.InputHitTest(point) as UIElement;
+            if (element != null)
+            {
+                object tasca = DependencyProperty.UnsetValue;
+                while (tasca == DependencyProperty.UnsetValue)
+                {
+                    tasca = source.ItemContainerGenerator.ItemFromContainer(element);
+
+                    if (tasca == DependencyProperty.UnsetValue)
+                    {
+                        element = VisualTreeHelper.GetParent(element) as UIElement;
+                    }
+
+                    if (element == source)
+                    {
+                        return null;
+                    }
+                }
+
+                if (tasca != DependencyProperty.UnsetValue)
+                {
+                    return tasca;
+                }
+            }
+
+            return null;
+        }
+
+        private void Llista_Drop(object sender, DragEventArgs e)
+        {
+            TascaServei TS = new TascaServei();
+            String nom = ((ListBox)sender).Name;
+            int codiTasca = ((TascaDades)e.Data.GetData(typeof(TascaDades))).Codi;
+            if(nom == "LlistaToDo")
+            {
+                TS.UpdateEstat(codiTasca, "ToDo");
+                ActualitzarTaula();
+            }
+            else if (nom == "LlistaDoing")
+            {
+                TS.UpdateEstat(codiTasca, "Doing");
+                ActualitzarTaula();
+            }
+            else
+            {
+                TS.UpdateEstat(codiTasca, "Done");
+                ActualitzarTaula();
+            }
         }
     }
 }
