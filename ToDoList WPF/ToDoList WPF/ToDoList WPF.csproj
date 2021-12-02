@@ -5,12 +5,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>ToDoList_WPF</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\logoToDo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Images\45048 %281%29.png" />
     <None Remove="Images\45048.png" />
     <None Remove="Images\greenDot.png" />
+    <None Remove="Images\logoToDo.ico" />
     <None Remove="Images\orangeDot.png" />
     <None Remove="Images\redDot.png" />
   </ItemGroup>
@@ -23,6 +25,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\greenDot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logoToDo.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\orangeDot.png">
