@@ -141,5 +141,14 @@ namespace ToDoList_WPF
                 ActualitzarTaula();
             }
         }
+
+        private void Llista_GotFocus(object sender, RoutedEventArgs e)
+        {
+            var selected = ((ListBox)sender).SelectedItem;
+            LlistaToDo.UnselectAll();
+            LlistaDoing.UnselectAll();
+            LlistaDone.UnselectAll();
+            ((ListBox)sender).SelectedItem = selected;
+        }
     }
 }
