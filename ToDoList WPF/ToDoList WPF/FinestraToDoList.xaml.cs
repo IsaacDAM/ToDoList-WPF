@@ -152,15 +152,6 @@ namespace ToDoList_WPF
             LlistaDone.UnselectAll();
             ((ListBox)sender).SelectedItem = selected;
         }
-        private void Llista_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            object Tasca = GetTascaFromListBox((ListBox)sender, e.GetPosition((ListBox)sender));
-
-            if (Tasca != null)
-            {
-                DragDrop.DoDragDrop((ListBox)sender, Tasca, DragDropEffects.Move);
-            }
-        }
 
         private static object GetTascaFromListBox(ListBox source, Point point)
         {
@@ -211,6 +202,16 @@ namespace ToDoList_WPF
             {
                 TS.UpdateEstat(codiTasca, "Done");
                 ActualitzarTaula();
+            }
+        }
+
+        private void Llista_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            object Tasca = GetTascaFromListBox((ListBox)sender, e.GetPosition((ListBox)sender));
+
+            if (Tasca != null)
+            {
+                DragDrop.DoDragDrop((ListBox)sender, Tasca, DragDropEffects.Move);
             }
         }
     }
