@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Servei;
 using System.Linq;
+using MongoDB.Bson;
 
 namespace ToDoList_WPF
 {
@@ -17,12 +18,13 @@ namespace ToDoList_WPF
         {
             InitializeComponent();
         }
-        public Finestra_Tasca(int entrada)
+        public Finestra_Tasca(ObjectId entrada)
         {
             InitializeComponent();
             TascaServei TS = new TascaServei();
             TascaDades Tasca = TS.Get(entrada);
             this.DataContext = Tasca;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -30,10 +32,6 @@ namespace ToDoList_WPF
             if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbRepresentant.SelectedItem != null)
             {
                 TascaDades Tasca = new TascaDades();
-                if (tbCodi.Text != "")
-                {
-                    Tasca.Codi = Int32.Parse(tbCodi.Text);
-                }
                 Tasca.Titol = tbTitol.Text;
                 Tasca.Descripcio = tbDescripcio.Text;
                 Tasca.dCreacio = (DateTime)tbDCreacio.SelectedDate;
@@ -65,16 +63,19 @@ namespace ToDoList_WPF
                 }
                 else
                 {
-                    TascaDades estat = ts.Get(Int32.Parse(tbCodi.Text));
+                    TascaDades estat = ts.Get(ObjectId.Parse(tbCodi.Text));
                     Tasca.Estat = estat.Estat;
+                    Tasca.Codi = ObjectId.Parse(tbCodi.Text);
                     ts.Update(Tasca);
                     Close();
+                    
                 }
             }
             else
             {
                 MessageBox.Show("S'han d'emplenar tots els camps.","Informació",MessageBoxButton.OK,MessageBoxImage.Information);
             }
+            
         }
 
 
@@ -84,6 +85,7 @@ namespace ToDoList_WPF
             lbRepresentant.ItemsSource = TreballadorServei.GetAll();
             if (this.DataContext != null)
             {
+                tbCodi.Text = ((TascaDades)this.DataContext).Codi.ToString();
                 int contador = 0;
                 bool trobat = false;
                 int i = 0;
@@ -117,6 +119,11 @@ namespace ToDoList_WPF
                 {
                     lbPrioritats.SelectedIndex = 2;
                 }
+            }
+            else
+            {
+                tbCodi.Text = "";
+
             }
         }
     }

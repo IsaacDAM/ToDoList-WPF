@@ -47,6 +47,7 @@ namespace ToDoList_WPF.Entitats
             this.Estat = estat;
         }
 
+        public TascaDades() { }
 
         public override string ToString()
         {

@@ -3,110 +3,57 @@ using System.Collections.Generic;
 using System.Text;
 using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Persistence;
-using System.Data.SQLite;
+using MongoDB;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
-namespace ToDoList_WPF.Servei
+namespace ToDoList_WPF.Servei 
 {
     class TreballadorServei
     {
         public static IEnumerable<TreballadorDades> GetAll()
         {
-            var result = new List<TreballadorDades>();
+            MongoServei MS = new MongoServei("Treballador");
+            List<TreballadorDades> result = MS.treballadorCollection.AsQueryable<TreballadorDades>().ToList();
 
-            using (var ctx = DbContext.GetInstance())
-            {
-                var query = "SELECT * FROM treballador";
-
-                using (var command = new SQLiteCommand(query, ctx))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            result.Add(new TreballadorDades
-                            {
-                                NIF = reader["NIF"].ToString(),
-                                Nom = reader["Nom"].ToString(),
-                                Cognoms = reader["Cognoms"].ToString(),
-                                Telefon = reader["Telefon"].ToString(),
-                                Correu = reader["Correu"].ToString(),
-                            });
-                        }
-                    }
-                }
-                return result;
-            }
+            return result;
         }
 
         public int Add(TreballadorDades treballador)
         {
-            int rows_afected = 0;
-            using (var ctx = DbContext.GetInstance())
-            { 
-                string query = "SELECT count(*) FROM treballador WHERE NIF = ?";
-                string query2 = "INSERT INTO treballador (NIF, nom, cognoms, telefon, correu) VALUES (?, ?, ?, ?, ?)";
-
-                using (var command = new SQLiteCommand(query, ctx))
-                {
-                    command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
-                    int dup = Convert.ToInt32(command.ExecuteScalar());
-                    if (dup == 0)
-                    {
-                        using (var command2 = new SQLiteCommand(query2, ctx))
-                        {
-                            command2.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
-                            command2.Parameters.Add(new SQLiteParameter("nom", treballador.Nom));
-                            command2.Parameters.Add(new SQLiteParameter("cognoms", treballador.Cognoms));
-                            command2.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
-                            command2.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
-
-                            rows_afected = command2.ExecuteNonQuery();
-                        }
-                    }
-                }
+            MongoServei MS = new MongoServei("Treballador");
+            if(MS.treballadorCollection.AsQueryable<TreballadorDades>().Where(t => t.NIF == treballador.NIF).ToList().Count == 0)
+            {
+                MS.treballadorCollection.InsertOne(treballador);
+                return 1;
             }
-            return rows_afected;
+            else
+            {
+                return 0;
+            }
         }
 
         public int Update(TreballadorDades treballador, String NIF)
         {
-            int rows_afected = 0;
-            using (var ctx = DbContext.GetInstance())
+            MongoServei MS = new MongoServei("Treballador");
+            if(MS.treballadorCollection.AsQueryable<TreballadorDades>().Where(t => t.NIF == treballador.NIF).ToList().Count == 0)
             {
-                string query = "UPDATE treballador SET NIF = ?, nom = ?, cognoms = ?, telefon = ?, correu = ? WHERE NIF = ?";
-                using (var command = new SQLiteCommand(query, ctx))
-                {
-                    command.Parameters.Add(new SQLiteParameter("nif", treballador.NIF));
-                    command.Parameters.Add(new SQLiteParameter("nom", treballador.Nom));
-                    command.Parameters.Add(new SQLiteParameter("cognoms", treballador.Cognoms));
-                    command.Parameters.Add(new SQLiteParameter("telefon", treballador.Telefon));
-                    command.Parameters.Add(new SQLiteParameter("correu", treballador.Correu));
-                    command.Parameters.Add(new SQLiteParameter("onif", NIF));
-                    try
-                    {
-                        rows_afected = command.ExecuteNonQuery();
-                    }
-                    catch (SQLiteException) { }
-                }
+                var filter = Builders<TreballadorDades>.Filter.Eq("nNIF", NIF);
+                MS.treballadorCollection.ReplaceOne(filter, treballador);
+                return 1;
             }
-            return rows_afected;
+            else
+            {
+                return 0;
+            }
         }
 
         public int Delete(TreballadorDades treballador)
         {
-            int rows_afected = 0;
-            using (var ctx = DbContext.GetInstance())
-            {
-                string query = "DELETE FROM treballador WHERE NIF = ?";
-                using (var command = new SQLiteCommand(query, ctx))
-                {
-                    command.Parameters.Add(new SQLiteParameter("NIF", treballador.NIF));
-                    rows_afected = command.ExecuteNonQuery();
-                }
-            }
-
-            return rows_afected;
+            MongoServei MS = new MongoServei("Treballador");
+            var result = MS.treballadorCollection.DeleteOne(t => t.NIF == treballador.NIF);
+            return (int)result.DeletedCount;
         }
-
     }
 }

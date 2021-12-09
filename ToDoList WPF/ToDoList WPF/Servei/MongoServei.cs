@@ -11,8 +11,8 @@ namespace ToDoList_WPF.Servei
     class MongoServei
     {
         private MongoClient mongoClient;
-        private IMongoCollection<TascaDades> tascaCollection;
-        private IMongoCollection<TreballadorDades> treballadorCollection;
+        public IMongoCollection<TascaDades> tascaCollection { get; set; }
+        public IMongoCollection<TreballadorDades> treballadorCollection { get; set; }
         public MongoServei(string collection)
         {
             mongoClient = new MongoClient("mongodb+srv://ToDoList:tdlpwd@cluster2021.pqnkq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
@@ -22,7 +22,7 @@ namespace ToDoList_WPF.Servei
                 treballadorCollection = database.GetCollection<TreballadorDades>(collection);
                 tascaCollection = null;
             }
-            else
+            else if(collection == "Tasca")
             {
                 tascaCollection = database.GetCollection<TascaDades>(collection);
                 treballadorCollection = null;

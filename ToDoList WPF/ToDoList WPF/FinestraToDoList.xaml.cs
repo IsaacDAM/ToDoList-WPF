@@ -8,6 +8,7 @@ using ToDoList_WPF.Servei;
 using System.Linq;
 using System.Windows.Input;
 using System.Windows.Media;
+using MongoDB.Bson;
 
 namespace ToDoList_WPF
 {
@@ -41,6 +42,7 @@ namespace ToDoList_WPF
 
         private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
         {
+            
             TascaDades Tasca = (TascaDades)LlistaToDo.SelectedItem;
             TascaServei TS = new TascaServei();
 
@@ -58,6 +60,7 @@ namespace ToDoList_WPF
 
         private void BotoRetornarToDo_Click(object sender, RoutedEventArgs e)
         {
+            
             TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
             TascaServei TS = new TascaServei();
 
@@ -70,9 +73,11 @@ namespace ToDoList_WPF
             {
                 MessageBox.Show("Selecciona un element de la llista", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            
         }
         private void BotoRetornarDoing_Click(object sender, RoutedEventArgs e)
         {
+            
             TascaDades Tasca = (TascaDades)LlistaDone.SelectedItem;
             TascaServei TS = new TascaServei();
 
@@ -85,10 +90,12 @@ namespace ToDoList_WPF
             {
                 MessageBox.Show("Selecciona un element de la llista", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            
         }
 
         private void BotoEnviarDone_Click(object sender, RoutedEventArgs e)
         {
+            
             TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
             TascaServei TS = new TascaServei();
 
@@ -101,6 +108,7 @@ namespace ToDoList_WPF
             {
                 MessageBox.Show("Selecciona un element de la llista", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            
         }
 
         private void ActualitzarTaula()
@@ -129,19 +137,21 @@ namespace ToDoList_WPF
 
         private void BotoModificar_Click(object sender, RoutedEventArgs e)
         {
-            Finestra_Tasca ftasca = new Finestra_Tasca((Int32)(sender as Button).Tag);
+            Finestra_Tasca ftasca = new Finestra_Tasca(ObjectId.Parse((sender as Button).Tag.ToString()));
             ftasca.ShowDialog();
             ActualitzarTaula();
         }
 
         private void BotoEliminar_Click(object sender, RoutedEventArgs e)
         {
+            
             if (MessageBox.Show("Vols eliminar la tasca?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 TascaServei TS = new TascaServei();
-                TS.Delete((Int32)(sender as Button).Tag);
+                TS.Delete(ObjectId.Parse((sender as Button).Tag.ToString()));
                 ActualitzarTaula();
             }
+            
         }
 
         private void Llista_GotFocus(object sender, RoutedEventArgs e)
@@ -185,9 +195,10 @@ namespace ToDoList_WPF
 
         private void Llista_Drop(object sender, DragEventArgs e)
         {
+            
             TascaServei TS = new TascaServei();
             String nom = ((ListBox)sender).Name;
-            int codiTasca = ((TascaDades)e.Data.GetData(typeof(TascaDades))).Codi;
+            ObjectId codiTasca = ((TascaDades)e.Data.GetData(typeof(TascaDades))).Codi;
             if(nom == "LlistaToDo")
             {
                 TS.UpdateEstat(codiTasca, "ToDo");
@@ -203,6 +214,7 @@ namespace ToDoList_WPF
                 TS.UpdateEstat(codiTasca, "Done");
                 ActualitzarTaula();
             }
+            
         }
 
         private void Llista_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -214,5 +226,6 @@ namespace ToDoList_WPF
                 DragDrop.DoDragDrop((ListBox)sender, Tasca, DragDropEffects.Move);
             }
         }
+        
     }
 }
