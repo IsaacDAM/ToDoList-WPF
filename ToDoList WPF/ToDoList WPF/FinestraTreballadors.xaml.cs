@@ -59,8 +59,10 @@ namespace ToDoList_WPF
             {
                 if (tbNIF.Text != "" && tbNom.Text != "")
                 {
+                    TreballadorDades MongoCodi = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
                     TreballadorDades Treballador = new TreballadorDades
                     {
+                        CodiT = MongoCodi.CodiT,
                         Nom = tbNom.Text,
                         Cognoms = tbCnom.Text,
                         NIF = tbNIF.Text,

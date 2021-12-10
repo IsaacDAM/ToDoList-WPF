@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
 using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Servei;
 using System.Linq;
@@ -9,9 +8,6 @@ using MongoDB.Bson;
 
 namespace ToDoList_WPF
 {
-    /// <summary>
-    /// Lógica de interacción para Finestra_Tasca.xaml
-    /// </summary>
     public partial class Finestra_Tasca : Window
     {
         public Finestra_Tasca()

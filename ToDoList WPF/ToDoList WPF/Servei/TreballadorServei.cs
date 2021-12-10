@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using ToDoList_WPF.Entitats;
-using ToDoList_WPF.Persistence;
-using MongoDB;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
-namespace ToDoList_WPF.Servei 
+namespace ToDoList_WPF.Servei
 {
     class TreballadorServei
     {
@@ -37,9 +33,9 @@ namespace ToDoList_WPF.Servei
         public int Update(TreballadorDades treballador, String NIF)
         {
             MongoServei MS = new MongoServei("Treballador");
-            if(MS.treballadorCollection.AsQueryable<TreballadorDades>().Where(t => t.NIF == treballador.NIF).ToList().Count == 0)
+            if(MS.treballadorCollection.AsQueryable<TreballadorDades>().Where(t => t.NIF == treballador.NIF).ToList().Count == 0 || treballador.NIF == NIF)
             {
-                var filter = Builders<TreballadorDades>.Filter.Eq("nNIF", NIF);
+                var filter = Builders<TreballadorDades>.Filter.Eq("nif", NIF);
                 MS.treballadorCollection.ReplaceOne(filter, treballador);
                 return 1;
             }

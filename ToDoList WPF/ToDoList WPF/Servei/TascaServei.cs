@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using ToDoList_WPF.Entitats;
-using ToDoList_WPF.Persistence;
-using System.Data.SQLite;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using System.Linq;

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using ToDoList_WPF.Entitats;
-using ToDoList_WPF.Persistence;
 using ToDoList_WPF.Servei;
 using System.Linq;
 using System.Windows.Input;
@@ -35,9 +34,7 @@ namespace ToDoList_WPF
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            DbContext.Up();
             ActualitzarTaula();
-            
         }
 
         private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
