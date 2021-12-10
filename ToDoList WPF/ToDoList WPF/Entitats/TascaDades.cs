@@ -22,9 +22,11 @@ namespace ToDoList_WPF.Entitats
         public String Descripcio { get; set; }
 
         [BsonElement("dcreacio")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime dCreacio { get; set; }
 
         [BsonElement("dfinalitzacio")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime dFinalitzacio { get; set; }
 
         [BsonElement("prioritat")]
@@ -51,7 +53,7 @@ namespace ToDoList_WPF.Entitats
 
         public override string ToString()
         {
-            return string.Format ("id: {0}\ntitol: {1}\ndescripcio: {2}\ndcreacio: {3}\ndfinalitzacio: {4}\nprioritat: {5}\nrepresentant: {6}\nestat: {7}\n", this.Codi, this.Titol, this.dCreacio, this.dFinalitzacio, this.Prioritat, this.Representant, this.Estat);
+            return string.Format ("id: {0}\ntitol: {1}\ndescripcio: {2}\ndcreacio: {3}\ndfinalitzacio: {4}\nprioritat: {5}\nrepresentant: {6}\nestat: {7}\n", this.Codi, this.Titol, this.Descripcio, this.dCreacio.Date, this.dFinalitzacio.Date, this.Prioritat, this.Representant, this.Estat);
         }
 
 
