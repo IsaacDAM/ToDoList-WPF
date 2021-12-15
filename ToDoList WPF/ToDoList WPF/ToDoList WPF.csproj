@@ -12,6 +12,8 @@
     <None Remove="Images\45048 %281%29.png" />
     <None Remove="Images\45048.png" />
     <None Remove="Images\btn_reload.png" />
+    <None Remove="Images\btn_tasca.png" />
+    <None Remove="Images\btn_treballador.png" />
     <None Remove="Images\greenDot.png" />
     <None Remove="Images\logoToDo.ico" />
     <None Remove="Images\orangeDot.png" />
@@ -23,6 +25,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\45048.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\btn_tasca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\btn_treballador.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\greenDot.png">
