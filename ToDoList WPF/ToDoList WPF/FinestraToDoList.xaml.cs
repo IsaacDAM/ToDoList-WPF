@@ -223,6 +223,10 @@ namespace ToDoList_WPF
                 DragDrop.DoDragDrop((ListBox)sender, Tasca, DragDropEffects.Move);
             }
         }
-        
+
+        private void BotoActualitzar_Click(object sender, RoutedEventArgs e)
+        {
+            ActualitzarTaula();
+        }
     }
 }

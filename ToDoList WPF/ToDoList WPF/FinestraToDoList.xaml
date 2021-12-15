@@ -27,8 +27,16 @@
             <RowDefinition Height="250*"/>
             <RowDefinition Height="54*" />
         </Grid.RowDefinitions>
-        <Button Grid.Row="5" Grid.Column="4" x:Name="BotoAfegirTasca" Content="Afegir Tasca"  Margin="28,15,29,10"  Click="BotoAfegirTasca_Click"/>
-        <Button Grid.Row="5" Grid.Column="1" x:Name="BotoTreballadors" Content="Treballadors"  Margin="28,15,29,10"  Click="BotoTreballadors_Click"/>
+        <Button Grid.Row="5" Grid.Column="4" x:Name="BotoAfegirTasca" Content="Afegir Tasca"  Margin="28,15,28,10"  Click="BotoAfegirTasca_Click"/>
+        <Button Grid.Row="5" Grid.Column="1" x:Name="BotoTreballadors" Content="Treballadors"  Margin="28,15,28,10"  Click="BotoTreballadors_Click"/>
+        <Button Grid.Row="5" Grid.Column="7" x:Name="BotoActualitzar" Margin="28,15,28,10" Click="BotoActualitzar_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images\btn_reload.png"  Height="20" Width="20" Stretch="Fill" />
+                <TextBlock VerticalAlignment="Center" Margin="20,0,0,0">Actualitzar</TextBlock>
+               
+                
+            </StackPanel>
+        </Button>
         <Button Grid.Row="3" Grid.Column="2" Name="BotoRetornarToDo" Click="BotoRetornarToDo_Click">
             <Image Source="Images\45048 (1).png"/>
         </Button>
