@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -57,7 +65,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\Setup.msi"
+        "OutputFilename" = "8:Release\\Setup ToDoList.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -191,7 +199,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ToDoList WPF"
         "ProductCode" = "8:{B38677BB-2FB2-4ADE-A67F-579F827E72C3}"
-        "PackageCode" = "8:{71D8EA50-F79C-4F9C-93AD-46802D189562}"
+        "PackageCode" = "8:{B4E690BF-3CDA-4A1B-B127-97B75050B50C}"
         "UpgradeCode" = "8:{295072BF-B50D-43A1-B805-560A3BFD9DBC}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -199,12 +207,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Adrià"
+        "Manufacturer" = "8:AdriaIsaacGuillem"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Adrià"
+        "ARPCONTACT" = "8:AdriaIsaacGuillem"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Instal·lador ToDoList WPF"
         "ARPURLINFOABOUT" = "8:"
