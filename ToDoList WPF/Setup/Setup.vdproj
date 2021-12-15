@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_55B5F000108243CB877B983728EDAFBC"
+        "MsmKey" = "8:_1937BBC822F54168B1DA5CF82840B4FB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -76,6 +100,16 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_70C3DCFDDF254087A730F3F0A5CB77DF"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
+                }
             }
         }
         "File"
@@ -157,7 +191,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ToDoList WPF"
         "ProductCode" = "8:{B38677BB-2FB2-4ADE-A67F-579F827E72C3}"
-        "PackageCode" = "8:{A6F96A05-2128-41B9-9C4A-6EBA20810993}"
+        "PackageCode" = "8:{71D8EA50-F79C-4F9C-93AD-46802D189562}"
         "UpgradeCode" = "8:{295072BF-B50D-43A1-B805-560A3BFD9DBC}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -277,17 +311,17 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EA1D4D6AFAA2440B841768C8A7C13ACF"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_74DF1C9DCEFF426DB850FAB706BD0B21"
             {
-            "Name" = "8:ToDoList WPF"
+            "Name" = "8:ToDoListWPF"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_55B5F000108243CB877B983728EDAFBC"
+            "Target" = "8:_1937BBC822F54168B1DA5CF82840B4FB"
             "Folder" = "8:_4D4E2D3B47734324AC1BBECA206FE6FD"
-            "WorkingFolder" = "8:_4D4E2D3B47734324AC1BBECA206FE6FD"
+            "WorkingFolder" = "8:_A691655200F4422DB022F54CABBE9090"
             "Icon" = "8:_F0ACF1ADE4C2481E955D564DDD3BCB1B"
             "Feature" = "8:"
             }
@@ -690,9 +724,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_55B5F000108243CB877B983728EDAFBC"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1937BBC822F54168B1DA5CF82840B4FB"
             {
-            "SourcePath" = "8:..\\ToDoList WPF\\obj\\Debug\\netcoreapp3.1\\ToDoList WPF.dll"
+            "SourcePath" = "8:..\\ToDoList WPF\\obj\\Release\\netcoreapp3.1\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A691655200F4422DB022F54CABBE9090"
@@ -711,7 +745,7 @@
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
+            "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{13F2BAE6-F0AF-47C5-BBAF-4A82DDB78CF1}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
