@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
         Title="Treballadors" Height="300" Width="500" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
-    <Grid>
+    <Grid  Style="{StaticResource FormBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="35*"/>

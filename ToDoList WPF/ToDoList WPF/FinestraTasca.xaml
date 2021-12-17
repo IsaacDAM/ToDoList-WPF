@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Tasca" Height="450" Width="800" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
 
-    <Grid>
+    <Grid  Style="{StaticResource FormBackground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="4*" />

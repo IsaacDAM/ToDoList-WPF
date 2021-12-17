@@ -7,7 +7,19 @@
         xmlns:local="clr-namespace:ToDoList_WPF"
         mc:Ignorable="d"
         Title="To Do List" Height="650" Width="1000" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="ListBox">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD9D9D9" Offset="1"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{StaticResource FormBackground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*" />
             <ColumnDefinition Width="291*"/>

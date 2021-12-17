@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1937BBC822F54168B1DA5CF82840B4FB"
+        "MsmKey" = "8:_23C91038BF1B4C7EB95D8530E3E16719"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -199,7 +199,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ToDoList WPF"
         "ProductCode" = "8:{B38677BB-2FB2-4ADE-A67F-579F827E72C3}"
-        "PackageCode" = "8:{B4E690BF-3CDA-4A1B-B127-97B75050B50C}"
+        "PackageCode" = "8:{163132AE-D076-4AE5-9A0A-442ED4F38E14}"
         "UpgradeCode" = "8:{295072BF-B50D-43A1-B805-560A3BFD9DBC}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -319,15 +319,15 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_74DF1C9DCEFF426DB850FAB706BD0B21"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D642F95537C54F67B34747286F273F1B"
             {
-            "Name" = "8:ToDoListWPF"
+            "Name" = "8:ToDoList WPF"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1937BBC822F54168B1DA5CF82840B4FB"
+            "Target" = "8:_23C91038BF1B4C7EB95D8530E3E16719"
             "Folder" = "8:_4D4E2D3B47734324AC1BBECA206FE6FD"
             "WorkingFolder" = "8:_A691655200F4422DB022F54CABBE9090"
             "Icon" = "8:_F0ACF1ADE4C2481E955D564DDD3BCB1B"
@@ -732,7 +732,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1937BBC822F54168B1DA5CF82840B4FB"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_23C91038BF1B4C7EB95D8530E3E16719"
             {
             "SourcePath" = "8:..\\ToDoList WPF\\obj\\Release\\netcoreapp3.1\\apphost.exe"
             "TargetName" = "8:"
