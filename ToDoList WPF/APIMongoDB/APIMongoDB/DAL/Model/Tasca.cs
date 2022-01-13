@@ -33,7 +33,7 @@ namespace APIMongoDB.DAL.Model
         [BsonElement("estat")]
         public String Estat { get; set; }
 
-        public TascaDades(string titol, string descripcio, DateTime dcreacio, DateTime dfinalitzacio, string prioritat, string representant, string estat)
+        public Tasca(string titol, string descripcio, DateTime dcreacio, DateTime dfinalitzacio, string prioritat, string representant, string estat)
         {
             this.Titol = titol;
             this.Descripcio = descripcio;
@@ -44,7 +44,7 @@ namespace APIMongoDB.DAL.Model
             this.Estat = estat;
         }
 
-        public TascaDades() { }
+        public Tasca() { }
 
         public override string ToString()
         {

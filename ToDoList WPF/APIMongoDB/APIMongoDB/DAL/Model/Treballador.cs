@@ -25,7 +25,7 @@ namespace APIMongoDB.DAL.Model
         public String Correu { get; set; }
 
 
-        public TreballadorDades(string nif, string nom, string cognoms, string telefon, string correu)
+        public Treballador(string nif, string nom, string cognoms, string telefon, string correu)
         {
             this.NIF = nif;
             this.Nom = nom;
@@ -35,7 +35,7 @@ namespace APIMongoDB.DAL.Model
 
         }
 
-        public TreballadorDades() { }
+        public Treballador() { }
 
         public override string ToString()
         {
