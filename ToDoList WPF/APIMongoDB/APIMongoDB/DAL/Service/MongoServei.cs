@@ -16,6 +16,7 @@ namespace APIMongoDB.DAL.Service
         {
             mongoClient = new MongoClient("mongodb+srv://ToDoList:tdlpwd@cluster2021.pqnkq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             var database = mongoClient.GetDatabase("ToDoList");
+            //Diferenciació de clases.
             if (collection == "Treballador")
             {
                 treballadorCollection = database.GetCollection<Treballador>(collection);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using APIMongoDB.DAL.Model;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
@@ -45,11 +46,25 @@ namespace APIMongoDB.DAL.Service
             }
         }
 
-        public int Delete(Treballador treballador)
+        public int Delete(String tnif)
         {
             MongoServei MS = new MongoServei("Treballador");
-            var result = MS.treballadorCollection.DeleteOne(t => t.NIF == treballador.NIF);
+            var result = MS.treballadorCollection.DeleteOne(t => t.NIF == tnif);
             return (int)result.DeletedCount;
+        }
+
+        public Treballador Get(String tnif)
+        {
+            MongoServei MS = new MongoServei("Treballador");
+            List<Treballador> result = MS.treballadorCollection.AsQueryable().Where(t => t.NIF == tnif).ToList();
+            try
+            {
+                return result[0];
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }
