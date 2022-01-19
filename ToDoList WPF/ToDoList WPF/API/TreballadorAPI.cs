@@ -16,6 +16,7 @@ namespace ToDoList_WPF.API
         public TreballadorAPI()
         {
             BaseUri = ConfigurationManager.AppSettings["BaseUri"];
+            //BaseUri = "https://localhost:44374/api/";
         }
 
         //GET tots els treballadors

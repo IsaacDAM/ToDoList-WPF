@@ -26,7 +26,16 @@ namespace ToDoList_WPF
             {
                 TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
                 TreballadorAPI TAPI = new TreballadorAPI();
-                await TAPI.DeleteAsync(Treballador.NIF);
+                try
+                {
+                    await TAPI.DeleteAsync(Treballador.NIF);
+                    MessageBox.Show("S'ha eliminat el treballador correctament.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar treballador: " + ex, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
 
                 LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
             }
