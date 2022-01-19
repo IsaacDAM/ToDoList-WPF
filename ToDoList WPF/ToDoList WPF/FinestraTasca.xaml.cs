@@ -18,11 +18,11 @@ namespace ToDoList_WPF
         }
         public Finestra_Tasca(String Titol)
         {
-            InitializeComponent();
             TascaAPI TAPI = new TascaAPI();
             GetTasca(Titol);
             TascaDades Tasca = TascaInicial;
-            this.DataContext = Tasca; 
+            this.DataContext = Tasca;
+            InitializeComponent();
         }
         private async void GetTasca(String Titol)
         {

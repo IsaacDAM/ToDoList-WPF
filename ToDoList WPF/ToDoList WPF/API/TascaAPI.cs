@@ -79,7 +79,7 @@ namespace ToDoList_WPF.API
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                //Enviem petició DELETE a /treballador/Id
+                //Enviem petició DELETE a /tasca/id
                 HttpResponseMessage response = await client.DeleteAsync($"tasca/{id}");
                 response.EnsureSuccessStatusCode();
             }
