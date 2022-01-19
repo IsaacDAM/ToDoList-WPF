@@ -43,17 +43,17 @@ namespace ToDoList_WPF.Servei
         }
         
 
-        public int Delete(ObjectId Codi)
+        public int Delete(String Titol)
         {
             MongoServei MS = new MongoServei("Tasca");
-            var result = MS.tascaCollection.DeleteOne(t => t.Codi == Codi);
+            var result = MS.tascaCollection.DeleteOne(t => t.Titol == Titol);
             return (int)result.DeletedCount;
         }
 
-        public TascaDades Get(ObjectId Codi)
+        public TascaDades Get(String Titol)
         {
             MongoServei MS = new MongoServei("Tasca");
-            List<TascaDades> result = MS.tascaCollection.AsQueryable().Where(t => t.Codi == Codi).ToList();
+            List<TascaDades> result = MS.tascaCollection.AsQueryable().Where(t => t.Titol == Titol).ToList();
             return result[0];
         }
 

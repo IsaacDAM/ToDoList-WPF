@@ -97,8 +97,8 @@
                                 <TreeViewItem Header="{Binding Prioritat}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Representant}" FontSize="13"></TreeViewItem>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Name="BotoModificar" Tag="{Binding Codi}" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
-                                    <Button Name="BotoEliminar" Tag="{Binding Codi}" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
+                                    <Button Name="BotoModificar" Tag="{Binding Titol}" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
+                                    <Button Name="BotoEliminar" Tag="{Binding Titol}" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
                                 </StackPanel>
                             </TreeViewItem>
                         </TreeView>
