@@ -17,6 +17,8 @@ namespace ToDoList_WPF
 
         private async void BotoEliminar_Click(object sender, RoutedEventArgs e)
         {
+            TreballadorAPI TAPI = new TreballadorAPI();
+
             TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
             if (TNIF == null)
             {
@@ -25,7 +27,6 @@ namespace ToDoList_WPF
             else if (MessageBox.Show("Vols eliminar al treballador?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
-                TreballadorAPI TAPI = new TreballadorAPI();
                 try
                 {
                     await TAPI.DeleteAsync(Treballador.NIF);
@@ -36,8 +37,7 @@ namespace ToDoList_WPF
                     MessageBox.Show("Error al eliminar treballador: " + ex, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 
-
-                LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+                LlistaDeTreballadors.ItemsSource = await TAPI.GetTreballadorsAsync();
             }
         }
 
@@ -54,9 +54,10 @@ namespace ToDoList_WPF
             }    
         }
 
-        private void Window_ContentRendered(object sender, EventArgs e)
+        private async void Window_ContentRendered(object sender, EventArgs e)
         {
-            LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+            TreballadorAPI TAPI = new TreballadorAPI();
+            LlistaDeTreballadors.ItemsSource = await TAPI.GetTreballadorsAsync();
         }
 
         private void BotoModificar_Click(object sender, RoutedEventArgs e)
