@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Input;
 using System.Windows.Media;
 using MongoDB.Bson;
+using ToDoList_WPF.API;
 
 namespace ToDoList_WPF
 {
@@ -134,18 +135,19 @@ namespace ToDoList_WPF
 
         private void BotoModificar_Click(object sender, RoutedEventArgs e)
         {
-            Finestra_Tasca ftasca = new Finestra_Tasca(ObjectId.Parse((sender as Button).Tag.ToString()));
+            TascaAPI TAPI = new TascaAPI();
+            Finestra_Tasca ftasca = new Finestra_Tasca((sender as Button).Tag.ToString());
             ftasca.ShowDialog();
             ActualitzarTaula();
         }
 
-        private void BotoEliminar_Click(object sender, RoutedEventArgs e)
+        private async void BotoEliminar_Click(object sender, RoutedEventArgs e)
         {
             
             if (MessageBox.Show("Vols eliminar la tasca?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                TascaServei TS = new TascaServei();
-                TS.Delete(ObjectId.Parse((sender as Button).Tag.ToString()));
+                TascaAPI TAPI = new TascaAPI();
+                await TAPI.DeleteAsync((sender as Button).Tag.ToString());
                 ActualitzarTaula();
             }
             

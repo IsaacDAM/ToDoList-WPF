@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using ToDoList_WPF.Entitats;
 using ToDoList_WPF.Servei;
+using ToDoList_WPF.API;
 using System.Linq;
 using MongoDB.Bson;
 
@@ -10,20 +11,26 @@ namespace ToDoList_WPF
 {
     public partial class Finestra_Tasca : Window
     {
+        TascaDades TascaInicial = new TascaDades();
         public Finestra_Tasca()
         {
             InitializeComponent();
         }
-        public Finestra_Tasca(ObjectId entrada)
+        public Finestra_Tasca(String Titol)
         {
             InitializeComponent();
-            TascaServei TS = new TascaServei();
-            TascaDades Tasca = TS.Get(entrada);
-            this.DataContext = Tasca;
-            
+            TascaAPI TAPI = new TascaAPI();
+            GetTasca(Titol);
+            TascaDades Tasca = TascaInicial;
+            this.DataContext = Tasca; 
+        }
+        private async void GetTasca(String Titol)
+        {
+            TascaAPI TAPI = new TascaAPI();
+            TascaInicial = await TAPI.GetTascaAsync(Titol);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {   
             if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbRepresentant.SelectedItem != null)
             {
@@ -48,21 +55,20 @@ namespace ToDoList_WPF
                 TreballadorDades t1 = (TreballadorDades)lbRepresentant.SelectedItem;
                 Tasca.Representant = t1.Nom;
 
-                TascaServei ts = new TascaServei();
+                TascaAPI TAPI = new TascaAPI();
 
                 if (tbCodi.Text == "")
                 {
 
                     Tasca.Estat = "ToDo";
-                    ts.Add(Tasca);
+                    await TAPI.AddAsync(Tasca);
                     Close();
                 }
                 else
                 {
-                    TascaDades estat = ts.Get(ObjectId.Parse(tbCodi.Text));
-                    Tasca.Estat = estat.Estat;
+                    Tasca.Estat = TascaInicial.Estat;
                     Tasca.Codi = ObjectId.Parse(tbCodi.Text);
-                    ts.Update(Tasca);
+                    await TAPI.UpdateAsync(Tasca,TascaInicial.Titol);
                     Close();
                     
                 }
