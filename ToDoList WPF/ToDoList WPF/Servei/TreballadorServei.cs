@@ -12,10 +12,8 @@ namespace ToDoList_WPF.Servei
         {
             MongoServei MS = new MongoServei("Treballador");
             List<TreballadorDades> result = MS.treballadorCollection.AsQueryable<TreballadorDades>().ToList();
-
             return result;
         }
-
         public int Add(TreballadorDades treballador)
         {
             MongoServei MS = new MongoServei("Treballador");
@@ -29,7 +27,6 @@ namespace ToDoList_WPF.Servei
                 return 0;
             }
         }
-
         public int Update(TreballadorDades treballador, String NIF)
         {
             MongoServei MS = new MongoServei("Treballador");
@@ -44,7 +41,6 @@ namespace ToDoList_WPF.Servei
                 return 0;
             }
         }
-
         public int Delete(TreballadorDades treballador)
         {
             MongoServei MS = new MongoServei("Treballador");

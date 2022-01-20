@@ -86,8 +86,8 @@ namespace ToDoList_WPF.API
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                //Enviem petició DELETE a /treballador/Id
-                HttpResponseMessage response = await client.DeleteAsync($"tasca/{Id}");
+                //Enviem petició DELETE a /tasca/id
+                HttpResponseMessage response = await client.DeleteAsync($"tasca/{id}");
                 response.EnsureSuccessStatusCode();
             }
         }
@@ -96,13 +96,11 @@ namespace ToDoList_WPF.API
         {
             Id = Id.Replace(" ", "_");
             TascaDades tasca = new TascaDades();
-
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUri);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                 //Enviem petició GET a /tasca/(Titol de la tasca).
                 HttpResponseMessage response = await client.GetAsync($"tasca/{Id}");
                 if (response.IsSuccessStatusCode)
