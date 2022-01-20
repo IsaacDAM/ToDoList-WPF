@@ -7,7 +7,9 @@ namespace APIMongoDB.DAL.Model
     public class Treballador
     {
         [BsonId]
-        public ObjectId CodiT { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public String _id { get; set; }
+
 
         [BsonElement("nif")]
         public String NIF { get; set; }
@@ -37,9 +39,9 @@ namespace APIMongoDB.DAL.Model
 
         public Treballador() { }
 
-        public override string ToString()
+        /*public override string ToString()
         {
             return String.Format("id: {0}\nNIF: {1}\nnom: {2}\ncognoms: {3}\ntelefon: {4}\ncorreu: {5}\n", this.CodiT, this.NIF, this.Nom, this.Cognoms, this.Telefon, this.Correu);
-        }
+        }*/
     }
 }

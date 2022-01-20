@@ -33,27 +33,27 @@ namespace APIMongoDB.DAL.Service
             return 1;
         }
 
-        public int UpdateEstat(ObjectId codi, string estat)
+        public int UpdateEstat(string titol, string estat)
         {
             MongoServei MS = new MongoServei("Tasca");
-            var filter = Builders<Tasca>.Filter.Eq("Codi", codi);
+            var filter = Builders<Tasca>.Filter.Eq("Titol", titol);
             var update = Builders<Tasca>.Update.Set("estat", estat);
             MS.tascaCollection.UpdateOne(filter, update);
             return 1;
         }
 
 
-        public int Delete(ObjectId Codi)
+        public int Delete(string titol)
         {
             MongoServei MS = new MongoServei("Tasca");
-            var result = MS.tascaCollection.DeleteOne(t => t.Codi == Codi);
+            var result = MS.tascaCollection.DeleteOne(t => t.Titol == titol);
             return (int)result.DeletedCount;
         }
 
-        public Tasca Get(ObjectId Codi)
+        public Tasca Get(string titol)
         {
             MongoServei MS = new MongoServei("Tasca");
-            List<Tasca> result = MS.tascaCollection.AsQueryable().Where(t => t.Codi == Codi).ToList();
+            List<Tasca> result = MS.tascaCollection.AsQueryable().Where(t => t.Titol == titol).ToList();
             return result[0];
         }
     }

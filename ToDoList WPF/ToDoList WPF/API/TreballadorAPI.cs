@@ -47,7 +47,7 @@ namespace ToDoList_WPF.API
         }
 
         //GET un treballador
-        public async Task<TreballadorDades> GetTreballadorAsync(int Id)
+        public async Task<TreballadorDades> GetTreballadorAsync(String Id)
         {
             TreballadorDades treballador = new TreballadorDades();
 
@@ -58,7 +58,7 @@ namespace ToDoList_WPF.API
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Enviem petició GET a /treballador/(dni del treballador).
-                HttpResponseMessage response = await client.GetAsync($"users/{Id}");
+                HttpResponseMessage response = await client.GetAsync($"treballador/{Id}");
                 if (response.IsSuccessStatusCode)
                 {
                     //Reposta 204 quan no ha trobat dades

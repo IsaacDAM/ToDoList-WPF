@@ -13,22 +13,22 @@ namespace APIMongoDB.Controllers
     [ApiController]
     public class TascaController
     {
-        // GET: users
+        // GET tasques
         [HttpGet]
         public List<Tasca> Get()
         {
             return TascaServei.GetAll().ToList();
         }
 
-        // GET users/5
+        // GET tasca
         [HttpGet("{id}")]
-        public Tasca Get(ObjectId id)
+        public Tasca Get(string id)
         {
             TascaServei ts = new TascaServei();
             return ts.Get(id);
         }
 
-        // POST users
+        // POST tasca
         [HttpPost]
         public void Post([FromBody] Tasca tasca)
         {
@@ -36,7 +36,7 @@ namespace APIMongoDB.Controllers
             ts.Add(tasca);
         }
 
-        // PUT users/5
+        // PUT tasca
         [HttpPut]
         public void Put(Tasca tasca, String titol)
         {
@@ -44,10 +44,10 @@ namespace APIMongoDB.Controllers
             ts.Update(tasca,titol);
         }
 
-        // DELETE users/5
+        // DELETE tasca
         [HttpDelete("{id}")]
 
-        public void Delete(ObjectId id)
+        public void Delete(string id)
         {
             TascaServei ts = new TascaServei();
             ts.Delete(id);

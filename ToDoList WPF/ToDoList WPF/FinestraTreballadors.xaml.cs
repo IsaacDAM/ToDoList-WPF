@@ -60,7 +60,7 @@ namespace ToDoList_WPF
             LlistaDeTreballadors.ItemsSource = await TAPI.GetTreballadorsAsync();
         }
 
-        private void BotoModificar_Click(object sender, RoutedEventArgs e)
+        private async void BotoModificar_Click(object sender, RoutedEventArgs e)
         {
             TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
             if(TNIF == null)
@@ -74,7 +74,7 @@ namespace ToDoList_WPF
                     TreballadorDades MongoCodi = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
                     TreballadorDades Treballador = new TreballadorDades
                     {
-                        CodiT = MongoCodi.CodiT,
+                        _id = MongoCodi._id,
                         Nom = tbNom.Text,
                         Cognoms = tbCnom.Text,
                         NIF = tbNIF.Text,
@@ -82,16 +82,17 @@ namespace ToDoList_WPF
                         Correu = tbEmail.Text
                     };
 
-                    TreballadorServei TServei = new TreballadorServei();
+                    TreballadorAPI TAPI = new TreballadorAPI();
                     String NIF = TNIF.NIF;
-
-                    if (TServei.Update(Treballador, NIF) == 0)
+                    TreballadorDades tempt = await TAPI.GetTreballadorAsync(Treballador.NIF);
+                    if (tempt != null && tempt._id != Treballador._id)
                     {
                         MessageBox.Show("Ja existeix un treballador amb aquest NIF.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {
-                        LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+                        await TAPI.UpdateAsync(Treballador, TNIF.NIF);
+                        LlistaDeTreballadors.ItemsSource = await TAPI.GetTreballadorsAsync();
                     }
                 }
                 else
@@ -101,8 +102,9 @@ namespace ToDoList_WPF
             }
         }
 
-        private void BotoAfegir_Click(object sender, RoutedEventArgs e)
+        private async void BotoAfegir_Click(object sender, RoutedEventArgs e)
         {
+            TreballadorAPI TAPI = new TreballadorAPI();
             if (tbNIF.Text != "" && tbNom.Text != "")
             {
                 TreballadorDades Treballador = new TreballadorDades
@@ -114,13 +116,13 @@ namespace ToDoList_WPF
                     Correu = tbEmail.Text
                 };
 
-                TreballadorServei TServei = new TreballadorServei();
-                if (TServei.Add(Treballador) == 0)
+                if (await TAPI.GetTreballadorAsync(Treballador.NIF) != null)
                 {
                     MessageBox.Show("Ja existeix un treballador amb aquest NIF.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
+                    await TAPI.AddAsync(Treballador);
                     LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
                 }
             }
