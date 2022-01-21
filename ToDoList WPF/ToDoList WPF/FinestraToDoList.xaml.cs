@@ -47,7 +47,7 @@ namespace ToDoList_WPF
             if (LlistaToDo.SelectedItem != null)
             {
                 Tasca.Estat = "Doing";
-                await TAPI.UpdateAsync(Tasca, Tasca._id);
+                await TAPI.UpdateAsync(Tasca);
                 ActualitzarTaula();
             }
             else
@@ -66,7 +66,7 @@ namespace ToDoList_WPF
             if (LlistaDoing.SelectedItem != null)
             {
                 Tasca.Estat = "ToDo";
-                await TAPI.UpdateAsync(Tasca, Tasca._id);
+                await TAPI.UpdateAsync(Tasca);
                 ActualitzarTaula();
             }
             else
@@ -84,7 +84,7 @@ namespace ToDoList_WPF
             if (LlistaDone.SelectedItem != null)
             {
                 Tasca.Estat = "Doing";
-                await TAPI.UpdateAsync(Tasca, Tasca._id);
+                await TAPI.UpdateAsync(Tasca);
                 ActualitzarTaula();
             }
             else
@@ -103,7 +103,7 @@ namespace ToDoList_WPF
             if (LlistaDoing.SelectedItem != null)
             {
                 Tasca.Estat = "Done";
-                await TAPI.UpdateAsync(Tasca, Tasca._id);
+                await TAPI.UpdateAsync(Tasca);
                 ActualitzarTaula();
             }
             else
@@ -205,19 +205,19 @@ namespace ToDoList_WPF
             if(nom == "LlistaToDo")
             {
                 Tasca.Estat = "ToDo";
-                await TAPI.UpdateAsync(Tasca, Tasca._id);
+                await TAPI.UpdateAsync(Tasca);
                 ActualitzarTaula();
             }
             else if (nom == "LlistaDoing")
             {
                 Tasca.Estat = "Doing";
-                await TAPI.UpdateAsync(Tasca, Tasca._id);
+                await TAPI.UpdateAsync(Tasca);
                 ActualitzarTaula();
             }
             else
             {
                 Tasca.Estat = "Done";
-                await TAPI.UpdateAsync(Tasca, Tasca._id);
+                await TAPI.UpdateAsync(Tasca);
                 ActualitzarTaula();
             }
             
