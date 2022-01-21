@@ -81,16 +81,17 @@ namespace ToDoList_WPF
 
 
 
-        private void Window_ContentRendered(object sender, EventArgs e)
+        private async void Window_ContentRendered(object sender, EventArgs e)
         {
             lbRepresentant.ItemsSource = TreballadorServei.GetAll();
             if (this.DataContext != null)
             {
+                TreballadorAPI TAPI = new TreballadorAPI();
                 tbCodi.Text = ((TascaDades)this.DataContext)._id;
                 int contador = 0;
                 bool trobat = false;
                 int i = 0;
-                List<TreballadorDades> Treballadors = TreballadorServei.GetAll().ToList();
+                List<TreballadorDades> Treballadors = await TAPI.GetTreballadorsAsync();
                 while (contador < Treballadors.Count() && !trobat)
                 {
                     if (Treballadors[i].Nom == ((TascaDades)this.DataContext).Representant)
