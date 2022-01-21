@@ -123,7 +123,7 @@ namespace ToDoList_WPF
                 else
                 {
                     await TAPI.AddAsync(Treballador);
-                    LlistaDeTreballadors.ItemsSource = TreballadorServei.GetAll();
+                    LlistaDeTreballadors.ItemsSource = await TAPI.GetTreballadorsAsync();
                 }
             }
             else
