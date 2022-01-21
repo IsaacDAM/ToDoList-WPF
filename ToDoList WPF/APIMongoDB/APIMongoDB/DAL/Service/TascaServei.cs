@@ -25,10 +25,10 @@ namespace APIMongoDB.DAL.Service
             return 1;
         }
 
-        public int Update(Tasca tasca, String id)
+        public int Update(Tasca tasca)
         {
             MongoServei MS = new MongoServei("Tasca");
-            var filter = Builders<Tasca>.Filter.Eq("_id", id);
+            var filter = Builders<Tasca>.Filter.Eq("_id", tasca._id);
             MS.tascaCollection.ReplaceOne(filter, tasca);
             return 1;
         }
