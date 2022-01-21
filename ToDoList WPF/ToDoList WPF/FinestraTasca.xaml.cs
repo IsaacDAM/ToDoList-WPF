@@ -20,14 +20,13 @@ namespace ToDoList_WPF
         {
             TascaAPI TAPI = new TascaAPI();
             GetTasca(id);
-            TascaDades Tasca = TascaInicial;
-            this.DataContext = Tasca;
-            InitializeComponent();
         }
-        private async void GetTasca(String id)
+        private async void GetTasca(string id)
         {
             TascaAPI TAPI = new TascaAPI();
             TascaInicial = await TAPI.GetTascaAsync(id);
+            this.DataContext = TascaInicial;
+            InitializeComponent();
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
