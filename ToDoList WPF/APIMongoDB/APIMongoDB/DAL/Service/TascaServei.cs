@@ -25,10 +25,10 @@ namespace APIMongoDB.DAL.Service
             return 1;
         }
 
-        public int Update(Tasca tasca, String titol)
+        public int Update(Tasca tasca, String id)
         {
             MongoServei MS = new MongoServei("Tasca");
-            var filter = Builders<Tasca>.Filter.Eq("Titol", titol);
+            var filter = Builders<Tasca>.Filter.Eq("_id", id);
             MS.tascaCollection.ReplaceOne(filter, tasca);
             return 1;
         }
@@ -43,17 +43,17 @@ namespace APIMongoDB.DAL.Service
         }
 
 
-        public int Delete(string titol)
+        public int Delete(string id)
         {
             MongoServei MS = new MongoServei("Tasca");
-            var result = MS.tascaCollection.DeleteOne(t => t.Titol == titol);
+            var result = MS.tascaCollection.DeleteOne(t => t._id == id);
             return (int)result.DeletedCount;
         }
 
-        public Tasca Get(string titol)
+        public Tasca Get(string id)
         {
             MongoServei MS = new MongoServei("Tasca");
-            List<Tasca> result = MS.tascaCollection.AsQueryable().Where(t => t.Titol == titol).ToList();
+            List<Tasca> result = MS.tascaCollection.AsQueryable().Where(t => t._id == id).ToList();
             return result[0];
         }
     }

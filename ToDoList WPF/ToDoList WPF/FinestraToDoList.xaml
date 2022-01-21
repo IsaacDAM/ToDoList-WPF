@@ -90,15 +90,15 @@
                     <StackPanel x:Name="StackToDo">
                         <TreeView Width="250">
                             <TreeViewItem Header="{Binding Titol}" IsExpanded="True">
-                                <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
+                                <TreeViewItem Header="{Binding _id}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dFinalitzacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Prioritat}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Representant}" FontSize="13"></TreeViewItem>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Name="BotoModificar" Tag="{Binding Titol}" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
-                                    <Button Name="BotoEliminar" Tag="{Binding Titol}" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
+                                    <Button Name="BotoModificar" Tag="{Binding _id}" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
+                                    <Button Name="BotoEliminar" Tag="{Binding _id}" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
                                 </StackPanel>
                             </TreeViewItem>
                         </TreeView>
@@ -127,15 +127,15 @@
                     <StackPanel Name="StackDoing">
                         <TreeView Width="250">
                             <TreeViewItem Header="{Binding Titol}" IsExpanded="True">
-                                <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
+                                <TreeViewItem Header="{Binding _id}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dFinalitzacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Prioritat}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Representant}" FontSize="13"></TreeViewItem>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Tag="{Binding Titol}" Name="BotoModificar" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
-                                    <Button Tag="{Binding Titol}" Name="BotoEliminar" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
+                                    <Button Tag="{Binding _id}" Name="BotoModificar" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
+                                    <Button Tag="{Binding _id}" Name="BotoEliminar" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
                                 </StackPanel>
                             </TreeViewItem>
                         </TreeView>
@@ -164,15 +164,15 @@
                     <StackPanel Name="StackDone" HorizontalAlignment="Center" VerticalAlignment="Top">
                         <TreeView Width="250">
                             <TreeViewItem Header="{Binding Titol}" IsExpanded="True">
-                                <TreeViewItem Header="{Binding Codi}" FontSize="13"></TreeViewItem>
+                                <TreeViewItem Header="{Binding _id}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dCreacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding dFinalitzacio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Prioritat}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Representant}" FontSize="13"></TreeViewItem>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Name="BotoModificar" Tag="{Binding Titol}" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
-                                    <Button Name="BotoEliminar" Tag="{Binding Titol}" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
+                                    <Button Name="BotoModificar" Tag="{Binding _id}" Content="Modificar" Margin="10" Height="25" Width="60" Click="BotoModificar_Click"></Button>
+                                    <Button Name="BotoEliminar" Tag="{Binding _id}" Content="Eliminar" Margin="10" Height="25" Width="60" Click="BotoEliminar_Click"></Button>
                                 </StackPanel>
                             </TreeViewItem>
                         </TreeView>

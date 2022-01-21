@@ -38,15 +38,16 @@ namespace ToDoList_WPF
             ActualitzarTaula();
         }
 
-        private void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
+        private async void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
         {
             
             TascaDades Tasca = (TascaDades)LlistaToDo.SelectedItem;
-            TascaServei TS = new TascaServei();
+            TascaAPI TAPI = new TascaAPI();
 
-            if(LlistaToDo.SelectedItem != null)
+            if (LlistaToDo.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca.Codi, "Doing");
+                Tasca.Estat = "Doing";
+                await TAPI.UpdateAsync(Tasca, Tasca._id);
                 ActualitzarTaula();
             }
             else
@@ -56,15 +57,16 @@ namespace ToDoList_WPF
             
         }
 
-        private void BotoRetornarToDo_Click(object sender, RoutedEventArgs e)
+        private async void BotoRetornarToDo_Click(object sender, RoutedEventArgs e)
         {
             
             TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
-            TascaServei TS = new TascaServei();
+            TascaAPI TAPI = new TascaAPI();
 
             if (LlistaDoing.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca.Codi, "ToDo");
+                Tasca.Estat = "ToDo";
+                await TAPI.UpdateAsync(Tasca, Tasca._id);
                 ActualitzarTaula();
             }
             else
@@ -73,15 +75,16 @@ namespace ToDoList_WPF
             }
             
         }
-        private void BotoRetornarDoing_Click(object sender, RoutedEventArgs e)
+        private async void BotoRetornarDoing_Click(object sender, RoutedEventArgs e)
         {
             
             TascaDades Tasca = (TascaDades)LlistaDone.SelectedItem;
-            TascaServei TS = new TascaServei();
+            TascaAPI TAPI = new TascaAPI();
 
             if (LlistaDone.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca.Codi, "Doing");
+                Tasca.Estat = "Doing";
+                await TAPI.UpdateAsync(Tasca, Tasca._id);
                 ActualitzarTaula();
             }
             else
@@ -91,15 +94,16 @@ namespace ToDoList_WPF
             
         }
 
-        private void BotoEnviarDone_Click(object sender, RoutedEventArgs e)
+        private async void BotoEnviarDone_Click(object sender, RoutedEventArgs e)
         {
             
             TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
-            TascaServei TS = new TascaServei();
+            TascaAPI TAPI = new TascaAPI();
 
             if (LlistaDoing.SelectedItem != null)
             {
-                TS.UpdateEstat(Tasca.Codi, "Done");
+                Tasca.Estat = "Done";
+                await TAPI.UpdateAsync(Tasca, Tasca._id);
                 ActualitzarTaula();
             }
             else
@@ -192,25 +196,28 @@ namespace ToDoList_WPF
             return null;
         }
 
-        private void Llista_Drop(object sender, DragEventArgs e)
+        private async void Llista_Drop(object sender, DragEventArgs e)
         {
-            
-            TascaServei TS = new TascaServei();
+
+            TascaAPI TAPI = new TascaAPI();
             String nom = ((ListBox)sender).Name;
-            ObjectId codiTasca = ((TascaDades)e.Data.GetData(typeof(TascaDades))).Codi;
+            TascaDades Tasca = ((TascaDades)e.Data.GetData(typeof(TascaDades)));
             if(nom == "LlistaToDo")
             {
-                TS.UpdateEstat(codiTasca, "ToDo");
+                Tasca.Estat = "ToDo";
+                await TAPI.UpdateAsync(Tasca, Tasca._id);
                 ActualitzarTaula();
             }
             else if (nom == "LlistaDoing")
             {
-                TS.UpdateEstat(codiTasca, "Doing");
+                Tasca.Estat = "Doing";
+                await TAPI.UpdateAsync(Tasca, Tasca._id);
                 ActualitzarTaula();
             }
             else
             {
-                TS.UpdateEstat(codiTasca, "Done");
+                Tasca.Estat = "Done";
+                await TAPI.UpdateAsync(Tasca, Tasca._id);
                 ActualitzarTaula();
             }
             

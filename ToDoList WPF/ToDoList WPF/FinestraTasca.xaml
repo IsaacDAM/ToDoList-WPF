@@ -21,7 +21,7 @@
             <RowDefinition Height="150*" />
         </Grid.RowDefinitions>
         <Label VerticalAlignment="Center" Margin="10,0,160,0" Height="26">Codi:</Label>
-        <TextBox Name="tbCodi" Text="{Binding Codi}" VerticalAlignment="Center"  Margin="110,0,50,0" Height="18" IsEnabled="False"></TextBox>
+        <TextBox Name="tbCodi" Text="{Binding _id}" VerticalAlignment="Center"  Margin="110,0,50,0" Height="18" IsEnabled="False"></TextBox>
         <Label Grid.Column="1" VerticalAlignment="Center" Margin="10,0,443,0" Height="26">Títol Tasca:</Label>
         <TextBox Name="tbTitol" Text="{Binding Titol}" Grid.Column="1" VerticalAlignment="Center"  Margin="90,0,40,0" Height="18" MaxLength="20"/>
         <Label Grid.Row="1" Margin="10,0,160,0">Descripció:</Label>

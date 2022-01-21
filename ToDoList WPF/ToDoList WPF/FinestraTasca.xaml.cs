@@ -16,18 +16,18 @@ namespace ToDoList_WPF
         {
             InitializeComponent();
         }
-        public Finestra_Tasca(String Titol)
+        public Finestra_Tasca(String id)
         {
             TascaAPI TAPI = new TascaAPI();
-            GetTasca(Titol);
+            GetTasca(id);
             TascaDades Tasca = TascaInicial;
             this.DataContext = Tasca;
             InitializeComponent();
         }
-        private async void GetTasca(String Titol)
+        private async void GetTasca(String id)
         {
             TascaAPI TAPI = new TascaAPI();
-            TascaInicial = await TAPI.GetTascaAsync(Titol);
+            TascaInicial = await TAPI.GetTascaAsync(id);
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -67,8 +67,8 @@ namespace ToDoList_WPF
                 else
                 {
                     Tasca.Estat = TascaInicial.Estat;
-                    Tasca.Codi = ObjectId.Parse(tbCodi.Text);
-                    await TAPI.UpdateAsync(Tasca,TascaInicial.Titol);
+                    Tasca._id = tbCodi.Text;
+                    await TAPI.UpdateAsync(Tasca,TascaInicial._id);
                     Close();
                     
                 }
@@ -87,7 +87,7 @@ namespace ToDoList_WPF
             lbRepresentant.ItemsSource = TreballadorServei.GetAll();
             if (this.DataContext != null)
             {
-                tbCodi.Text = ((TascaDades)this.DataContext).Codi.ToString();
+                tbCodi.Text = ((TascaDades)this.DataContext)._id;
                 int contador = 0;
                 bool trobat = false;
                 int i = 0;

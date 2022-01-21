@@ -28,7 +28,7 @@ namespace ToDoList_WPF.Servei
         public int Update(TascaDades tasca)
         {
             MongoServei MS = new MongoServei("Tasca");
-            var filter = Builders<TascaDades>.Filter.Eq("Codi", tasca.Codi);
+            var filter = Builders<TascaDades>.Filter.Eq("_id", tasca._id);
             MS.tascaCollection.ReplaceOne(filter, tasca);
             return 1;
         }
