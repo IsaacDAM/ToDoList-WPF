@@ -38,10 +38,10 @@ namespace APIMongoDB.Controllers
 
         // PUT tasca
         [HttpPut]
-        public void Put(Tasca tasca, String titol)
+        public void Put(Tasca tasca, String id)
         {
             TascaServei ts = new TascaServei();
-            ts.Update(tasca,titol);
+            ts.Update(tasca,id);
         }
 
         // DELETE tasca

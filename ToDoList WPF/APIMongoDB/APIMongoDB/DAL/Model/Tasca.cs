@@ -8,7 +8,8 @@ namespace APIMongoDB.DAL.Model
     public class Tasca
     {
         [BsonId]
-        public ObjectId Codi { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public String _id { get; set; }
 
         [BsonElement("titol")]
         public String Titol { get; set; }
@@ -46,10 +47,11 @@ namespace APIMongoDB.DAL.Model
 
         public Tasca() { }
 
-        public override string ToString()
+        /*public override string ToString()
         {
             return string.Format("id: {0}\ntitol: {1}\ndescripcio: {2}\ndcreacio: {3}\ndfinalitzacio: {4}\nprioritat: {5}\nrepresentant: {6}\nestat: {7}\n", this.Codi, this.Titol, this.Descripcio, this.dCreacio.Date, this.dFinalitzacio.Date, this.Prioritat, this.Representant, this.Estat);
         }
+        */
 
 
     }

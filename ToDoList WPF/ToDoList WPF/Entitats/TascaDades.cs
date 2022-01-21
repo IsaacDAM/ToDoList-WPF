@@ -7,7 +7,8 @@ namespace ToDoList_WPF.Entitats
     public class TascaDades
     {
         [BsonId]
-        public ObjectId Codi { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public String _id { get; set; }
 
         [BsonElement ("titol")]
         public String Titol { get; set; }

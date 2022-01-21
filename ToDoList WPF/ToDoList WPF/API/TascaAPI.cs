@@ -34,10 +34,6 @@ namespace ToDoList_WPF.API
                     //Obtenim i posa el resultat a la llista de tasques.
                     tasques = await response.Content.ReadAsAsync<List<TascaDades>>();
                     response.Dispose();
-                    foreach(TascaDades tasca in tasques)
-                    {
-                        tasca.Titol = tasca.Titol.Replace("_", " ");
-                    }
                 }
                 else
                 {
@@ -49,7 +45,6 @@ namespace ToDoList_WPF.API
         //POST una tasca
         public async Task AddAsync(TascaDades tasca)
         {
-            tasca.Titol = tasca.Titol.Replace(" ", "_");
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUri);
@@ -62,9 +57,8 @@ namespace ToDoList_WPF.API
             }
         }
         //PUT (Modificar) una tasca
-        public async Task UpdateAsync(TascaDades tasca, String titol)
+        public async Task UpdateAsync(TascaDades tasca, String id)
         {
-            titol = titol.Replace(" ", "_");
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUri);
@@ -79,7 +73,6 @@ namespace ToDoList_WPF.API
         //DELETE una tasca
         public async Task DeleteAsync(string Id)
         {
-            Id = Id.Replace(" ", "_");
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUri);
@@ -87,14 +80,13 @@ namespace ToDoList_WPF.API
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Enviem petició DELETE a /tasca/id
-                HttpResponseMessage response = await client.DeleteAsync($"tasca/{id}");
+                HttpResponseMessage response = await client.DeleteAsync($"tasca/{Id}");
                 response.EnsureSuccessStatusCode();
             }
         }
         //GET tasca
         public async Task<TascaDades> GetTascaAsync(string Id)
         {
-            Id = Id.Replace(" ", "_");
             TascaDades tasca = new TascaDades();
             using (var client = new HttpClient())
             {
@@ -115,7 +107,6 @@ namespace ToDoList_WPF.API
                         //Obtenim i coloca el resultat a treballador.
                         tasca = await response.Content.ReadAsAsync<TascaDades>();
                         response.Dispose();
-                        tasca.Titol = tasca.Titol.Replace("_", " ");
                     }
                 }
                 else
