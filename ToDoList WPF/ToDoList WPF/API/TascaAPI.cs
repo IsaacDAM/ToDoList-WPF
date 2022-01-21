@@ -57,7 +57,7 @@ namespace ToDoList_WPF.API
             }
         }
         //PUT (Modificar) una tasca
-        public async Task UpdateAsync(TascaDades tasca, String id)
+        public async Task UpdateAsync(TascaDades tasca)
         {
             using (var client = new HttpClient())
             {
