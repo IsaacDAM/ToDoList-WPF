@@ -61,7 +61,7 @@ namespace APIMongoDB.DAL.Service
             {
                 return result[0];
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 return null;
             }
