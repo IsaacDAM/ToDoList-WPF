@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using ToDoList_WPF.Entitats;
-using ToDoList_WPF.Servei;
 using System.Linq;
 using System.Windows.Input;
 using System.Windows.Media;

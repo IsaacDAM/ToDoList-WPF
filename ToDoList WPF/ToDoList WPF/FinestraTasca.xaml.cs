@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows;
 using ToDoList_WPF.Entitats;
-using ToDoList_WPF.Servei;
 using ToDoList_WPF.API;
 using System.Linq;
 using MongoDB.Bson;
@@ -83,10 +82,10 @@ namespace ToDoList_WPF
 
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
-            lbRepresentant.ItemsSource = TreballadorServei.GetAll();
+            TreballadorAPI TAPI = new TreballadorAPI();
+            lbRepresentant.ItemsSource = await TAPI.GetTreballadorsAsync();
             if (this.DataContext != null)
             {
-                TreballadorAPI TAPI = new TreballadorAPI();
                 tbCodi.Text = ((TascaDades)this.DataContext)._id;
                 int contador = 0;
                 bool trobat = false;

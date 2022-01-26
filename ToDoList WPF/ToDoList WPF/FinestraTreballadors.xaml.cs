@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Controls;
 using ToDoList_WPF.API;
 using ToDoList_WPF.Entitats;
-using ToDoList_WPF.Servei;
 
 namespace ToDoList_WPF
 {
