@@ -18,9 +18,9 @@ namespace ToDoList_WPF.API
             BaseUri = ConfigurationManager.AppSettings["BaseUri"];
         }
         //GET totes les tasques.
-        public async Task<List<TascaDades>> GetTascaAsync()
+        public async Task<List<Tasca>> GetTascaAsync()
         {
-            List<TascaDades> tasques = new List<TascaDades>();
+            List<Tasca> tasques = new List<Tasca>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUri);
@@ -32,7 +32,7 @@ namespace ToDoList_WPF.API
                 if (response.IsSuccessStatusCode)
                 {
                     //Obtenim i posa el resultat a la llista de tasques.
-                    tasques = await response.Content.ReadAsAsync<List<TascaDades>>();
+                    tasques = await response.Content.ReadAsAsync<List<Tasca>>();
                     response.Dispose();
                 }
                 else
@@ -43,7 +43,7 @@ namespace ToDoList_WPF.API
             return tasques;
         }
         //POST una tasca
-        public async Task AddAsync(TascaDades tasca)
+        public async Task AddAsync(Tasca tasca)
         {
             using (var client = new HttpClient())
             {
@@ -57,7 +57,7 @@ namespace ToDoList_WPF.API
             }
         }
         //PUT (Modificar) una tasca
-        public async Task UpdateAsync(TascaDades tasca)
+        public async Task UpdateAsync(Tasca tasca)
         {
             using (var client = new HttpClient())
             {
@@ -85,9 +85,9 @@ namespace ToDoList_WPF.API
             }
         }
         //GET tasca
-        public async Task<TascaDades> GetTascaAsync(string Id)
+        public async Task<Tasca> GetTascaAsync(string Id)
         {
-            TascaDades tasca = new TascaDades();
+            Tasca tasca = new Tasca();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUri);
@@ -105,7 +105,7 @@ namespace ToDoList_WPF.API
                     else
                     {
                         //Obtenim i coloca el resultat a treballador.
-                        tasca = await response.Content.ReadAsAsync<TascaDades>();
+                        tasca = await response.Content.ReadAsAsync<Tasca>();
                         response.Dispose();
                     }
                 }

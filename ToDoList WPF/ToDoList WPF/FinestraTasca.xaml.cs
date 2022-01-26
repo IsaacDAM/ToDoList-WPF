@@ -10,7 +10,7 @@ namespace ToDoList_WPF
 {
     public partial class Finestra_Tasca : Window
     {
-        TascaDades TascaInicial = new TascaDades();
+        Tasca TascaInicial = new Tasca();
         public Finestra_Tasca()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace ToDoList_WPF
         {   
             if(tbTitol.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null && tbDFinal.SelectedDate != null && lbPrioritats.SelectedItem != null && lbRepresentant.SelectedItem != null)
             {
-                TascaDades Tasca = new TascaDades();
+                Tasca Tasca = new Tasca();
                 Tasca.Titol = tbTitol.Text;
                 Tasca.Descripcio = tbDescripcio.Text;
                 Tasca.dCreacio = (DateTime)tbDCreacio.SelectedDate;
@@ -50,7 +50,7 @@ namespace ToDoList_WPF
                 {
                     Tasca.Prioritat = "Baixa";
                 }
-                TreballadorDades t1 = (TreballadorDades)lbRepresentant.SelectedItem;
+                Treballador t1 = (Treballador)lbRepresentant.SelectedItem;
                 Tasca.Representant = t1.Nom;
 
                 TascaAPI TAPI = new TascaAPI();
@@ -86,14 +86,14 @@ namespace ToDoList_WPF
             lbRepresentant.ItemsSource = await TAPI.GetTreballadorsAsync();
             if (this.DataContext != null)
             {
-                tbCodi.Text = ((TascaDades)this.DataContext)._id;
+                tbCodi.Text = ((Tasca)this.DataContext)._id;
                 int contador = 0;
                 bool trobat = false;
                 int i = 0;
-                List<TreballadorDades> Treballadors = await TAPI.GetTreballadorsAsync();
+                List<Treballador> Treballadors = await TAPI.GetTreballadorsAsync();
                 while (contador < Treballadors.Count() && !trobat)
                 {
-                    if (Treballadors[i].Nom == ((TascaDades)this.DataContext).Representant)
+                    if (Treballadors[i].Nom == ((Tasca)this.DataContext).Representant)
                     {
                         lbRepresentant.SelectedIndex = contador;
                         trobat = true;
@@ -108,11 +108,11 @@ namespace ToDoList_WPF
                 {
                     MessageBox.Show("S'ha eliminat el treballador d'aquesta tasca, selecciona un de nou.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                if(((TascaDades)this.DataContext).Prioritat == "Alta")
+                if(((Tasca)this.DataContext).Prioritat == "Alta")
                 {
                     lbPrioritats.SelectedIndex = 0;
                 }
-                else if(((TascaDades)this.DataContext).Prioritat == "Mitja")
+                else if(((Tasca)this.DataContext).Prioritat == "Mitja")
                 {
                     lbPrioritats.SelectedIndex = 1;
                 }

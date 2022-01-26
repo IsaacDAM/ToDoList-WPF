@@ -4,7 +4,7 @@ using MongoDB.Bson;
 
 namespace ToDoList_WPF.Entitats
 {
-    public class TreballadorDades
+    public class Treballador
     {
 
         [BsonId]
@@ -28,7 +28,7 @@ namespace ToDoList_WPF.Entitats
         public String Correu { get; set; }
 
 
-        public TreballadorDades(string nif, string nom, string cognoms, string telefon, string correu)
+        public Treballador(string nif, string nom, string cognoms, string telefon, string correu)
         {
             this.NIF = nif;
             this.Nom = nom;
@@ -38,7 +38,7 @@ namespace ToDoList_WPF.Entitats
 
         }
 
-        public TreballadorDades() { }
+        public Treballador() { }
 
         /*public override string ToString()
         {

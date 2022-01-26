@@ -18,14 +18,14 @@ namespace ToDoList_WPF
         {
             TreballadorAPI TAPI = new TreballadorAPI();
 
-            TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+            Treballador TNIF = (Treballador)LlistaDeTreballadors.SelectedItem;
             if (TNIF == null)
             {
                 MessageBox.Show("No s'ha seleccionat un treballador.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else if (MessageBox.Show("Vols eliminar al treballador?", "Advertència", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+                Treballador Treballador = (Treballador)LlistaDeTreballadors.SelectedItem;
                 try
                 {
                     await TAPI.DeleteAsync(Treballador.NIF);
@@ -42,7 +42,7 @@ namespace ToDoList_WPF
 
         private void LlistaDeTreballadors_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TreballadorDades Treballador = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+            Treballador Treballador = (Treballador)LlistaDeTreballadors.SelectedItem;
             if(Treballador != null)
             {
                 tbNom.Text = Treballador.Nom;
@@ -61,7 +61,7 @@ namespace ToDoList_WPF
 
         private async void BotoModificar_Click(object sender, RoutedEventArgs e)
         {
-            TreballadorDades TNIF = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
+            Treballador TNIF = (Treballador)LlistaDeTreballadors.SelectedItem;
             if(TNIF == null)
             {
                 MessageBox.Show("No s'ha seleccionat un treballador.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -70,8 +70,8 @@ namespace ToDoList_WPF
             {
                 if (tbNIF.Text != "" && tbNom.Text != "")
                 {
-                    TreballadorDades MongoCodi = (TreballadorDades)LlistaDeTreballadors.SelectedItem;
-                    TreballadorDades Treballador = new TreballadorDades
+                    Treballador MongoCodi = (Treballador)LlistaDeTreballadors.SelectedItem;
+                    Treballador Treballador = new Treballador
                     {
                         _id = MongoCodi._id,
                         Nom = tbNom.Text,
@@ -83,7 +83,7 @@ namespace ToDoList_WPF
 
                     TreballadorAPI TAPI = new TreballadorAPI();
                     String NIF = TNIF.NIF;
-                    TreballadorDades tempt = await TAPI.GetTreballadorAsync(Treballador.NIF);
+                    Treballador tempt = await TAPI.GetTreballadorAsync(Treballador.NIF);
                     if (tempt != null && tempt._id != Treballador._id)
                     {
                         MessageBox.Show("Ja existeix un treballador amb aquest NIF.", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -106,7 +106,7 @@ namespace ToDoList_WPF
             TreballadorAPI TAPI = new TreballadorAPI();
             if (tbNIF.Text != "" && tbNom.Text != "")
             {
-                TreballadorDades Treballador = new TreballadorDades
+                Treballador Treballador = new Treballador
                 {
                     Nom = tbNom.Text,
                     Cognoms = tbCnom.Text,

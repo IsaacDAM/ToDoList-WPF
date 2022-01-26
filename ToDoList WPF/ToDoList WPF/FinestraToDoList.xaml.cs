@@ -40,7 +40,7 @@ namespace ToDoList_WPF
         private async void BotoEnviarDoing_Click(object sender, RoutedEventArgs e)
         {
             
-            TascaDades Tasca = (TascaDades)LlistaToDo.SelectedItem;
+            Tasca Tasca = (Tasca)LlistaToDo.SelectedItem;
             TascaAPI TAPI = new TascaAPI();
 
             if (LlistaToDo.SelectedItem != null)
@@ -59,7 +59,7 @@ namespace ToDoList_WPF
         private async void BotoRetornarToDo_Click(object sender, RoutedEventArgs e)
         {
             
-            TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
+            Tasca Tasca = (Tasca)LlistaDoing.SelectedItem;
             TascaAPI TAPI = new TascaAPI();
 
             if (LlistaDoing.SelectedItem != null)
@@ -77,7 +77,7 @@ namespace ToDoList_WPF
         private async void BotoRetornarDoing_Click(object sender, RoutedEventArgs e)
         {
             
-            TascaDades Tasca = (TascaDades)LlistaDone.SelectedItem;
+            Tasca Tasca = (Tasca)LlistaDone.SelectedItem;
             TascaAPI TAPI = new TascaAPI();
 
             if (LlistaDone.SelectedItem != null)
@@ -96,7 +96,7 @@ namespace ToDoList_WPF
         private async void BotoEnviarDone_Click(object sender, RoutedEventArgs e)
         {
             
-            TascaDades Tasca = (TascaDades)LlistaDoing.SelectedItem;
+            Tasca Tasca = (Tasca)LlistaDoing.SelectedItem;
             TascaAPI TAPI = new TascaAPI();
 
             if (LlistaDoing.SelectedItem != null)
@@ -118,7 +118,7 @@ namespace ToDoList_WPF
             LlistaToDo.Items.Clear();
             LlistaDoing.Items.Clear();
             LlistaDone.Items.Clear();
-            List<TascaDades> Tasca = await TAPI.GetTascaAsync();
+            List<Tasca> Tasca = await TAPI.GetTascaAsync();
             foreach (var i in Tasca)
             {
                 if (i.Estat == "ToDo")
@@ -201,7 +201,7 @@ namespace ToDoList_WPF
 
             TascaAPI TAPI = new TascaAPI();
             String nom = ((ListBox)sender).Name;
-            TascaDades Tasca = ((TascaDades)e.Data.GetData(typeof(TascaDades)));
+            Tasca Tasca = ((Tasca)e.Data.GetData(typeof(Tasca)));
             if(nom == "LlistaToDo")
             {
                 Tasca.Estat = "ToDo";

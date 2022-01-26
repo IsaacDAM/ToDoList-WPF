@@ -20,9 +20,9 @@ namespace ToDoList_WPF.API
         }
 
         //GET tots els treballadors
-        public async Task<List<TreballadorDades>> GetTreballadorsAsync()
+        public async Task<List<Treballador>> GetTreballadorsAsync()
         {
-            List<TreballadorDades> treballadors = new List<TreballadorDades>();
+            List<Treballador> treballadors = new List<Treballador>();
 
             using (var client = new HttpClient())
             {
@@ -35,7 +35,7 @@ namespace ToDoList_WPF.API
                 if (response.IsSuccessStatusCode)
                 {
                     //Obtenim i posa el resultat a la llista de treballadors.
-                    treballadors = await response.Content.ReadAsAsync<List<TreballadorDades>>();
+                    treballadors = await response.Content.ReadAsAsync<List<Treballador>>();
                     response.Dispose();
                 }
                 else
@@ -47,9 +47,9 @@ namespace ToDoList_WPF.API
         }
 
         //GET un treballador
-        public async Task<TreballadorDades> GetTreballadorAsync(String Id)
+        public async Task<Treballador> GetTreballadorAsync(String Id)
         {
-            TreballadorDades treballador = new TreballadorDades();
+            Treballador treballador = new Treballador();
 
             using (var client = new HttpClient())
             {
@@ -69,7 +69,7 @@ namespace ToDoList_WPF.API
                     else
                     {
                         //Obtenim i coloca el resultat a treballador.
-                        treballador = await response.Content.ReadAsAsync<TreballadorDades>();
+                        treballador = await response.Content.ReadAsAsync<Treballador>();
                         response.Dispose();
                     }
                 }
@@ -82,7 +82,7 @@ namespace ToDoList_WPF.API
         }
 
         //POST un treballador
-        public async Task AddAsync(TreballadorDades treballador)
+        public async Task AddAsync(Treballador treballador)
         {
             using (var client = new HttpClient())
             {
@@ -97,7 +97,7 @@ namespace ToDoList_WPF.API
         }
 
         //PUT (Modificar) un treballador
-        public async Task UpdateAsync(TreballadorDades treballador, string Id)
+        public async Task UpdateAsync(Treballador treballador, string Id)
         {
             using (var client = new HttpClient())
             {
