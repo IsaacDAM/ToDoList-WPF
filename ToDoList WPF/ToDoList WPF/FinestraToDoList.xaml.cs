@@ -115,10 +115,10 @@ namespace ToDoList_WPF
         private async void ActualitzarTaula()
         {
             TascaAPI TAPI = new TascaAPI();
+            List<Tasca> Tasca = await TAPI.GetTascaAsync();
             LlistaToDo.Items.Clear();
             LlistaDoing.Items.Clear();
             LlistaDone.Items.Clear();
-            List<Tasca> Tasca = await TAPI.GetTascaAsync();
             foreach (var i in Tasca)
             {
                 if (i.Estat == "ToDo")
