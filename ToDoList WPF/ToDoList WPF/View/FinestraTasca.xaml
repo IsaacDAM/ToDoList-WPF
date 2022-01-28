@@ -34,19 +34,19 @@
         <ListBox Name="lbPrioritats" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="400,0,40,18">
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Images\redDot.png" Margin="0,0,5,0"/>
+                    <Image Source="..\Images\redDot.png" Margin="0,0,5,0"/>
                     <TextBlock>Alta</TextBlock>
                 </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Images\orangeDot.png" Margin="0,0,5,0"/>
+                    <Image Source="..\Images\orangeDot.png" Margin="0,0,5,0"/>
                     <TextBlock >Mitja</TextBlock>
                 </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Images\greenDot.png" Margin="0,0,5,0"/>
+                    <Image Source="..\Images\greenDot.png" Margin="0,0,5,0"/>
                     <TextBlock >Baixa</TextBlock>
                 </StackPanel>
             </ListBoxItem>

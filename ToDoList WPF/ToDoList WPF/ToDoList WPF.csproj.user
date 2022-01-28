@@ -9,18 +9,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="FinestraTasca.xaml.cs">
+    <Compile Update="View\FinestraTasca.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="FinestraToDoList.xaml.cs">
+    <Compile Update="View\FinestraToDoList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="FinestraTasca.xaml">
+    <Page Update="View\FinestraTasca.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="FinestraToDoList.xaml">
+    <Page Update="View\FinestraToDoList.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

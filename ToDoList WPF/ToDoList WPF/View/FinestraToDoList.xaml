@@ -41,33 +41,33 @@
         </Grid.RowDefinitions>
         <Button Grid.Row="5" Grid.Column="4" x:Name="BotoAfegirTasca" Margin="28,15,28,10"  Click="BotoAfegirTasca_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Images\btn_tasca.png"  Height="20" Width="20" Stretch="Fill" />
+                <Image Source="..\Images\btn_tasca.png"  Height="20" Width="20" Stretch="Fill" />
                 <TextBlock VerticalAlignment="Center" Margin="20,0,0,0">Afegir Tasca</TextBlock>
             </StackPanel>
         </Button>
         <Button Grid.Row="5" Grid.Column="1" x:Name="BotoTreballadors"  Margin="28,15,28,10"  Click="BotoTreballadors_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Images\btn_treballador.png"  Height="20" Width="20" Stretch="Fill" />
+                <Image Source="..\Images\btn_treballador.png"  Height="20" Width="20" Stretch="Fill" />
                 <TextBlock VerticalAlignment="Center" Margin="20,0,0,0">Treballadors</TextBlock>
             </StackPanel>
         </Button>
         <Button Grid.Row="5" Grid.Column="7" x:Name="BotoActualitzar" Margin="28,15,28,10" Click="BotoActualitzar_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Images\btn_reload.png"  Height="20" Width="20" Stretch="Fill" />
+                <Image Source="..\Images\btn_reload.png"  Height="20" Width="20" Stretch="Fill" />
                 <TextBlock VerticalAlignment="Center" Margin="20,0,0,0">Actualitzar</TextBlock>
             </StackPanel>
         </Button>
         <Button Grid.Row="3" Grid.Column="2" Name="BotoRetornarToDo" Click="BotoRetornarToDo_Click">
-            <Image Source="Images\45048 (1).png"/>
+            <Image Source="..\Images\45048 (1).png"/>
         </Button>
         <Button Grid.Row="3" Grid.Column="3" Name="BotoEnviarDoing" Click="BotoEnviarDoing_Click">
-            <Image Source="Images\45048.png"/>
+            <Image Source="..\Images\45048.png"/>
         </Button>
         <Button Grid.Row="3" Grid.Column="5" Name="BotoRetornarDoing" Click="BotoRetornarDoing_Click">
-            <Image Source="Images\45048 (1).png"/>
+            <Image Source="..\Images\45048 (1).png"/>
         </Button>
         <Button Grid.Row="3" Grid.Column="6" Name="BotoEnviarDone" Click="BotoEnviarDone_Click">
-            <Image Source="Images\45048.png"/>
+            <Image Source="..\Images\45048.png"/>
         </Button>
         <ListBox Grid.Row="2" Grid.Column="1" x:Name="LlistaToDo"  BorderBrush="Black" Grid.RowSpan="3" GotFocus="Llista_GotFocus" AllowDrop="True" PreviewMouseDoubleClick="Llista_PreviewMouseDoubleClick" Drop="Llista_Drop">
             <ListBox.Resources>
